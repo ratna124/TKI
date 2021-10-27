@@ -31,7 +31,7 @@
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Negara Tujuan</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Tentang Kami</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Login Here!</a></li>
+                        <li class="nav-item"><a class="nav-link" href="\TKI\login\login.php">Login Here!</a></li>
                     </ul>
                 </div>
             </div>
@@ -41,7 +41,7 @@
             <div class="container">
                 <div class="masthead-subheading">Welcome To PT Hendrarta Argaraya !</div>
                 <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#">Sign In</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="\TKI\login\login.php">Sign In</a>
             </div>
         </header>
         <!-- Services-->
@@ -84,7 +84,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Negara Tujuan</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Country Of Destination.</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4">
@@ -109,7 +109,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/singapore.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Singapore</div>
@@ -154,7 +154,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/jepang.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Southwest</div>
@@ -169,7 +169,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/jepang.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Window</div>
@@ -324,49 +324,34 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <!-- Name input-->
-                                <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                <h5 class="section-heading text-uppercase">Alamat</h5>
+                                <p class="section-heading text-uppercase">Jl. Papa Hijau No.21, Tulusrejo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</p>
                             </div>
                             <div class="form-group">
-                                <!-- Email address input-->
-                                <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                <!-- Name input-->
+                                <h5 class="section-heading text-uppercase">No. Telp</h5>
+                                <p class="section-heading text-uppercase">(0341) 470411</p>
                             </div>
-                            <div class="form-group mb-md-0">
-                                <!-- Phone number input-->
-                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            <div class="form-group">
+                                <!-- Name input-->
+                                <h5 class="section-heading text-uppercase">Buka</h5>
+                                <p class="section-heading text-uppercase">Monday 9AM–4PM</p>
+                                <p class="section-heading text-uppercase">Tuesday 9AM–4PM</p>
+                                <p class="section-heading text-uppercase">Thursday 9AM–4PM</p>
+                                <p class="section-heading text-uppercase">Wednesday 9AM–4PM</p>
+                                <p class="section-heading text-uppercase">Friday 9AM–4PM</p>
+                                <p class="section-heading text-uppercase">Saturday 9AM–4PM</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-group-textarea mb-md-0">
-                                <!-- Message input-->
-                                <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            <p>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.5285256472375!2d112.62433531477909!3d-7.944206494277823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd629dc485b4d4b%3A0x1cff56dd621f9e2f!2sPT%20Hendrarta%20Argaraya!5e0!3m2!1sen!2sid!4v1635342494124!5m2!1sen!2sid" width="620" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </p>
                             </div>
                         </div>
                     </div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                        </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                    <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
-                </form>
+                    </form>
             </div>
         </section>
         <!-- Footer-->
@@ -397,20 +382,29 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Threads
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Illustration
-                                        </li>
-                                    </ul>
+                                    <h2 class="text-uppercase">Hong kong</h2>
+                                    <p class="item-intro text-muted">Country Of Destination.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/hongkong2.jpg" alt="..." />
+                                    <h5>Kriteria</h5>
+                                    <ul>Tinggi badan minimal 165Cm (laki-laki) 150Cm (perempuan)</ul>
+                                    <ul>Berat badan proporsional</ul>
+                                    <ul>Usia minimal 20 s.d 35 tahun</ul>
+                                    <ul>Sehat jasmani dan rohani</ul>
+                                    <ul>Pendidikan minimal SLTA / Sederajat</ul>
+                                    <ul>Bagi yang Ex. Taiwan harus membawa Paspor lama & ARC</ul>
+                                    <br>
+                                    <h5>Persyaratan & Ketentuan</h5>
+                                    <ul>E-KTP (asli)</ul>
+                                    <ul>Kartu Keluarga (asli)</ul>
+                                    <ul>Akta Kelahiran (asli)</ul>
+                                    <ul>Izin Orang Tua/ Suami (asli)</ul>
+                                    <ul>Ijazah (asli)</ul>
+                                    <ul>Surat Keterangan Status/ Surat Nikah (asli)</ul>
+                                    <ul>SKCK dari Polda</ul>
+                                    <br>
+                                    <h5>Gaji</h5>
+                                    <ul>± Rp. xxx</ul>
+                                    <br>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-times me-1"></i>
                                         Close Project
@@ -432,20 +426,29 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Explore
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Graphic Design
-                                        </li>
-                                    </ul>
+                                    <h2 class="text-uppercase">Singapore</h2>
+                                    <p class="item-intro text-muted">Country Of Destination.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/singapore2.jpg" alt="..." />
+                                    <h5>Kriteria</h5>
+                                    <ul>Tinggi badan minimal 165Cm (laki-laki) 150Cm (perempuan)</ul>
+                                    <ul>Berat badan proporsional</ul>
+                                    <ul>Usia minimal 20 s.d 35 tahun</ul>
+                                    <ul>Sehat jasmani dan rohani</ul>
+                                    <ul>Pendidikan minimal SLTA / Sederajat</ul>
+                                    <ul>Bagi yang Ex. Singapore harus membawa Paspor lama & ARC</ul>
+                                    <br>
+                                    <h5>Persyaratan & Ketentuan</h5>
+                                    <ul>E-KTP (asli)</ul>
+                                    <ul>Kartu Keluarga (asli)</ul>
+                                    <ul>Akta Kelahiran (asli)</ul>
+                                    <ul>Izin Orang Tua/ Suami (asli)</ul>
+                                    <ul>Ijazah (asli)</ul>
+                                    <ul>Surat Keterangan Status/ Surat Nikah (asli)</ul>
+                                    <ul>SKCK dari Polda</ul>
+                                    <br>
+                                    <h5>Gaji</h5>
+                                    <ul>± Rp. xxx</ul>
+                                    <br>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-times me-1"></i>
                                         Close Project
@@ -467,20 +470,29 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Finish
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Identity
-                                        </li>
-                                    </ul>
+                                    <h2 class="text-uppercase">Malaysia</h2>
+                                    <p class="item-intro text-muted">Country Of Destination.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/malaysia2.jpg" alt="..." />
+                                    <h5>Kriteria</h5>
+                                    <ul>Tinggi badan minimal 165Cm (laki-laki) 150Cm (perempuan)</ul>
+                                    <ul>Berat badan proporsional</ul>
+                                    <ul>Usia minimal 20 s.d 35 tahun</ul>
+                                    <ul>Sehat jasmani dan rohani</ul>
+                                    <ul>Pendidikan minimal SLTA / Sederajat</ul>
+                                    <ul>Bagi yang Ex. Malaysia harus membawa Paspor lama & ARC</ul>
+                                    <br>
+                                    <h5>Persyaratan & Ketentuan</h5>
+                                    <ul>E-KTP (asli)</ul>
+                                    <ul>Kartu Keluarga (asli)</ul>
+                                    <ul>Akta Kelahiran (asli)</ul>
+                                    <ul>Izin Orang Tua/ Suami (asli)</ul>
+                                    <ul>Ijazah (asli)</ul>
+                                    <ul>Surat Keterangan Status/ Surat Nikah (asli)</ul>
+                                    <ul>SKCK dari Polda</ul>
+                                    <br>
+                                    <h5>Gaji</h5>
+                                    <ul>± Rp. xxx</ul>
+                                    <br>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-times me-1"></i>
                                         Close Project
@@ -502,20 +514,29 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Lines
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Branding
-                                        </li>
-                                    </ul>
+                                    <h2 class="text-uppercase">Taiwan</h2>
+                                    <p class="item-intro text-muted">Country Of Destination.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/taiwan2.jpg" alt="..." />
+                                    <h5>Kriteria</h5>
+                                    <ul>Tinggi badan minimal 165Cm (laki-laki) 150Cm (perempuan)</ul>
+                                    <ul>Berat badan proporsional</ul>
+                                    <ul>Usia minimal 20 s.d 35 tahun</ul>
+                                    <ul>Sehat jasmani dan rohani</ul>
+                                    <ul>Pendidikan minimal SLTA / Sederajat</ul>
+                                    <ul>Bagi yang Ex. Taiwan harus membawa Paspor lama & ARC</ul>
+                                    <br>
+                                    <h5>Persyaratan & Ketentuan</h5>
+                                    <ul>E-KTP (asli)</ul>
+                                    <ul>Kartu Keluarga (asli)</ul>
+                                    <ul>Akta Kelahiran (asli)</ul>
+                                    <ul>Izin Orang Tua/ Suami (asli)</ul>
+                                    <ul>Ijazah (asli)</ul>
+                                    <ul>Surat Keterangan Status/ Surat Nikah (asli)</ul>
+                                    <ul>SKCK dari Polda</ul>
+                                    <br>
+                                    <h5>Gaji</h5>
+                                    <ul>± Rp. xxx</ul>
+                                    <br>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-times me-1"></i>
                                         Close Project
