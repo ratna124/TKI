@@ -347,47 +347,37 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Tabel Data User</h6><br>
-                            <a href="tabelManageUserForm.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-plus fa-sm text-white-50"></i>Add New User</a>
+                            <h6 class="m-0 font-weight-bold text-primary">Edit User</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama</th>
-                                            <th>Username</th>
-                                            <th>Password</th>
-                                            <th>Role</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php 
-		include 'config.php';
-        $konektor = mysqli_connect("localhost","root","", "tki");
-		$no = 1;
-		$data = mysqli_query($konektor,"select * from user");
-		while($d = mysqli_fetch_array($data)){
-			?>
-			<tr>
-				<td><?php echo $no++; ?></td>
-				<td><?php echo $d['nama']; ?></td>
-				<td><?php echo $d['username']; ?></td>
-				<td><?php echo $d['password']; ?></td>
-                <td><?php echo $d['role']; ?></td>
-				<td>
-					<a href="tabelManageUserEdit.php?id=<?php echo $d['id']; ?>">EDIT</a>
-					<a href="tabelManageUserDelete.php?id=<?php echo $d['id']; ?>">HAPUS</a>
-				</td>
-			</tr>
-			<?php 
-		}
-		?>
-                                    </tbody>
-                                </table>
+		<form method="post" action="tabelManageUserFormProses.php">
+			<table>
+				<tr>			
+					<td>Nama</td>
+					<td>
+						<input type="hidden" name="id" value="<?php echo $d['id']; ?>">
+						<input type="text" name="nama">
+					</td>
+				</tr>
+				<tr>
+					<td>Username</td>
+					<td><input type="text" name="username"></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="text" name="password"></td>
+				</tr>
+                <tr>
+					<td>Role</td>
+					<td><input type="text" name="role"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="SIMPAN"></td>
+				</tr>		
+			</table>
+		</form>
                             </div>
                         </div>
                     </div>
