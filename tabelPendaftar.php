@@ -34,7 +34,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="indexadmin.php">
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-house-user"></i>
                 </div>
@@ -46,7 +46,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="indexadmin.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -61,7 +61,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tabelManageUser.html">
+                <a class="nav-link" href="tabelManageUser.php">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Manage User</span></a>
             </li>
@@ -84,32 +84,32 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Negara Tujuan:</h6>
-                        <a class="collapse-item" href="tabelDataTKIHong.html">Hongkong</a>
+                        <a class="collapse-item" href="tabelDataTKIHong.php">Hongkong</a>
                         <a class="collapse-item" href="#">Jepang</a>
-                        <a class="collapse-item" href="tabelDataTKITaiw.html">Taiwan</a>
-                        <a class="collapse-item" href="tabelDataTKISing.html">Singapore</a>
-                        <a class="collapse-item" href="tabelDataTKIMalay.html">Malaysia</a>
+                        <a class="collapse-item" href="tabelDataTKITaiw.php">Taiwan</a>
+                        <a class="collapse-item" href="tabelDataTKISing.php">Singapore</a>
+                        <a class="collapse-item" href="tabelDataTKIMalay.php">Malaysia</a>
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="charts.php">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Edit Charts</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tabelPendaftar.html">
+                <a class="nav-link" href="tabelPendaftar.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Pendaftar</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tabelTest.html">
+                <a class="nav-link" href="tabelTest.php">
                     <i class="fas fa-fw fa-user-edit"></i>
                     <span>Test TKI</span></a>
             </li>
@@ -342,7 +342,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-2 text-gray-800">Data TKI Singapore</h1>
+                        <h1 class="h3 mb-2 text-gray-800">Pendaftar</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i>Cetak Disini</a>
                     </div>
@@ -353,7 +353,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Tabel Daftar TKI Singapore</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Tabel Data Pendaftar</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -365,7 +365,6 @@
                                             <th>Nama Lengkap</th>
                                             <th>Tempat Lahir</th>
                                             <th>Tanggal Lahir</th>
-                                            <th>Umur</th>
                                             <th>Alamat</th>
                                             <th>Jenis Kelamin</th>
                                             <th>TB</th>
@@ -375,7 +374,6 @@
                                             <th>Status</th>
                                             <th>Agama</th>
                                             <th>Pengalaman Kerja</th>
-                                            <th>Gaji</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -386,7 +384,6 @@
                                             <th>Nama Lengkap</th>
                                             <th>Tempat Lahir</th>
                                             <th>Tanggal Lahir</th>
-                                            <th>Umur</th>
                                             <th>Alamat</th>
                                             <th>Jenis Kelamin</th>
                                             <th>TB</th>
@@ -396,7 +393,6 @@
                                             <th>Status</th>
                                             <th>Agama</th>
                                             <th>Pengalaman Kerja</th>
-                                            <th>Gaji</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
@@ -407,7 +403,6 @@
                                             <td>Garrett Winters</td>
                                             <td>Bogor</td>
                                             <td>23 Januari 1997</td>
-                                            <td>24</td>
                                             <td>Malang</td>
                                             <td>Perempuan</td>
                                             <td>160</td>
@@ -417,9 +412,42 @@
                                             <td>Menikah</td>
                                             <td>Islam</td>
                                             <td>Non</td>
-                                            <td>$5</td>
                                             <td></td>
                                         </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>1234567890</td>
+                                            <td>Dinda Dewi</td>
+                                            <td>Malang</td>
+                                            <td>23 Maret 1999</td>
+                                            <td>Malang</td>
+                                            <td>Perempuan</td>
+                                            <td>160</td>
+                                            <td>60</td>
+                                            <td>SMA</td>
+                                            <td>Malaysia</td>
+                                            <td>Belum Menikah</td>
+                                            <td>Islam</td>
+                                            <td>Non</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>1234567890</td>
+                                            <td>Tiara Putri</td>
+                                            <td>Malang</td>
+                                            <td>12 Januari 1998</td>
+                                            <td>Malang</td>
+                                            <td>Perempuan</td>
+                                            <td>159</td>
+                                            <td>58</td>
+                                            <td>SMA</td>
+                                            <td>Malaysia</td>
+                                            <td>Belum Menikah</td>
+                                            <td>Islam</td>
+                                            <td>Non</td>
+                                            <td></td>
+                                        </tr>   
                                     </tbody>
                                 </table>
                             </div>
@@ -467,7 +495,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="login.php">Logout</a>
                 </div>
             </div>
         </div>

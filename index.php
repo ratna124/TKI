@@ -31,7 +31,7 @@
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Negara Tujuan</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Tentang Kami</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="\TKI\login\login.php">Login Here!</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.php">Login Here!</a></li>
                     </ul>
                 </div>
             </div>
@@ -41,7 +41,7 @@
             <div class="container">
                 <div class="masthead-subheading">Welcome To PT Hendrarta Argaraya !</div>
                 <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="\TKI\login\login.php">Sign In</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="login.php">Sign In</a>
             </div>
         </header>
         <!-- Services-->

@@ -13,9 +13,9 @@
 
 	</head>
 	<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
-	<a href="\TKI\landingPage\index.php" style="color: #fff">Back to Landing Page</a>
+	<a href="index.php" style="color: #fff">Back to Landing Page</a>
 	<section class="ftco-section">
-	<a href="\TKI\landingPage\index.php" ></a>
+	<a href="index.php" ></a>
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
