@@ -100,6 +100,12 @@
                     <span>Edit Charts</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="tabelNegaraTujuan.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Negara Tujuan</span></a>
+            </li>
+
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="tabelPendaftar.php">
@@ -347,7 +353,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Edit User</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Tambah User</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

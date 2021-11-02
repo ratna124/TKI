@@ -347,53 +347,53 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Manage User</h1>
-                    <p class="mb-4">Manage User merupakan fitur untuk mengelola data-data user yang login. Admin dapat mengedit, menambah, dan menghapus data user.</p>
-                    <p>Role : 1 -> admin, 2 -> user</p>
+                    <h1 class="h3 mb-2 text-gray-800">Negara Tujuan</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Edit User</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Tabel Negara Tujuan</h6><br>
+                            <a href="tabelNegaraTujuanAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-plus fa-sm text-white-50"></i>Add New Destination</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                            <?php
-	include 'config.php';
-    $konektor = mysqli_connect("localhost","root","", "tki");
-	$id = $_GET['id'];
-	$data = mysqli_query($konektor,"select * from user where id='$id'");
-	while($d = mysqli_fetch_array($data)){
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Negara</th>
+                                            <th>Kriteria</th>
+                                            <th>Persyaratan</th>
+                                            <th>Gaji</th>
+                                            <th>Gambar</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php 
+		include 'config.php';
+        $konektor = mysqli_connect("localhost","root","", "tki");
+		$no = 1;
+		$data = mysqli_query($konektor,"select * from negara");
+		while($d = mysqli_fetch_array($data)){
+			?>
+			<tr>
+				<td><?php echo $no++; ?></td>
+				<td><?php echo $d['negara_tujuan']; ?></td>
+				<td><?php echo $d['kriteria']; ?></td>
+				<td><?php echo $d['persyaratan']; ?></td>
+                <td><?php echo $d['jumlah_gaji']; ?></td>
+                <td style="text-align: center;"><img src="gambar/<?php echo $row['gambar_produk']; ?>" style="width: 120px;"></td>
+				<td>
+					<a href="tabelNegaraTujuanEdit.php?id_negara=<?php echo $d['id_negara']; ?>">EDIT</a>
+					<a href="tabelNegaraTujuanDelete.php?id_negara=<?php echo $d['id_negara']; ?>">HAPUS</a>
+				</td>
+			</tr>
+			<?php 
+		}
 		?>
-		<form method="post" action="tabelManageUserEditProses.php">
-			<table>
-				<tr>			
-					<td>Nama</td>
-					<td>
-						<input type="hidden" name="id" value="<?php echo $d['id']; ?>">
-						<input type="text" name="nama" value="<?php echo $d['nama']; ?>">
-					</td>
-				</tr>
-				<tr>
-					<td>Username</td>
-					<td><input type="text" name="username" value="<?php echo $d['username']; ?>"></td>
-				</tr>
-				<tr>
-					<td>Password</td>
-					<td><input type="text" name="password" value="<?php echo $d['password']; ?>"></td>
-				</tr>
-                <tr>
-					<td>Role</td>
-					<td><input type="text" name="role" value="<?php echo $d['role']; ?>"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" value="SIMPAN"></td>
-				</tr>		
-			</table>
-		</form>
-        <?php 
-	}
-	?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

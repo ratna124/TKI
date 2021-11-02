@@ -100,6 +100,12 @@
                     <span>Edit Charts</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="tabelNegaraTujuan.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Negara Tujuan</span></a>
+            </li>
+
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="tabelPendaftar.php">

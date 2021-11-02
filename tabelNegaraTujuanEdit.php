@@ -347,43 +347,45 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Manage User</h1>
-                    <p class="mb-4">Manage User merupakan fitur untuk mengelola data-data user yang login. Admin dapat mengedit, menambah, dan menghapus data user.</p>
-                    <p>Role : 1 -> admin, 2 -> user</p>
+                    <h1 class="h3 mb-2 text-gray-800">Negara Tujuan</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Edit User</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Tambah Negara</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                             <?php
 	include 'config.php';
     $konektor = mysqli_connect("localhost","root","", "tki");
-	$id = $_GET['id'];
-	$data = mysqli_query($konektor,"select * from user where id='$id'");
+	$id_negara = $_GET['id_negara'];
+	$data = mysqli_query($konektor,"select * from negara where id_negara='$id_negara'");
 	while($d = mysqli_fetch_array($data)){
 		?>
-		<form method="post" action="tabelManageUserEditProses.php">
+		<form method="post" action="tabelNegaraTujuanEditProses.php" enctype="multipart/form-data">
 			<table>
 				<tr>			
-					<td>Nama</td>
+					<td>Negara</td>
 					<td>
-						<input type="hidden" name="id" value="<?php echo $d['id']; ?>">
-						<input type="text" name="nama" value="<?php echo $d['nama']; ?>">
+                    <input type="hidden" name="id_negara" value="<?php echo $d['id_negara']; ?>">
+						<input type="text" name="negara_tujuan" value="<?php echo $d['negara_tujuan']; ?>">
 					</td>
 				</tr>
 				<tr>
-					<td>Username</td>
-					<td><input type="text" name="username" value="<?php echo $d['username']; ?>"></td>
+					<td>Kriteria</td>
+					<td><input type="text" name="kriteria" value="<?php echo $d['kriteria']; ?>"></td>
 				</tr>
 				<tr>
-					<td>Password</td>
-					<td><input type="text" name="password" value="<?php echo $d['password']; ?>"></td>
+					<td>Persyaratan</td>
+					<td><input type="text" name="persyaratan" value="<?php echo $d['persyaratan']; ?>"></td>
 				</tr>
                 <tr>
-					<td>Role</td>
-					<td><input type="text" name="role" value="<?php echo $d['role']; ?>"></td>
+					<td>Gaji</td>
+					<td><input type="text" name="jumlah_gaji" value="<?php echo $d['jumlah_gaji']; ?>"></td>
+				</tr>
+                <tr>
+					<td>Gambar Negara</td>
+                    <td><input type="file" name="gambar_negara" value="<?php echo $d['gambar_negara']; ?>"></td>
 				</tr>
 				<tr>
 					<td></td>
