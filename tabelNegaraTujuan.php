@@ -383,7 +383,7 @@
 				<td><?php echo $d['kriteria']; ?></td>
 				<td><?php echo $d['persyaratan']; ?></td>
                 <td><?php echo $d['jumlah_gaji']; ?></td>
-                <td style="text-align: center;"><img src="gambar/<?php echo $row['gambar_produk']; ?>" style="width: 120px;"></td>
+                <td style="text-align: center;"><img src="gambar/<?php echo $d['gambar_negara']; ?>" style="width: 100px;"></td>
 				<td>
 					<a href="tabelNegaraTujuanEdit.php?id_negara=<?php echo $d['id_negara']; ?>">EDIT</a>
 					<a href="tabelNegaraTujuanDelete.php?id_negara=<?php echo $d['id_negara']; ?>">HAPUS</a>

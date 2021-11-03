@@ -384,8 +384,9 @@
 					<td><input type="text" name="jumlah_gaji" value="<?php echo $d['jumlah_gaji']; ?>"></td>
 				</tr>
                 <tr>
-					<td>Gambar Negara</td>
-                    <td><input type="file" name="gambar_negara" value="<?php echo $d['gambar_negara']; ?>"></td>
+                <td>Gambar Negara</td>
+          <td><img src="gambar/<?php echo $d['gambar_negara']; ?>" style="width: 120px;float: left;margin-bottom: 5px;">
+          <input type="file" name="gambar_negara" /></td>
 				</tr>
 				<tr>
 					<td></td>
