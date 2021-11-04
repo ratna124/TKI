@@ -7,7 +7,7 @@ $id_negara = $_GET['id_negara'];
  
  
 // menghapus data dari database
-mysqli_query($konektor,"delete from negara_tujuan where id_negara='$id_negara'");
+mysqli_query($konektor,"delete from negara where id_negara='$id_negara'");
  
 // mengalihkan halaman kembali ke index.php
 header("location:tabelNegaraTujuan.php");

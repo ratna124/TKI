@@ -366,11 +366,11 @@
 				</tr>
 				<tr>
 					<td>Kriteria</td>
-					<td><input type="text" name="kriteria"></td>
+					<td><textarea type="text" name="kriteria" rows="7" cols="50"></textarea>
 				</tr>
 				<tr>
 					<td>Persyaratan</td>
-					<td><input type="text" name="persyaratan"></td>
+					<td><textarea type="text" name="persyaratan" rows="7" cols="50"></textarea>
 				</tr>
                 <tr>
 					<td>Gaji</td>
