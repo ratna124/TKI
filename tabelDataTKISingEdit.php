@@ -348,7 +348,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-2 text-gray-800">Data TKI Hongkong</h1>
+                        <h1 class="h3 mb-2 text-gray-800">Pendaftar</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i>Cetak Disini</a>
                     </div>
@@ -359,37 +359,90 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Tabel Daftar TKI Hongkong</h6><br>
-                            <a href="tabelDataTKIHongAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-plus fa-sm text-white-50"></i>Add New TKI</a>
+                            <h6 class="m-0 font-weight-bold text-primary">Form Edit Data Pendaftar</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Sektor</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    
-                                    <tbody>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <?php
+                                    include 'config.php';
+                                    $konektor = mysqli_connect("localhost","root","", "tki");
+                                    $id_dft = $_GET['id_dft'];
+                                    $data = mysqli_query($konektor,"select * from pendaftaran where id_dft='$id_dft'");
+                                    while($d = mysqli_fetch_array($data)){
+                                ?>
+                                        <form method="post" action="tabelPendaftarEditProses.php">
+                                            <table>
+                                                <tr>			
+                                                    <td>NIK</td>
+                                                    <td>
+                                                        <input type="hidden" name="id_dft" value="<?php echo $d['id_dft']; ?>">
+                                                        <input type="text" name="nik" value="<?php echo $d['nik']; ?>">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Nama Lengkap</td>
+                                                    <td><input type="text" name="nama_lengkap" value="<?php echo $d['nama_lengkap']; ?>"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tempat Lahir</td>
+                                                    <td><input type="text" name="tempat_lahir" value="<?php echo $d['tempat_lahir']; ?>"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tanggal Lahir</td>
+                                                    <td><input type="text" name="tanggal_lahir" value="<?php echo $d['tanggal_lahir']; ?>"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Umur</td>
+                                                    <td><input type="text" name="umur" value="<?php echo $d['umur']; ?>"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Alamat Lengkap</td>
+                                                    <td><input type="text" name="alamat_lengkap" value="<?php echo $d['alamat_lengkap']; ?>"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Jenis Kelamin</td>
+                                                    <td><input type="text" name="jenis_kelamin" value="<?php echo $d['jenis_kelamin']; ?>"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>TB</td>
+                                                    <td><input type="text" name="tb" value="<?php echo $d['tb']; ?>"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>BB</td>
+                                                    <td><input type="text" name="bb" value="<?php echo $d['bb']; ?>"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Pendidikan Terakhir</td>
+                                                    <td><input type="text" name="pendidikan_terakhir" value="<?php echo $d['pendidikan_terakhir']; ?>"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tujuan Negara</td>
+                                                    <td><input type="text" name="tujuan_negara" value="<?php echo $d['tujuan_negara']; ?>"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Status</td>
+                                                    <td><input type="text" name="status" value="<?php echo $d['status']; ?>"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Agama</td>
+                                                    <td><input type="text" name="agama" value="<?php echo $d['agama']; ?>"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Pengalaman Kerja</td>
+                                                    <td><input type="text" name="pengalaman_kerja" value="<?php echo $d['pengalaman_kerja']; ?>"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td><input type="submit" value="SIMPAN"></td>
+                                                </tr>		
+                                            </table>
+                                        </form>
+                                        <?php 
+                                    }
+                                ?>
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <!-- /.container-fluid -->
 
@@ -400,7 +453,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; PT Hendrarta Argaraya 2020</span>
                     </div>
                 </div>
             </footer>

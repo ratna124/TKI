@@ -100,6 +100,12 @@
                     <span>Edit Charts</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="tabelNegaraTujuan.php">
+                    <i class="fas fa-fw fa-globe"></i>
+                    <span>Negara Tujuan</span></a>
+            </li>
+
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="tabelPendaftar.php">
@@ -378,6 +384,10 @@
                                                     <td><input type="text" name="nama_lengkap" value="<?php echo $d['nama_lengkap']; ?>"></td>
                                                 </tr>
                                                 <tr>
+                                                    <td>Negara Tujuan</td>
+                                                    <td><input type="text" name="id_negara" value="<?php echo $d['id_negara']; ?>"></td>
+                                                </tr>
+                                                <tr>
                                                     <td>Tempat Lahir</td>
                                                     <td><input type="text" name="tempat_lahir" value="<?php echo $d['tempat_lahir']; ?>"></td>
                                                 </tr>
@@ -410,10 +420,6 @@
                                                     <td><input type="text" name="pendidikan_terakhir" value="<?php echo $d['pendidikan_terakhir']; ?>"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Tujuan Negara</td>
-                                                    <td><input type="text" name="tujuan_negara" value="<?php echo $d['tujuan_negara']; ?>"></td>
-                                                </tr>
-                                                <tr>
                                                     <td>Status</td>
                                                     <td><input type="text" name="status" value="<?php echo $d['status']; ?>"></td>
                                                 </tr>
@@ -428,6 +434,7 @@
                                                 <tr>
                                                     <td></td>
                                                     <td><input type="submit" value="SIMPAN"></td>
+                                                    <td><input type="submit" href="tabelPendaftar.php" value="Cancel"></td>
                                                 </tr>		
                                             </table>
                                         </form>

@@ -348,7 +348,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-2 text-gray-800">Data TKI Hongkong</h1>
+                        <h1 class="h3 mb-2 text-gray-800">TKI Hongkong</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i>Cetak Disini</a>
                     </div>
@@ -359,33 +359,34 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Tabel Daftar TKI Hongkong</h6><br>
-                            <a href="tabelDataTKIHongAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-plus fa-sm text-white-50"></i>Add New TKI</a>
+                            <h6 class="m-0 font-weight-bold text-primary">Form Tambah Data TKI Hongkong</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Sektor</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
+                                <form method="post" action="tabelPendaftarTambahProses.php">
+                                    <table>
+                                        <tr>			
+                                            <td>Nama Lengkap</td>
+                                            <td>
+                                                <input type="hidden" name="id_hongkong" value="<?php echo $d['id_hongkong']; ?>">
+                                                <input type="text" name="id_dft">
+                                            </td>
                                         </tr>
-                                    </thead>
-                                    
-                                    <tbody>
+                                        <tr>
+                                            <td>Sektor</td>
+                                            <td><input type="text" name="sektor"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Status</td>
+                                            <td><input type="text" name="status"></td>
+                                        </tr>
                                         <tr>
                                             <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                            <td><input type="submit" value="SIMPAN"></td>
+                                            <td><input type="submit" href="tabelPendaftar.php" value="Cancel"></td>
+                                        </tr>		
+                                    </table>
+                                </form>
                             </div>
                         </div>
                     </div>

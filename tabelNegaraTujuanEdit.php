@@ -391,6 +391,7 @@
 				<tr>
 					<td></td>
 					<td><input type="submit" value="SIMPAN"></td>
+                    <td><input type="submit" href="tabelPendaftar.php" value="Cancel"></td>
 				</tr>		
 			</table>
 		</form>
