@@ -369,21 +369,45 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Lengkap</th>
+                                            <th>Nama TKI</th>
                                             <th>Sektor</th>
-                                            <th>Status</th>
+                                            <th>Kartu Keluarga</th>
+                                            <th>Akta Kelahiran</th>
+                                            <th>Surat Menikah</th>
+                                            <th>Surat Ijin Ortu/Suami</th>
+                                            <th>Ex Paspor</th>
+                                            <th>Status Proses</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     
                                     <tbody>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
+                                    <?php 
+                                        include 'config.php';
+                                        $konektor = mysqli_connect("localhost","root","", "tki");
+                                        $no = 1;
+                                        $data = mysqli_query($konektor,"SELECT * FROM hongkong INNER JOIN pendaftaran ON hongkong.id_dft = pendaftaran.id_dft");
+                                        while($d = mysqli_fetch_array($data)){
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $no++; ?></td>
+                                                <td><?php echo $d['nama_lengkap']; ?></td>
+                                                <td><?php echo $d['sektor']; ?></td>
+                                                <td><?php echo $d['kk_hk']; ?></td>
+                                                <td><?php echo $d['akte_hk']; ?></td>
+                                                <td><?php echo $d['suratnikah_hk']; ?></td>
+                                                <td><?php echo $d['suratijin_hk']; ?></td>
+                                                <td><?php echo $d['expaspor_hk']; ?></td>
+                                                <td><?php echo $d['status_proses_hk']; ?></td>
+
+                                                <td>
+                                                    <a href="tabelDataTKIHongEdit.php?id_hongkong=<?php echo $d['id_hongkong']; ?>">EDIT</a>
+                                                    <a href="tabelDataTKIHongDelete.php?id_hongkong=<?php echo $d['id_hongkong']; ?>">HAPUS</a>
+                                                </td>
+                                            </tr>
+                                            <?php 
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

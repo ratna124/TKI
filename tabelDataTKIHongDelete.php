@@ -7,7 +7,7 @@ $id_hongkong = $_GET['id_hongkong'];
  
  
 // menghapus data dari database
-mysqli_query($konektor,"delete from hongkong where id_hongkong='$id_hongkong'");
+mysqli_query($konektor,"DELETE FROM hongkong WHERE id_hongkong='$id_hongkong'");
  
 // mengalihkan halaman kembali ke tabelDataTKIHongkong.php
 header("location:tabelDataTKIHong.php");

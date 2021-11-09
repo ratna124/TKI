@@ -363,10 +363,10 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <form method="post" action="tabelPendaftarTambahProses.php">
+                                <form method="post" action="tabelDataTKIHongProses.php">
                                     <table>
                                         <tr>			
-                                            <td>Nama Lengkap</td>
+                                            <td>Nama TKI</td>
                                             <td>
                                                 <input type="hidden" name="id_hongkong" value="<?php echo $d['id_hongkong']; ?>">
                                                 <input type="text" name="id_dft">
@@ -377,13 +377,33 @@
                                             <td><input type="text" name="sektor"></td>
                                         </tr>
                                         <tr>
-                                            <td>Status</td>
-                                            <td><input type="text" name="status"></td>
+                                            <td>Kartu Keluarga</td>
+                                            <td><input type="text" name="kk_hk" value="<?php echo $d['kk_hk']; ?>"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Akta Kelahiran</td>
+                                            <td><input type="text" name="akte_hk" value="<?php echo $d['akte_hk']; ?>"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Surat Menikah</td>
+                                            <td><input type="text" name="suratnikah_hk" value="<?php echo $d['suratnikah_hk']; ?>"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Surat Ijin Ortu/Suami</td>
+                                            <td><input type="text" name="suratijin_hk" value="<?php echo $d['suratijin_hk']; ?>"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ex Paspor</td>
+                                            <td><input type="text" name="expaspor_hk" value="<?php echo $d['expaspor_hk']; ?>"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Status Proses</td>
+                                            <td><input type="text" name="status_proses_hk"></td>
                                         </tr>
                                         <tr>
                                             <td></td>
                                             <td><input type="submit" value="SIMPAN"></td>
-                                            <td><input type="submit" href="tabelPendaftar.php" value="Cancel"></td>
+                                            <td><input type="submit" href="tabelDataTKIHong.php" value="Cancel"></td>
                                         </tr>		
                                     </table>
                                 </form>

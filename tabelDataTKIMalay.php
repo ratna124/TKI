@@ -367,84 +367,45 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>NIK</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Tempat Lahir</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th>Umur</th>
-                                            <th>Alamat</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>TB</th>
-                                            <th>BB</th>
-                                            <th>Pendidikan_Terakhir</th>
-                                            <th>Tujuan Negara</th>
-                                            <th>Status</th>
-                                            <th>Agama</th>
-                                            <th>Pengalaman Kerja</th>
-                                            <th>Gaji</th>
+                                            <th>Nama TKI</th>
+                                            <th>Sektor</th>
+                                            <th>Kartu Keluarga</th>
+                                            <th>Akta Kelahiran</th>
+                                            <th>Surat Menikah</th>
+                                            <th>Surat Ijin Ortu/Suami</th>
+                                            <th>Ex Paspor</th>
+                                            <th>Status Proses</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>NIK</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Tempat Lahir</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th>Umur</th>
-                                            <th>Alamat</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>TB</th>
-                                            <th>BB</th>
-                                            <th>Pendidikan_Terakhir</th>
-                                            <th>Tujuan Negara</th>
-                                            <th>Status</th>
-                                            <th>Agama</th>
-                                            <th>Pengalaman Kerja</th>
-                                            <th>Gaji</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
+                                    
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>1234567890</td>
-                                            <td>Dinda Dewi</td>
-                                            <td>Malang</td>
-                                            <td>23 Maret 1999</td>
-                                            <td>22</td>
-                                            <td>Malang</td>
-                                            <td>Perempuan</td>
-                                            <td>160</td>
-                                            <td>60</td>
-                                            <td>SMA</td>
-                                            <td>Malaysia</td>
-                                            <td>Belum Menikah</td>
-                                            <td>Islam</td>
-                                            <td>Non</td>
-                                            <td>$5</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>1234567890</td>
-                                            <td>Tiara Putri</td>
-                                            <td>Malang</td>
-                                            <td>12 Januari 1998</td>
-                                            <td>23</td>
-                                            <td>Malang</td>
-                                            <td>Perempuan</td>
-                                            <td>159</td>
-                                            <td>58</td>
-                                            <td>SMA</td>
-                                            <td>Malaysia</td>
-                                            <td>Belum Menikah</td>
-                                            <td>Islam</td>
-                                            <td>Non</td>
-                                            <td>$5</td>
-                                            <td></td>
-                                        </tr>
+                                    <?php 
+                                        include 'config.php';
+                                        $konektor = mysqli_connect("localhost","root","", "tki");
+                                        $no = 1;
+                                        $data = mysqli_query($konektor,"SELECT * FROM malaysia INNER JOIN pendaftaran ON malaysia.id_dft = pendaftaran.id_dft");
+                                        while($d = mysqli_fetch_array($data)){
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $no++; ?></td>
+                                                <td><?php echo $d['nama_lengkap']; ?></td>
+                                                <td><?php echo $d['sektor_malay']; ?></td>
+                                                <td><?php echo $d['kk_malay']; ?></td>
+                                                <td><?php echo $d['akte_malay']; ?></td>
+                                                <td><?php echo $d['suratnikah_malay']; ?></td>
+                                                <td><?php echo $d['suratijin_malay']; ?></td>
+                                                <td><?php echo $d['expaspor_malay']; ?></td>
+                                                <td><?php echo $d['status_proses_malay']; ?></td>
+
+                                                <td>
+                                                    <a href="tabelDataTKIMalayEdit.php?id_malaysia=<?php echo $d['id_malaysia']; ?>">EDIT</a>
+                                                    <a href="tabelDataTKIMalayDelete.php?id_malaysia=<?php echo $d['id_malaysia']; ?>">HAPUS</a>
+                                                </td>
+                                            </tr>
+                                            <?php 
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

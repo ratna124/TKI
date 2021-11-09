@@ -367,7 +367,7 @@
                                     include 'config.php';
                                     $konektor = mysqli_connect("localhost","root","", "tki");
                                     $id_dft = $_GET['id_dft'];
-                                    $data = mysqli_query($konektor,"select * from pendaftaran where id_dft='$id_dft'");
+                                    $data = mysqli_query($konektor,"SELECT * FROM pendaftaran WHERE id_dft='$id_dft'");
                                     while($d = mysqli_fetch_array($data)){
                                 ?>
                                         <form method="post" action="tabelPendaftarEditProses.php">
@@ -434,7 +434,7 @@
                                                 <tr>
                                                     <td></td>
                                                     <td><input type="submit" value="SIMPAN"></td>
-                                                    <td><input type="submit" href="tabelPendaftar.php" value="Cancel"></td>
+                                                    
                                                 </tr>		
                                             </table>
                                         </form>

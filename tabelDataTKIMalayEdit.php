@@ -348,7 +348,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-2 text-gray-800">Pendaftar</h1>
+                        <h1 class="h3 mb-2 text-gray-800">Data TKI Malaysia</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i>Cetak Disini</a>
                     </div>
@@ -359,81 +359,58 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Form Edit Data Pendaftar</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Form Edit Data TKI Malaysia</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <?php
                                     include 'config.php';
                                     $konektor = mysqli_connect("localhost","root","", "tki");
-                                    $id_dft = $_GET['id_dft'];
-                                    $data = mysqli_query($konektor,"select * from pendaftaran where id_dft='$id_dft'");
+                                    $id_malaysia = $_GET['id_malaysia'];
+                                    $data = mysqli_query($konektor,"SELECT * FROM malaysia WHERE id_malaysia='$id_malaysia'");
                                     while($d = mysqli_fetch_array($data)){
                                 ?>
-                                        <form method="post" action="tabelPendaftarEditProses.php">
+                                        <form method="post" action="tabelDataTKIMalayEditProses.php">
                                             <table>
                                                 <tr>			
-                                                    <td>NIK</td>
+                                                    <td>Nama TKI</td>
                                                     <td>
-                                                        <input type="hidden" name="id_dft" value="<?php echo $d['id_dft']; ?>">
-                                                        <input type="text" name="nik" value="<?php echo $d['nik']; ?>">
+                                                        <input type="hidden" name="id_malaysia" value="<?php echo $d['id_malaysia']; ?>">
+                                                        <input type="text" name="id_dft" value="<?php echo $d['id_dft']; ?>">
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Nama Lengkap</td>
-                                                    <td><input type="text" name="nama_lengkap" value="<?php echo $d['nama_lengkap']; ?>"></td>
+                                                    <td>Sektor</td>
+                                                    <td><input type="text" name="sektor_malay" value="<?php echo $d['sektor_malay']; ?>"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Tempat Lahir</td>
-                                                    <td><input type="text" name="tempat_lahir" value="<?php echo $d['tempat_lahir']; ?>"></td>
+                                                    <td>Kartu Keluarga</td>
+                                                    <td><input type="text" name="kk_malay" value="<?php echo $d['kk_malay']; ?>"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Tanggal Lahir</td>
-                                                    <td><input type="text" name="tanggal_lahir" value="<?php echo $d['tanggal_lahir']; ?>"></td>
+                                                    <td>Akta Kelahiran</td>
+                                                    <td><input type="text" name="akte_malay" value="<?php echo $d['akte_malay']; ?>"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Umur</td>
-                                                    <td><input type="text" name="umur" value="<?php echo $d['umur']; ?>"></td>
+                                                    <td>Surat Menikah</td>
+                                                    <td><input type="text" name="suratnikah_malay" value="<?php echo $d['suratnikah_malay']; ?>"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Alamat Lengkap</td>
-                                                    <td><input type="text" name="alamat_lengkap" value="<?php echo $d['alamat_lengkap']; ?>"></td>
+                                                    <td>Surat Ijin Ortu/Suami</td>
+                                                    <td><input type="text" name="suratijin_malay" value="<?php echo $d['suratijin_malay']; ?>"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Jenis Kelamin</td>
-                                                    <td><input type="text" name="jenis_kelamin" value="<?php echo $d['jenis_kelamin']; ?>"></td>
+                                                    <td>Ex Paspor</td>
+                                                    <td><input type="text" name="expaspor_malay" value="<?php echo $d['expaspor_malay']; ?>"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>TB</td>
-                                                    <td><input type="text" name="tb" value="<?php echo $d['tb']; ?>"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>BB</td>
-                                                    <td><input type="text" name="bb" value="<?php echo $d['bb']; ?>"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Pendidikan Terakhir</td>
-                                                    <td><input type="text" name="pendidikan_terakhir" value="<?php echo $d['pendidikan_terakhir']; ?>"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Tujuan Negara</td>
-                                                    <td><input type="text" name="tujuan_negara" value="<?php echo $d['tujuan_negara']; ?>"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Status</td>
-                                                    <td><input type="text" name="status" value="<?php echo $d['status']; ?>"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Agama</td>
-                                                    <td><input type="text" name="agama" value="<?php echo $d['agama']; ?>"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Pengalaman Kerja</td>
-                                                    <td><input type="text" name="pengalaman_kerja" value="<?php echo $d['pengalaman_kerja']; ?>"></td>
+                                                    <td>Status Proses</td>
+                                                    <td><input type="text" name="status_proses_malay" value="<?php echo $d['status_proses_malay']; ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <td></td>
                                                     <td><input type="submit" value="SIMPAN"></td>
+                                                    <td><input type="submit" href="tabelDataTKIMalay.php" value="Cancel"></td>
                                                 </tr>		
                                             </table>
                                         </form>
