@@ -20,7 +20,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="index.php">PT. Hendrarta Argaraya</a>
+                <a class="navbar-brand" href="index2.php">PT. Hendrarta Argaraya</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -31,7 +31,7 @@
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Negara Tujuan</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Tentang Kami</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.php">Login Here!</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.php">Logout!</a></li>
                     </ul>
                 </div>
             </div>
@@ -41,7 +41,7 @@
             <div class="container">
                 <div class="masthead-subheading">Welcome To PT Hendrarta Argaraya !</div>
                 <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="login.php">Sign In</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="login.php">Log Out</a>
             </div>
         </header>
         <!-- Services-->
@@ -98,7 +98,7 @@
 			            ?>
                 <div class="row text-center">
                     <div class="row-md-4">
-                        <a  href="indexNegara.php?id_negara=<?php echo $d['id_negara']; ?>">        
+                        <a  href="indexNegara2.php?id_negara=<?php echo $d['id_negara']; ?>">        
                         <img src="gambar/<?php echo $d['gambar_negara']; ?>" style="width: 500px;">
                             </a>
                         <h4 class="my-3"><?php echo $d['negara_tujuan']; ?></h4><br><br>

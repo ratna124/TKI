@@ -10,15 +10,31 @@ $result = mysqli_query($connect, "SELECT * FROM user where username='$username' 
 
 $cek = mysqli_num_rows($result);
  
-if($cek > 0) {
+if($cek > 0){
+ 
 	$data = mysqli_fetch_assoc($result);
-	//menyimpan session user, nama, status dan id login
-	$_SESSION['username'] = $username;
-	$_SESSION['nama'] = $data['nama'];
-	$_SESSION['status'] = "login";
-	$_SESSION['id'] = $data['id'];
-	header("location:main.php");
-} else {
-	echo "<script>alert('Username/password salah!');history.go(-1);</script>";
+ 
+	// cek jika user login sebagai admin
+	if($data['role']=="1"){
+ 
+		// buat session login dan username
+		$_SESSION['username'] = $username;
+		$_SESSION['role'] = "1";
+		// alihkan ke halaman dashboard admin
+		header("location:tabelManageUser.php");
+ 
+	// cek jika user login sebagai pegawai
+	}else if($data['role']=="2"){
+		// buat session login dan username
+		$_SESSION['username'] = $username;
+		$_SESSION['role'] = "2";
+		// alihkan ke halaman dashboard pegawai
+		header("location:index2.php");
+	}
+	else{
+ 
+		// alihkan ke halaman login kembali
+		header("location:login.php?pesan=gagal");
+}
 }
 ?>

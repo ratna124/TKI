@@ -15,6 +15,7 @@
 
 	</head>
 	<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
+	<a href="index.php" style="color: #fff">Back to Landing Page</a>
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -56,7 +57,7 @@
 	            </div>
 	          </form>
 	          <p class="w-100 text-center">
-			  <a href="index.php" style="color: #67b4f5">&mdash; Or Already Have an Account &mdash;</a>
+			  <a href="login.php" style="color: #67b4f5">&mdash; Or Already Have an Account &mdash;</a>
 			</p>
 		      </div>
 				</div>
