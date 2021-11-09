@@ -102,7 +102,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="tabelNegaraTujuan.php">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-fw fa-globe"></i>
                     <span>Negara Tujuan</span></a>
             </li>
 
@@ -367,65 +367,45 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>NIK</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Tempat Lahir</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th>Umur</th>
-                                            <th>Alamat</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>TB</th>
-                                            <th>BB</th>
-                                            <th>Pendidikan_Terakhir</th>
-                                            <th>Tujuan Negara</th>
-                                            <th>Status</th>
-                                            <th>Agama</th>
-                                            <th>Pengalaman Kerja</th>
-                                            <th>Gaji</th>
+                                            <th>Nama TKI</th>
+                                            <th>Sektor</th>
+                                            <th>Kartu Keluarga</th>
+                                            <th>Akta Kelahiran</th>
+                                            <th>Surat Menikah</th>
+                                            <th>Surat Ijin Ortu/Suami</th>
+                                            <th>Ex Paspor</th>
+                                            <th>Status Proses</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>NIK</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Tempat Lahir</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th>Umur</th>
-                                            <th>Alamat</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>TB</th>
-                                            <th>BB</th>
-                                            <th>Pendidikan_Terakhir</th>
-                                            <th>Tujuan Negara</th>
-                                            <th>Status</th>
-                                            <th>Agama</th>
-                                            <th>Pengalaman Kerja</th>
-                                            <th>Gaji</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
+                                    
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>1234567890</td>
-                                            <td>Garrett Winters</td>
-                                            <td>Bogor</td>
-                                            <td>23 Januari 1997</td>
-                                            <td>24</td>
-                                            <td>Malang</td>
-                                            <td>Perempuan</td>
-                                            <td>160</td>
-                                            <td>60</td>
-                                            <td>SMA</td>
-                                            <td>Singapore</td>
-                                            <td>Menikah</td>
-                                            <td>Islam</td>
-                                            <td>Non</td>
-                                            <td>$5</td>
-                                            <td></td>
-                                        </tr>
+                                    <?php 
+                                        include 'config.php';
+                                        $konektor = mysqli_connect("localhost","root","", "tki");
+                                        $no = 1;
+                                        $data = mysqli_query($konektor,"SELECT * FROM singapore INNER JOIN pendaftaran ON singapore.id_dft = pendaftaran.id_dft");
+                                        while($d = mysqli_fetch_array($data)){
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $no++; ?></td>
+                                                <td><?php echo $d['nama_lengkap']; ?></td>
+                                                <td><?php echo $d['sektor_sing']; ?></td>
+                                                <td><?php echo $d['kk_sing']; ?></td>
+                                                <td><?php echo $d['akte_sing']; ?></td>
+                                                <td><?php echo $d['suratnikah_sing']; ?></td>
+                                                <td><?php echo $d['suratijin_sing']; ?></td>
+                                                <td><?php echo $d['expaspor_sing']; ?></td>
+                                                <td><?php echo $d['status_proses_sing']; ?></td>
+
+                                                <td>
+                                                    <a href="tabelDataTKISingEdit.php?id_singapore=<?php echo $d['id_singapore']; ?>">EDIT</a>
+                                                    <a href="tabelDataTKISingDelete.php?id_singapore=<?php echo $d['id_singapore']; ?>">HAPUS</a>
+                                                </td>
+                                            </tr>
+                                            <?php 
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

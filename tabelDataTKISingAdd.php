@@ -102,7 +102,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="tabelNegaraTujuan.php">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-fw fa-globe"></i>
                     <span>Negara Tujuan</span></a>
             </li>
 
@@ -347,44 +347,66 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Manage User</h1>
-                    <p class="mb-4">Manage User merupakan fitur untuk mengelola data-data user yang login. Admin dapat mengedit, menambah, dan menghapus data user.</p>
-                    <p>Role : 1 -> admin, 2 -> user</p>
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-2 text-gray-800">TKI Singapore</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i>Cetak Disini</a>
+                    </div>
+                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
+                        For more information about DataTables, please visit the <a target="_blank"
+                            href="https://datatables.net">official DataTables documentation</a>.</p>
+
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Form Tambah User</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Form Tambah Data TKI Singapore</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-		<form method="post" action="tabelManageUserFormProses.php">
-			<table>
-				<tr>			
-					<td>Nama</td>
-					<td>
-						<input type="hidden" name="id" value="<?php echo $d['id']; ?>">
-						<input type="text" name="nama">
-					</td>
-				</tr>
-				<tr>
-					<td>Username</td>
-					<td><input type="text" name="username"></td>
-				</tr>
-				<tr>
-					<td>Password</td>
-					<td><input type="text" name="password"></td>
-				</tr>
-                <tr>
-					<td>Role</td>
-					<td><input type="text" name="role"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" value="SIMPAN"></td>
-                    <td><input type="submit" href="tabelManageUSer.php" value="Cancel"></td>
-				</tr>		
-			</table>
-		</form>
+                                <form method="post" action="tabelDataTKISingProses.php">
+                                    <table>
+                                        <tr>			
+                                            <td>Nama TKI</td>
+                                            <td>
+                                                <input type="hidden" name="id_singapore" value="<?php echo $d['id_singapore']; ?>">
+                                                <input type="text" name="id_dft">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sektor</td>
+                                            <td><input type="text" name="sektor"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kartu Keluarga</td>
+                                            <td><input type="text" name="kk_sing" value="<?php echo $d['kk_sing']; ?>"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Akta Kelahiran</td>
+                                            <td><input type="text" name="akte_sing" value="<?php echo $d['akte_sing']; ?>"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Surat Menikah</td>
+                                            <td><input type="text" name="suratnikah_sing" value="<?php echo $d['suratnikah_sing']; ?>"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Surat Ijin Ortu/Suami</td>
+                                            <td><input type="text" name="suratijin_sing" value="<?php echo $d['suratijin_sing']; ?>"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ex Paspor</td>
+                                            <td><input type="text" name="expaspor_sing" value="<?php echo $d['expaspor_sing']; ?>"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Status Proses</td>
+                                            <td><input type="text" name="status_proses_sing"></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="submit" value="SIMPAN"></td>
+                                            <td><input type="submit" href="tabelDataTKISing.php" value="Cancel"></td>
+                                        </tr>		
+                                    </table>
+                                </form>
                             </div>
                         </div>
                     </div>

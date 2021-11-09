@@ -102,7 +102,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="tabelNegaraTujuan.php">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-fw fa-globe"></i>
                     <span>Negara Tujuan</span></a>
             </li>
 
@@ -360,7 +360,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Tabel Data Pendaftar</h6><br>
-                            <a href="tabelPendaftarTambah.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            <a href="tabelPendaftarAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-plus fa-sm text-white-50"></i>Add New Pendaftar</a>
                         </div>
                         <div class="card-body">
@@ -371,6 +371,7 @@
                                             <th>No</th>
                                             <th>NIK</th>
                                             <th>Nama Lengkap</th>
+                                            <th>Negara Tujuan</th>
                                             <th>Tempat Lahir</th>
                                             <th>Tanggal Lahir</th>
                                             <th>Umur</th>
@@ -379,45 +380,26 @@
                                             <th>TB</th>
                                             <th>BB</th>
                                             <th>Pendidikan Terakhir</th>
-                                            <th>Tujuan Negara</th>
                                             <th>Status</th>
                                             <th>Agama</th>
                                             <th>Pengalaman Kerja</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>NIK</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Tempat Lahir</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th>Umur</th>
-                                            <th>Alamat Lengkap</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>TB</th>
-                                            <th>BB</th>
-                                            <th>Pendidikan Terakhir</th>
-                                            <th>Tujuan Negara</th>
-                                            <th>Status</th>
-                                            <th>Agama</th>
-                                            <th>Pengalaman Kerja</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
+                                    
                                     <tbody>
                                     <?php 
                                         include 'config.php';
                                         $konektor = mysqli_connect("localhost","root","", "tki");
                                         $no = 1;
-                                        $data = mysqli_query($konektor,"select * from pendaftaran");
+                                        $data = mysqli_query($konektor,"SELECT * FROM pendaftaran INNER JOIN negara ON pendaftaran.id_negara = negara.id_negara");
                                         while($d = mysqli_fetch_array($data)){
                                             ?>
                                             <tr>
                                                 <td><?php echo $no++; ?></td>
                                                 <td><?php echo $d['nik']; ?></td>
                                                 <td><?php echo $d['nama_lengkap']; ?></td>
+                                                <td><?php echo $d['negara_tujuan']; ?></td>
                                                 <td><?php echo $d['tempat_lahir']; ?></td>
                                                 <td><?php echo $d['tanggal_lahir']; ?></td>
                                                 <td><?php echo $d['umur']; ?></td>
@@ -426,7 +408,6 @@
                                                 <td><?php echo $d['tb']; ?></td>
                                                 <td><?php echo $d['bb']; ?></td>
                                                 <td><?php echo $d['pendidikan_terakhir']; ?></td>
-                                                <td><?php echo $d['tujuan_negara']; ?></td>
                                                 <td><?php echo $d['status']; ?></td>
                                                 <td><?php echo $d['agama']; ?></td>
                                                 <td><?php echo $d['pengalaman_kerja']; ?></td>

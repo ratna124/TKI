@@ -102,7 +102,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="tabelNegaraTujuan.php">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-fw fa-globe"></i>
                     <span>Negara Tujuan</span></a>
             </li>
 
@@ -359,7 +359,9 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Tabel Daftar TKI Hongkong</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Tabel Daftar TKI Hongkong</h6><br>
+                            <a href="tabelDataTKIHongAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-plus fa-sm text-white-50"></i>Add New TKI</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -367,65 +369,45 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>NIK</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Tempat Lahir</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th>Umur</th>
-                                            <th>Alamat</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>TB</th>
-                                            <th>BB</th>
-                                            <th>Pendidikan_Terakhir</th>
-                                            <th>Tujuan Negara</th>
-                                            <th>Status</th>
-                                            <th>Agama</th>
-                                            <th>Pengalaman Kerja</th>
-                                            <th>Gaji</th>
+                                            <th>Nama TKI</th>
+                                            <th>Sektor</th>
+                                            <th>Kartu Keluarga</th>
+                                            <th>Akta Kelahiran</th>
+                                            <th>Surat Menikah</th>
+                                            <th>Surat Ijin Ortu/Suami</th>
+                                            <th>Ex Paspor</th>
+                                            <th>Status Proses</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>NIK</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Tempat Lahir</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th>Umur</th>
-                                            <th>Alamat</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>TB</th>
-                                            <th>BB</th>
-                                            <th>Pendidikan_Terakhir</th>
-                                            <th>Tujuan Negara</th>
-                                            <th>Status</th>
-                                            <th>Agama</th>
-                                            <th>Pengalaman Kerja</th>
-                                            <th>Gaji</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
+                                    
                                     <tbody>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
+                                    <?php 
+                                        include 'config.php';
+                                        $konektor = mysqli_connect("localhost","root","", "tki");
+                                        $no = 1;
+                                        $data = mysqli_query($konektor,"SELECT * FROM hongkong INNER JOIN pendaftaran ON hongkong.id_dft = pendaftaran.id_dft");
+                                        while($d = mysqli_fetch_array($data)){
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $no++; ?></td>
+                                                <td><?php echo $d['nama_lengkap']; ?></td>
+                                                <td><?php echo $d['sektor']; ?></td>
+                                                <td><?php echo $d['kk_hk']; ?></td>
+                                                <td><?php echo $d['akte_hk']; ?></td>
+                                                <td><?php echo $d['suratnikah_hk']; ?></td>
+                                                <td><?php echo $d['suratijin_hk']; ?></td>
+                                                <td><?php echo $d['expaspor_hk']; ?></td>
+                                                <td><?php echo $d['status_proses_hk']; ?></td>
+
+                                                <td>
+                                                    <a href="tabelDataTKIHongEdit.php?id_hongkong=<?php echo $d['id_hongkong']; ?>">EDIT</a>
+                                                    <a href="tabelDataTKIHongDelete.php?id_hongkong=<?php echo $d['id_hongkong']; ?>">HAPUS</a>
+                                                </td>
+                                            </tr>
+                                            <?php 
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

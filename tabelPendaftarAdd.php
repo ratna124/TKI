@@ -102,7 +102,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="tabelNegaraTujuan.php">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-fw fa-globe"></i>
                     <span>Negara Tujuan</span></a>
             </li>
 
@@ -347,44 +347,90 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Manage User</h1>
-                    <p class="mb-4">Manage User merupakan fitur untuk mengelola data-data user yang login. Admin dapat mengedit, menambah, dan menghapus data user.</p>
-                    <p>Role : 1 -> admin, 2 -> user</p>
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-2 text-gray-800">Pendaftar</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i>Cetak Disini</a>
+                    </div>
+                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
+                        For more information about DataTables, please visit the <a target="_blank"
+                            href="https://datatables.net">official DataTables documentation</a>.</p>
+
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Form Tambah User</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Form Tambah Data Pendaftar</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-		<form method="post" action="tabelManageUserFormProses.php">
-			<table>
-				<tr>			
-					<td>Nama</td>
-					<td>
-						<input type="hidden" name="id" value="<?php echo $d['id']; ?>">
-						<input type="text" name="nama">
-					</td>
-				</tr>
-				<tr>
-					<td>Username</td>
-					<td><input type="text" name="username"></td>
-				</tr>
-				<tr>
-					<td>Password</td>
-					<td><input type="text" name="password"></td>
-				</tr>
-                <tr>
-					<td>Role</td>
-					<td><input type="text" name="role"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" value="SIMPAN"></td>
-                    <td><input type="submit" href="tabelManageUSer.php" value="Cancel"></td>
-				</tr>		
-			</table>
-		</form>
+                                <form method="post" action="tabelPendaftarAddProses.php">
+                                    <table>
+                                        <tr>			
+                                            <td>NIK</td>
+                                            <td>
+                                                <input type="hidden" name="id_dft" value="<?php echo $d['id_dft']; ?>">
+                                                <input type="text" name="nik">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Nama</td>
+                                            <td><input type="text" name="nama_lengkap"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Negara Tujuan</td>
+                                            <td><input type="text" name="id_negara"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tempat Lahir</td>
+                                            <td><input type="text" name="tempat_lahir"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tanggal Lahir</td>
+                                            <td><input type="text" name="tanggal_lahir"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Umur</td>
+                                            <td><input type="text" name="umur"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alamat Lengkap</td>
+                                            <td><input type="text" name="alamat_lengkap"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jenis Kelamin</td>
+                                            <td><input type="text" name="jenis_kelamin"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>TB</td>
+                                            <td><input type="text" name="tb"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>BB</td>
+                                            <td><input type="text" name="bb"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pendidikan Terakhir</td>
+                                            <td><input type="text" name="pendidikan_terakhir"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Status</td>
+                                            <td><input type="text" name="status"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Agama</td>
+                                            <td><input type="text" name="agama"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pengalaman Kerja</td>
+                                            <td><input type="text" name="pengalaman_kerja"></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="submit" value="SIMPAN"></td>
+                                            <td><input type="submit" href="tabelPendaftar.php" value="Cancel"></td>
+                                        </tr>		
+                                    </table>
+                                </form>
                             </div>
                         </div>
                     </div>
