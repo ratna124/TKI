@@ -15,10 +15,18 @@
 	
 
     // update data ke database
-	mysqli_query($konektor,"UPDATE taiwan SET id_dft='$id_dft', sektor_taiw='$sektor_taiw', kk_taiw='$kk_taiw',
+	$query="UPDATE taiwan SET id_dft='$id_dft', sektor_taiw='$sektor_taiw', kk_taiw='$kk_taiw',
                                                 akte_taiw='$akte_taiw', suratnikah_taiw='$suratnikah_taiw',
-                                                expaspor='$expaspor_taiw', status_proses_taiw= $status_proses_taiw 
-                                                WHERE id_taiwan='$id_taiwan'");
-	// mengalihkan halaman kembali ke tabelDataTKITaiwan.php
-    header("location:tabelDataTKITaiwan.php");
+                                                expaspor_taiw='$expaspor_taiw', status_proses_taiw= '$status_proses_taiw' 
+                                                WHERE id_taiwan='$id_taiwan'";
+    $result = mysqli_query($konektor, $query);
+    if ($result) {
+		echo "<script>alert('Berhasil Memperbarui Data!');history.go(-2);</script>";
+?>
+<?php
+	} else {
+		echo "<script>alert('Gagal Memperbarui Data!');history.go(-1);</script>".mysqli_error($konektor);
+	}
+     // mengalihkan halaman kembali ke tabelPendaftar.php
+     header("location:tabelDataTKITaiw.php");  
  ?>

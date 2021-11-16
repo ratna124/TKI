@@ -15,10 +15,18 @@
 	
 
     // update data ke database
-	mysqli_query($konektor,"UPDATE malaysia SET id_dft='$id_dft', sektor_malay='$sektor_malay', kk_malay='$kk_malay',
+	$query="UPDATE malaysia SET id_dft='$id_dft', sektor_malay='$sektor_malay', kk_malay='$kk_malay',
                                                 akte_malay='$akte_malay', suratnikah_malay='$suratnikah_malay',
-                                                expaspor='$expaspor_malay', status_proses_malay= $status_proses_malay 
-                                                WHERE id_malaysia='$id_malaysia'");
-	// mengalimalayan halaman kembali ke tabelDataTKIMalay.php
-    header("location:tabelDataTKIMalay.php");
+                                                expaspor_malay='$expaspor_malay', status_proses_malay= '$status_proses_malay' 
+                                                WHERE id_malaysia='$id_malaysia'";
+	$result = mysqli_query($konektor, $query);
+    if ($result) {
+		echo "<script>alert('Berhasil Memperbarui Data!');history.go(-2);</script>";
+?>
+<?php
+	} else {
+		echo "<script>alert('Gagal Memperbarui Data!');history.go(-1);</script>".mysqli_error($konektor);
+	}
+     // mengalihkan halaman kembali ke tabelDataTKIMalay.php
+     header("location:tabelDataTKIMalay.php");  
  ?>

@@ -374,7 +374,7 @@
                                         </tr>
                                         <tr>
                                             <td>Sektor</td>
-                                            <td><input type="text" name="sektor"></td>
+                                            <td><input type="text" name="sektor_taiw"></td>
                                         </tr>
                                         <tr>
                                             <td>Kartu Keluarga</td>

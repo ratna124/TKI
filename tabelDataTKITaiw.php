@@ -390,7 +390,7 @@
                                             <tr>
                                                 <td><?php echo $no++; ?></td>
                                                 <td><?php echo $d['nama_lengkap']; ?></td>
-                                                <td><?php echo $d['sektor']; ?></td>
+                                                <td><?php echo $d['sektor_taiw']; ?></td>
                                                 <td><?php echo $d['kk_taiw']; ?></td>
                                                 <td><?php echo $d['akte_taiw']; ?></td>
                                                 <td><?php echo $d['suratnikah_taiw']; ?></td>

@@ -15,10 +15,19 @@
 	
 
     // update data ke database
-	mysqli_query($konektor,"UPDATE hongkong SET id_dft='$id_dft', sektor='$sektor', kk_hk='$kk_hk',
+	$query="UPDATE hongkong SET id_dft='$id_dft', sektor='$sektor', kk_hk='$kk_hk',
                                                 akte_hk='$akte_hk', suratnikah_hk='$suratnikah_hk',
-                                                expaspor='$expaspor_hk', status_proses_hk= $status_proses_hk 
-                                                WHERE id_hongkong='$id_hongkong'");
-	// mengalihkan halaman kembali ke tabelDataTKIHongkong.php
-    header("location:tabelDataTKIHong.php");
+                                                expaspor_hk='$expaspor_hk', status_proses_hk= '$status_proses_hk' 
+                                                WHERE id_hongkong='$id_hongkong'";
+	$result = mysqli_query($konektor, $query);
+    if ($result) {
+		echo "<script>alert('Berhasil Memperbarui Data!');history.go(-2);</script>";
+?>
+<?php
+	} else {
+		echo "<script>alert('Gagal Memperbarui Data!');history.go(-1);</script>".mysqli_error($konektor);
+	}
+     // mengalihkan halaman kembali ke tabelDataTKIHong.php
+     header("location:tabelDataTKIHong.php");  
  ?>
+ 

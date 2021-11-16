@@ -17,8 +17,16 @@
     // update data ke database
 	mysqli_query($konektor,"UPDATE singapore SET id_dft='$id_dft', sektor_sing='$sektor_sing', kk_sing='$kk_sing',
                                                 akte_sing='$akte_sing', suratnikah_sing='$suratnikah_sing',
-                                                expaspor='$expaspor_sing', status_proses_sing= $status_proses_sing 
+                                                expaspor_sing='$expaspor_sing', status_proses_sing= '$status_proses_sing' 
                                                 WHERE id_singapore='$id_singapore'");
-	// mengalihkan halaman kembali ke tabelDataTKIHongkong.php
-    header("location:tabelDataTKISing.php");
+    $result = mysqli_query($konektor, $query);
+    if ($result) {
+		echo "<script>alert('Berhasil Memperbarui Data!');history.go(-2);</script>";
+?>
+<?php
+	} else {
+		echo "<script>alert('Gagal Memperbarui Data!');history.go(-1);</script>".mysqli_error($konektor);
+	}
+     // mengalihkan halaman kembali ke tabelDataTKISing.php
+     header("location:tabelDataTKISing.php");  
  ?>
