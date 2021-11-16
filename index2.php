@@ -41,7 +41,7 @@
             <div class="container">
                 <div class="masthead-subheading">Welcome To PT Hendrarta Argaraya !</div>
                 <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="login.php">Log Out</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="TKIFormDaftar.php">Daftar</a>
             </div>
         </header>
         <!-- Services-->
