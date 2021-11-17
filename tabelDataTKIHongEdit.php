@@ -388,7 +388,11 @@
                                                 </tr>
                                                 <tr>
                                                     <td>Sektor</td>
-                                                    <td><input type="text" name="sektor" value="<?php echo $d['sektor']; ?>"></td>
+                                                    <td><input type="text" name="sektor_hk" value="<?php echo $d['sektor_hk']; ?>"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>E-KTP</td>
+                                                    <td><input type="text" name="ektp_hk" value="<?php echo $d['ektp_hk']; ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Kartu Keluarga</td>
@@ -409,6 +413,10 @@
                                                 <tr>
                                                     <td>Ex Paspor</td>
                                                     <td><input type="text" name="expaspor_hk" value="<?php echo $d['expaspor_hk']; ?>"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SKCK</td>
+                                                    <td><input type="text" name="skck_hk" value="<?php echo $d['skck_hk']; ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Status Proses</td>

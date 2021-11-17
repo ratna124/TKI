@@ -355,7 +355,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-2 text-gray-800">Data TKI Malaysia</h1>
+                        <h1 class="h3 mb-2 text-gray-800">Pendaftar</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i>Cetak Disini</a>
                     </div>
@@ -366,75 +366,73 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Form Edit Data TKI Malaysia</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Tabel Data Pendaftar</h6><br>
+                            <a href="tabelPendaftarAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-plus fa-sm text-white-50"></i>Add New Pendaftar</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <?php
-                                    include 'config.php';
-                                    $konektor = mysqli_connect("localhost","root","", "tki");
-                                    $id_malaysia = $_GET['id_malaysia'];
-                                    $data = mysqli_query($konektor,"SELECT * FROM malaysia WHERE id_malaysia='$id_malaysia'");
-                                    while($d = mysqli_fetch_array($data)){
-                                ?>
-                                        <form method="post" action="tabelDataTKIMalayEditProses.php">
-                                            <table>
-                                                <tr>			
-                                                    <td>Nama TKI</td>
-                                                    <td>
-                                                        <input type="hidden" name="id_malaysia" value="<?php echo $d['id_malaysia']; ?>">
-                                                        <input type="text" name="id_dft" value="<?php echo $d['id_dft']; ?>">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sektor</td>
-                                                    <td><input type="text" name="sektor_malay" value="<?php echo $d['sektor_malay']; ?>"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>E-KTP</td>
-                                                    <td><input type="text" name="ektp_malay" value="<?php echo $d['ektp_malay']; ?>"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Kartu Keluarga</td>
-                                                    <td><input type="text" name="kk_malay" value="<?php echo $d['kk_malay']; ?>"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Akta Kelahiran</td>
-                                                    <td><input type="text" name="akte_malay" value="<?php echo $d['akte_malay']; ?>"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Surat Menikah</td>
-                                                    <td><input type="text" name="suratnikah_malay" value="<?php echo $d['suratnikah_malay']; ?>"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Surat Ijin Ortu/Suami</td>
-                                                    <td><input type="text" name="suratijin_malay" value="<?php echo $d['suratijin_malay']; ?>"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Ex Paspor</td>
-                                                    <td><input type="text" name="expaspor_malay" value="<?php echo $d['expaspor_malay']; ?>"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>SKCK</td>
-                                                    <td><input type="text" name="skck_malay" value="<?php echo $d['skck_malay']; ?>"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Status Proses</td>
-                                                    <td><input type="text" name="status_proses_malay" value="<?php echo $d['status_proses_malay']; ?>"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td><input type="submit" value="SIMPAN"></td>
-                                                    <td><input type="submit" href="tabelDataTKIMalay.php" value="Cancel"></td>
-                                                </tr>		
-                                            </table>
-                                        </form>
-                                        <?php 
-                                    }
-                                ?>
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>NIK</th>
+                                            <th>Nama Lengkap</th>
+                                            <th>Negara Tujuan</th>
+                                            <th>Tempat Lahir</th>
+                                            <th>Tanggal Lahir</th>
+                                            <th>Umur</th>
+                                            <th>Alamat Lengkap</th>
+                                            <th>Jenis Kelamin</th>
+                                            <th>TB</th>
+                                            <th>BB</th>
+                                            <th>Pendidikan Terakhir</th>
+                                            <th>Status</th>
+                                            <th>Agama</th>
+                                            <th>Pengalaman Kerja</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tbody>
+                                    <?php 
+                                        include 'config.php';
+                                        $konektor = mysqli_connect("localhost","root","", "tki");
+                                        $no = 1;
+                                        $data = mysqli_query($konektor,"SELECT * FROM pendaftaran INNER JOIN negara ON pendaftaran.id_negara = negara.id_negara");
+                                        while($d = mysqli_fetch_array($data)){
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $no++; ?></td>
+                                                <td><?php echo $d['nik']; ?></td>
+                                                <td><?php echo $d['nama_lengkap']; ?></td>
+                                                <td><?php echo $d['negara_tujuan']; ?></td>
+                                                <td><?php echo $d['tempat_lahir']; ?></td>
+                                                <td><?php echo $d['tanggal_lahir']; ?></td>
+                                                <td><?php echo $d['umur']; ?></td>
+                                                <td><?php echo $d['alamat_lengkap']; ?></td>
+                                                <td><?php echo $d['jenis_kelamin']; ?></td>
+                                                <td><?php echo $d['tb']; ?></td>
+                                                <td><?php echo $d['bb']; ?></td>
+                                                <td><?php echo $d['pendidikan_terakhir']; ?></td>
+                                                <td><?php echo $d['status']; ?></td>
+                                                <td><?php echo $d['agama']; ?></td>
+                                                <td><?php echo $d['pengalaman_kerja']; ?></td>
+
+                                                <td>
+                                                    <a href="tabelPendaftarEdit.php?id_dft=<?php echo $d['id_dft']; ?>">EDIT</a>
+                                                    <a href="tabelPendaftarDelete.php?id_dft=<?php echo $d['id_dft']; ?>">HAPUS</a>
+                                                </td>
+                                            </tr>
+                                            <?php 
+                                            }
+                                        ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <!-- /.container-fluid -->
 
@@ -445,7 +443,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; PT Hendrarta Argaraya 2020</span>
+                        <span>Copyright &copy; Your Website 2020</span>
                     </div>
                 </div>
             </footer>

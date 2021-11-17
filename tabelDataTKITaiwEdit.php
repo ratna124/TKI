@@ -391,6 +391,10 @@
                                                     <td><input type="text" name="sektor_taiw" value="<?php echo $d['sektor_taiw']; ?>"></td>
                                                 </tr>
                                                 <tr>
+                                                    <td>E-KTP</td>
+                                                    <td><input type="text" name="sektor_taiw" value="<?php echo $d['ektp_taiw']; ?>"></td>
+                                                </tr>
+                                                <tr>
                                                     <td>Kartu Keluarga</td>
                                                     <td><input type="text" name="kk_taiw" value="<?php echo $d['kk_taiw']; ?>"></td>
                                                 </tr>
@@ -409,6 +413,10 @@
                                                 <tr>
                                                     <td>Ex Paspor</td>
                                                     <td><input type="text" name="expaspor_taiw" value="<?php echo $d['expaspor_taiw']; ?>"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SKCK</td>
+                                                    <td><input type="text" name="skck_taiw" value="<?php echo $d['skck_taiw']; ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Status Proses</td>

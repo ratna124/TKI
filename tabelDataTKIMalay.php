@@ -376,11 +376,13 @@
                                             <th>No</th>
                                             <th>Nama TKI</th>
                                             <th>Sektor</th>
+                                            <th>E-KTP</th>
                                             <th>Kartu Keluarga</th>
                                             <th>Akta Kelahiran</th>
                                             <th>Surat Menikah</th>
                                             <th>Surat Ijin Ortu/Suami</th>
                                             <th>Ex Paspor</th>
+                                            <th>SKCK</th>
                                             <th>Status Proses</th>
                                             <th>Action</th>
                                         </tr>
@@ -398,11 +400,13 @@
                                                 <td><?php echo $no++; ?></td>
                                                 <td><?php echo $d['nama_lengkap']; ?></td>
                                                 <td><?php echo $d['sektor_malay']; ?></td>
+                                                <td><?php echo $d['ektp_malay']; ?></td>
                                                 <td><?php echo $d['kk_malay']; ?></td>
                                                 <td><?php echo $d['akte_malay']; ?></td>
                                                 <td><?php echo $d['suratnikah_malay']; ?></td>
                                                 <td><?php echo $d['suratijin_malay']; ?></td>
                                                 <td><?php echo $d['expaspor_malay']; ?></td>
+                                                <td><?php echo $d['skck_malay']; ?></td>
                                                 <td><?php echo $d['status_proses_malay']; ?></td>
 
                                                 <td>

@@ -384,24 +384,32 @@
                                             <td><input type="text" name="sektor_malay"></td>
                                         </tr>
                                         <tr>
+                                            <td>E-KTP</td>
+                                            <td><input type="text" name="ektp_malay"></td>
+                                        </tr>
+                                        <tr>
                                             <td>Kartu Keluarga</td>
-                                            <td><input type="text" name="kk_malay" value="<?php echo $d['kk_malay']; ?>"></td>
+                                            <td><input type="text" name="kk_malay"></td>
                                         </tr>
                                         <tr>
                                             <td>Akta Kelahiran</td>
-                                            <td><input type="text" name="akte_malay" value="<?php echo $d['akte_malay']; ?>"></td>
+                                            <td><input type="text" name="akte_malay"></td>
                                         </tr>
                                         <tr>
                                             <td>Surat Menikah</td>
-                                            <td><input type="text" name="suratnikah_malay" value="<?php echo $d['suratnikah_malay']; ?>"></td>
+                                            <td><input type="text" name="suratnikah_malay"></td>
                                         </tr>
                                         <tr>
                                             <td>Surat Ijin Ortu/Suami</td>
-                                            <td><input type="text" name="suratijin_malay" value="<?php echo $d['suratijin_malay']; ?>"></td>
+                                            <td><input type="text" name="suratijin_malay"></td>
                                         </tr>
                                         <tr>
                                             <td>Ex Paspor</td>
-                                            <td><input type="text" name="expaspor_malay" value="<?php echo $d['expaspor_malay']; ?>"></td>
+                                            <td><input type="text" name="expaspor_malay"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>SKCK</td>
+                                            <td><input type="text" name="skck_malay"></td>
                                         </tr>
                                         <tr>
                                             <td>Status Proses</td>

@@ -378,11 +378,13 @@
                                             <th>No</th>
                                             <th>Nama TKI</th>
                                             <th>Sektor</th>
+                                            <th>E-KTP</th>
                                             <th>Kartu Keluarga</th>
                                             <th>Akta Kelahiran</th>
                                             <th>Surat Menikah</th>
                                             <th>Surat Ijin Ortu/Suami</th>
                                             <th>Ex Paspor</th>
+                                            <th>SKCK</th>
                                             <th>Status Proses</th>
                                             <th>Action</th>
                                         </tr>
@@ -399,12 +401,14 @@
                                             <tr>
                                                 <td><?php echo $no++; ?></td>
                                                 <td><?php echo $d['nama_lengkap']; ?></td>
-                                                <td><?php echo $d['sektor']; ?></td>
+                                                <td><?php echo $d['sektor_hk']; ?></td>
+                                                <td><?php echo $d['ektp_hk']; ?></td>
                                                 <td><?php echo $d['kk_hk']; ?></td>
                                                 <td><?php echo $d['akte_hk']; ?></td>
                                                 <td><?php echo $d['suratnikah_hk']; ?></td>
                                                 <td><?php echo $d['suratijin_hk']; ?></td>
                                                 <td><?php echo $d['expaspor_hk']; ?></td>
+                                                <td><?php echo $d['skck_hk']; ?></td>
                                                 <td><?php echo $d['status_proses_hk']; ?></td>
 
                                                 <td>
