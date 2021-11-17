@@ -297,54 +297,43 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-2 text-gray-800">Data Diri</h1>
+    <h1 class="h3 mb-2 text-gray-800">Berkas</h1>
 </div>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Data Diri TKI</h6><br>
-        
+        <h6 class="m-0 font-weight-bold text-primary">Berkas TKI</h6><br>
+        <a href="TKIUploadBerkasAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-plus fa-sm text-white-50"></i>Add Berkas</a>
     </div>
     <div class="card-body">
                 <?php 
                     include 'config.php';
                     $konektor = mysqli_connect("localhost","root","", "tki");
                     $no = 1;
-                    $data = mysqli_query($konektor,"SELECT * FROM pendaftaran INNER JOIN negara ON pendaftaran.id_negara = negara.id_negara");
+                    $data = mysqli_query($konektor,"SELECT * FROM hongkong INNER JOIN pendaftaran ON hongkong.id_dft = pendaftaran.id_dft");
                     while($d = mysqli_fetch_array($data)){
                         ?>
                             <!--<?php echo $no++; ?> -->
-                            </h5>NIK</h5>
-                            <p><?php echo $d['nik']; ?></p>
-                            </h5>Nama Lengkap</h5>
-                            <p><?php echo $d['nama_lengkap']; ?></p>
-                            </h5>Negara Tujuan</h5>
-                            <p><?php echo $d['negara_tujuan']; ?></p>
-                            </h5>Tempat Lahir</h5>
-                            <p><?php echo $d['tempat_lahir']; ?></p>
-                            </h5>Tanggal Lahir</h5>
-                            <p><?php echo $d['tanggal_lahir']; ?></p>
-                            </h5>Umur</h5>
-                            <p><?php echo $d['umur']; ?></p>
-                            </h5>Alamat Lengkap</h5>
-                            <p><?php echo $d['alamat_lengkap']; ?></p>
-                            </h5>Jenis Kelamin</h5>
-                            <p><?php echo $d['jenis_kelamin']; ?></p>
-                            </h5>Tinggi Badan</h5>
-                            <p><?php echo $d['tb']; ?></p>
-                            </h5>Berat Badan</h5>
-                            <p><?php echo $d['bb']; ?></p>
-                            </h5>Pendidikan Terakhir</h5>
-                            <p><?php echo $d['pendidikan_terakhir']; ?></p>
-                            </h5>Status</h5>
-                            <p><?php echo $d['status']; ?></p>
-                            </h5>Agama</h5>
-                            <p><?php echo $d['agama']; ?></p>
-                            </h5>Pengalaman Kerja</h5>
-                            <p><?php echo $d['pengalaman_kerja']; ?></p>
-
-                
+                            </h5>Sektor</h5>
+                            <p><?php echo $d['sektor_hk']; ?></p>
+                            </h5>Sektor</h5>
+                            <img src="gambar/<?php echo $d['ektp_hk']; ?>" style="width: 100px;">
+                            </h5>Kartu Keluarga</h5>
+                            <img src="gambar/<?php echo $d['kk_hk']; ?>" style="width: 100px;">
+                            </h5>Akta Lahir</h5>
+                            <img src="gambar/<?php echo $d['akta_hk']; ?>" style="width: 100px;">
+                            </h5>Surat Nikah</h5>
+                            <img src="gambar/<?php echo $d['suratnikah_hk']; ?>" style="width: 100px;">
+                            </h5>Surat Ijin</h5>
+                            <img src="gambar/<?php echo $d['suratijin_hk']; ?>" style="width: 100px;">
+                            </h5>Ex Paspor</h5>
+                            <img src="gambar/<?php echo $d['expaspor_hk']; ?>" style="width: 100px;">
+                            </h5>SKCK</h5>
+                            <img src="gambar/<?php echo $d['skck_hk']; ?>" style="width: 100px;">
+                            </h5>Status Proses</h5>
+                            <p><?php echo $d['status_proses_hk']; ?></p>
                         <?php 
                         }
                     ?>

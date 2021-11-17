@@ -297,57 +297,63 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-2 text-gray-800">Data Diri</h1>
+    <h1 class="h3 mb-2 text-gray-800">Berkas</h1>
 </div>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Data Diri TKI</h6><br>
+        <h6 class="m-0 font-weight-bold text-primary">Berkas TKI</h6><br>
         
     </div>
     <div class="card-body">
-                <?php 
-                    include 'config.php';
-                    $konektor = mysqli_connect("localhost","root","", "tki");
-                    $no = 1;
-                    $data = mysqli_query($konektor,"SELECT * FROM pendaftaran INNER JOIN negara ON pendaftaran.id_negara = negara.id_negara");
-                    while($d = mysqli_fetch_array($data)){
-                        ?>
-                            <!--<?php echo $no++; ?> -->
-                            </h5>NIK</h5>
-                            <p><?php echo $d['nik']; ?></p>
-                            </h5>Nama Lengkap</h5>
-                            <p><?php echo $d['nama_lengkap']; ?></p>
-                            </h5>Negara Tujuan</h5>
-                            <p><?php echo $d['negara_tujuan']; ?></p>
-                            </h5>Tempat Lahir</h5>
-                            <p><?php echo $d['tempat_lahir']; ?></p>
-                            </h5>Tanggal Lahir</h5>
-                            <p><?php echo $d['tanggal_lahir']; ?></p>
-                            </h5>Umur</h5>
-                            <p><?php echo $d['umur']; ?></p>
-                            </h5>Alamat Lengkap</h5>
-                            <p><?php echo $d['alamat_lengkap']; ?></p>
-                            </h5>Jenis Kelamin</h5>
-                            <p><?php echo $d['jenis_kelamin']; ?></p>
-                            </h5>Tinggi Badan</h5>
-                            <p><?php echo $d['tb']; ?></p>
-                            </h5>Berat Badan</h5>
-                            <p><?php echo $d['bb']; ?></p>
-                            </h5>Pendidikan Terakhir</h5>
-                            <p><?php echo $d['pendidikan_terakhir']; ?></p>
-                            </h5>Status</h5>
-                            <p><?php echo $d['status']; ?></p>
-                            </h5>Agama</h5>
-                            <p><?php echo $d['agama']; ?></p>
-                            </h5>Pengalaman Kerja</h5>
-                            <p><?php echo $d['pengalaman_kerja']; ?></p>
-
-                
-                        <?php 
-                        }
-                    ?>
+    <form action="TKIUploadBerkasProses.php" method="post" enctype="multipart/form-data">
+    <table>
+				<tr>			
+					<td>Sektor</td>
+					<td>
+						<input type="hidden" name="id_hongkong" value="<?php echo $d['id_hongkong']; ?>">
+						<input type="text" name="sektor_hk">
+					</td>
+				</tr>
+                <tr>
+					<td>E-KTP</td>
+                    <td><input type="file" name="ektp_hk"></td>
+				</tr>
+                <tr>
+					<td>Kartu Keluarga</td>
+                    <td><input type="file" name="kk_hk"></td>
+				</tr>
+                <tr>
+					<td>Akte Lahir</td>
+                    <td><input type="file" name="akta_hk"></td>
+				</tr>
+                <tr>
+					<td>Surat Nikah</td>
+                    <td><input type="file" name="suratnikah_hk"></td>
+				</tr>
+                <tr>
+					<td>Surat Ijin</td>
+                    <td><input type="file" name="suratijin_hk"></td>
+				</tr>
+                <tr>
+					<td>Ex Paspor</td>
+                    <td><input type="file" name="expaspor_hk"></td>
+				</tr>
+                <tr>
+					<td>SKCK</td>
+                    <td><input type="file" name="skck_hk"></td>
+				</tr>
+                <tr>
+					<td>Status Proses</td>
+					<td><input type="text" name="status_proses_hk"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="SIMPAN"></td>
+				</tr>		
+			</table>
+	</form>
  
     </div>
 </div>
