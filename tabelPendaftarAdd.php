@@ -122,7 +122,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="tabelBlkln.php">
                     <i class="fas fa-fw fa-building"></i>
                     <span>BLKLN</span></a>
             </li>
@@ -371,72 +371,94 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <form method="post" action="tabelPendaftarAddProses.php">
-                                    <table>
-                                        <tr>			
-                                            <td>NIK</td>
-                                            <td>
+                                    <fieldset>
+                                        <div class="form-group">			
+                                            <label>NIK</label>
+                                                <td>
                                                 <input type="hidden" name="id_dft" value="<?php echo $d['id_dft']; ?>">
-                                                <input type="text" name="nik">
+                                                <input type="text" name="nik" class="form-control" placeholder="Masukkan NIK"/>
+                                                </td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nama Lengkap</label>
+                                            <td><input type="text" name="nama_lengkap" class="form-control" placeholder="Masukkan nama lengkap"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Negara Tujuan</label>
+                                            <td>
+                                                <select class="form-control" name="id_negara">
+                                                    <option>--pilih negara tujuan--</option>
+                                                    <option value='1'>Hongkong</option>
+                                                    <option value='2'>Taiwan</option>
+                                                    <option value='3'>Singapore</option>
+                                                    <option value='4'>Malaysia</option>
+                                                </select>   
                                             </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Nama</td>
-                                            <td><input type="text" name="nama_lengkap"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Negara Tujuan</td>
-                                            <td><input type="text" name="id_negara"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tempat Lahir</td>
-                                            <td><input type="text" name="tempat_lahir"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tanggal Lahir</td>
-                                            <td><input type="text" name="tanggal_lahir"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Umur</td>
-                                            <td><input type="text" name="umur"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Alamat Lengkap</td>
-                                            <td><input type="text" name="alamat_lengkap"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jenis Kelamin</td>
-                                            <td><input type="text" name="jenis_kelamin"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>TB</td>
-                                            <td><input type="text" name="tb"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>BB</td>
-                                            <td><input type="text" name="bb"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Pendidikan Terakhir</td>
-                                            <td><input type="text" name="pendidikan_terakhir"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Status</td>
-                                            <td><input type="text" name="status"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Agama</td>
-                                            <td><input type="text" name="agama"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Pengalaman Kerja</td>
-                                            <td><input type="text" name="pengalaman_kerja"></td>
-                                        </tr>
-                                        <tr>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tempat Lahir</label>
+                                            <td><input type="text" name="tempat_lahir" class="form-control" placeholder="Masukkan tempat lahir"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tanggal Lahir</label>
+                                            <td><input type="text" name="tanggal_lahir" class="form-control" placeholder="Masukkan tanggal lahir yy/mm/dd"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Umur</label>
+                                            <td><input type="text" name="umur" class="form-control" placeholder="Masukkan umur"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Alamat Lengkap</label>
+                                            <td><input type="text" name="alamat_lengkap" class="form-control" placeholder="Masukkan alamat lengkap"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Jenis Kelamin</label>
+                                            <td>
+                                                <select class="form-control" name="jenis_kelamin">
+                                                    <option>--pilih jenis kelamin--</option>
+                                                    <option>Pria</option>
+                                                    <option>Wanita</option>
+                                                </select>   
+                                            </td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>TB</label>
+                                            <td><input type="text" name="tb" class="form-control" placeholder="Masukkan tinggi badan"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>BB</label>
+                                            <td><input type="text" name="bb" class="form-control" placeholder="Masukkan berat badan"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Pendidikan Terakhir</label>
+                                            <td><input type="text" name="pendidikan_terakhir" class="form-control" placeholder="Masukkan pendidikan terakhir"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Status</label>
+                                            <td>
+                                                <select class="form-control" name="status">
+                                                    <option>--pilih status--</option>
+                                                    <option>Menikah</option>
+                                                    <option>Belum Menikah</option>
+                                                    <option>Cerai Hidup</option>
+                                                    <option>Cerai Mati</option>
+                                                </select>   
+                                            </td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Agama</label>
+                                            <td><input type="text" name="agama" class="form-control" placeholder="Masukkan agama"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Pengalaman Kerja</label>
+                                            <td><input type="text" name="pengalaman_kerja" class="form-control" placeholder="Masukkan pengalaman kerja"/></td>
+                                        </div>
+                                        <p>
                                             <td></td>
                                             <td><input type="submit" value="SIMPAN"></td>
                                             <td><input type="submit" href="tabelPendaftar.php" value="Cancel"></td>
-                                        </tr>		
-                                    </table>
+                                        </p>		
+                                    </fieldset>
                                 </form>
                             </div>
                         </div>

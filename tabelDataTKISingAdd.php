@@ -122,7 +122,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="tabelBlkln.php">
                     <i class="fas fa-fw fa-building"></i>
                     <span>BLKLN</span></a>
             </li>
@@ -370,53 +370,53 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <form method="post" action="tabelDataTKISingProses.php">
-                                    <table>
-                                        <tr>			
+                                <form method="post" action="tabelDataTKISingAddProses.php">
+                                    <fieldset>
+                                        <div class="form-group">			
                                             <td>Nama TKI</td>
                                             <td>
                                                 <input type="hidden" name="id_singapore" value="<?php echo $d['id_singapore']; ?>">
-                                                <input type="text" name="id_dft">
+                                                <input type="text" name="id_dft" class="form-control"/>
                                             </td>
-                                        </tr>
-                                        <tr>
+                                        </div>
+                                        <div class="form-group">
                                             <td>Sektor</td>
-                                            <td><input type="text" name="sektor_sing"></td>
-                                        </tr>
-                                        <tr>
+                                            <td><input type="text" name="sektor_sing" class="form-control"/></td>
+                                        </div>
+                                        <div class="form-group">
                                             <td>E-KTP</td>
-                                            <td><input type="text" name="ektp_sing"></td>
-                                        </tr>
-                                        <tr>
+                                            <td><input type="text" name="ektp_sing" class="form-control"/></td>
+                                        </div>
+                                        <div class="form-group">
                                             <td>Kartu Keluarga</td>
-                                            <td><input type="text" name="kk_sing"></td>
-                                        </tr>
-                                        <tr>
+                                            <td><input type="text" name="kk_sing" class="form-control"/></td>
+                                        </div>
+                                        <div class="form-group">
                                             <td>Akta Kelahiran</td>
-                                            <td><input type="text" name="akte_sing"></td>
-                                        </tr>
-                                        <tr>
+                                            <td><input type="text" name="akte_sing" class="form-control"/></td>
+                                        </div>
+                                        <div class="form-group">
                                             <td>Surat Menikah</td>
-                                            <td><input type="text" name="suratnikah_sing"></td>
-                                        </tr>
-                                        <tr>
+                                            <td><input type="text" name="suratnikah_sing" class="form-control"/></td>
+                                        </div>
+                                        <div class="form-group">
                                             <td>Surat Ijin Ortu/Suami</td>
-                                            <td><input type="text" name="suratijin_sing"></td>
-                                        </tr>
-                                        <tr>
+                                            <td><input type="text" name="suratijin_sing" class="form-control"/></td>
+                                        </div>
+                                        <div class="form-group">
                                             <td>Ex Paspor</td>
-                                            <td><input type="text" name="expaspor_sing"></td>
-                                        </tr>
-                                        <tr>
+                                            <td><input type="text" name="expaspor_sing" class="form-control"/></td>
+                                        </div>
+                                        <div class="form-group">
                                             <td>Status Proses</td>
-                                            <td><input type="text" name="status_proses_sing"></td>
-                                        </tr>
-                                        <tr>
+                                            <td><input type="text" name="status_proses_sing" class="form-control" placeholder="Masukkan status proses tki saat ini"/></td>
+                                        </div>
+                                        <p>
                                             <td></td>
                                             <td><input type="submit" value="SIMPAN"></td>
                                             <td><input type="submit" href="tabelDataTKISing.php" value="Cancel"></td>
-                                        </tr>		
-                                    </table>
+                                        </p>		
+                                    </fieldset>
                                 </form>
                             </div>
                         </div>

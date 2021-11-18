@@ -122,7 +122,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="tabelBlkln.php">
                     <i class="fas fa-fw fa-building"></i>
                     <span>BLKLN</span></a>
             </li>
@@ -368,36 +368,42 @@
                                 include 'config.php';
                                 $konektor = mysqli_connect("localhost","root","", "tki");
                                 $id = $_GET['id'];
-                                $data = mysqli_query($konektor,"select * from user where id='$id'");
+                                $data = mysqli_query($konektor,"SELECT * FROM user WHERE id='$id'");
                                 while($d = mysqli_fetch_array($data)){
                                     ?>
                                     <form method="post" action="tabelManageUserEditProses.php">
-                                        <table>
-                                            <tr>			
+                                        <fieldset>
+                                            <div class="form-group">			
                                                 <td>Nama</td>
                                                 <td>
                                                     <input type="hidden" name="id" value="<?php echo $d['id']; ?>">
-                                                    <input type="text" name="nama" value="<?php echo $d['nama']; ?>">
+                                                    <input type="text" class="form-control" name="nama" value="<?php echo $d['nama']; ?>">
                                                 </td>
-                                            </tr>
-                                            <tr>
+                                            </div>
+                                            <div class="form-group">
                                                 <td>Username</td>
-                                                <td><input type="text" name="username" value="<?php echo $d['username']; ?>"></td>
-                                            </tr>
-                                            <tr>
+                                                <td><input type="text" class="form-control" name="username" value="<?php echo $d['username']; ?>"></td>
+                                            </div>
+                                            <div class="form-group">
                                                 <td>Password</td>
-                                                <td><input type="text" name="password" value="<?php echo $d['password']; ?>"></td>
-                                            </tr>
-                                            <tr>
+                                                <td><input type="text" class="form-control" name="password" value="<?php echo $d['password']; ?>"></td>
+                                            </div>
+                                            <div class="form-group">
                                                 <td>Role</td>
-                                                <td><input type="text" name="role" value="<?php echo $d['role']; ?>"></td>
-                                            </tr>
-                                            <tr>
+                                                <td>
+                                                    <select class="form-control" name="role">
+                                                        <option></option>
+                                                        <option value='1'>Admin</option>
+                                                        <option value='2'>TKI</option>
+                                                    </select>   
+                                                </td>
+                                            </div>
+                                            <p>
                                                 <td></td>
                                                 <td><input type="submit" value="SIMPAN"></td>
                                                 <td><input type="submit" href="tabelManageUSer.php" value="Cancel"></td>
-                                            </tr>		
-                                        </table>
+                                            </p>		
+                                        </fieldset>
                                     </form>
                                     <?php 
                                 }

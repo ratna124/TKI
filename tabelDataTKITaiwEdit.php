@@ -122,7 +122,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="tabelBlkln.php">
                     <i class="fas fa-fw fa-building"></i>
                     <span>BLKLN</span></a>
             </li>
@@ -378,56 +378,56 @@
                                     while($d = mysqli_fetch_array($data)){
                                 ?>
                                         <form method="post" action="tabelDataTKITaiwEditProses.php">
-                                            <table>
-                                                <tr>			
+                                            <fieldset>
+                                                <div class="form-group">			
                                                     <td>Nama TKI</td>
                                                     <td>
                                                         <input type="hidden" name="id_taiwan" value="<?php echo $d['id_taiwan']; ?>">
-                                                        <input type="text" name="id_dft" value="<?php echo $d['id_dft']; ?>">
+                                                        <input type="text" class="form-control" name="id_dft" value="<?php echo $d['id_dft']; ?>">
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <div class="form-group">
                                                     <td>Sektor</td>
-                                                    <td><input type="text" name="sektor_taiw" value="<?php echo $d['sektor_taiw']; ?>"></td>
+                                                    <td><input type="text" class="form-control" name="sektor_taiw" value="<?php echo $d['sektor_taiw']; ?>"></td>
                                                 </tr>
-                                                <tr>
+                                                <div class="form-group">
                                                     <td>E-KTP</td>
-                                                    <td><input type="text" name="sektor_taiw" value="<?php echo $d['ektp_taiw']; ?>"></td>
+                                                    <td><input type="text" class="form-control" name="sektor_taiw" value="<?php echo $d['ektp_taiw']; ?>"></td>
                                                 </tr>
-                                                <tr>
+                                                <div class="form-group">
                                                     <td>Kartu Keluarga</td>
-                                                    <td><input type="text" name="kk_taiw" value="<?php echo $d['kk_taiw']; ?>"></td>
+                                                    <td><input type="text" class="form-control" name="kk_taiw" value="<?php echo $d['kk_taiw']; ?>"></td>
                                                 </tr>
-                                                <tr>
+                                                <div class="form-group">
                                                     <td>Akta Kelahiran</td>
-                                                    <td><input type="text" name="akte_taiw" value="<?php echo $d['akte_taiw']; ?>"></td>
+                                                    <td><input type="text" class="form-control" name="akte_taiw" value="<?php echo $d['akte_taiw']; ?>"></td>
                                                 </tr>
-                                                <tr>
+                                                <div class="form-group">
                                                     <td>Surat Menikah</td>
-                                                    <td><input type="text" name="suratnikah_taiw" value="<?php echo $d['suratnikah_taiw']; ?>"></td>
+                                                    <td><input type="text" class="form-control" name="suratnikah_taiw" value="<?php echo $d['suratnikah_taiw']; ?>"></td>
                                                 </tr>
-                                                <tr>
+                                                <div class="form-group">
                                                     <td>Surat Ijin Ortu/Suami</td>
-                                                    <td><input type="text" name="suratijin_taiw" value="<?php echo $d['suratijin_taiw']; ?>"></td>
+                                                    <td><input type="text" class="form-control" name="suratijin_taiw" value="<?php echo $d['suratijin_taiw']; ?>"></td>
                                                 </tr>
-                                                <tr>
+                                                <div class="form-group">
                                                     <td>Ex Paspor</td>
-                                                    <td><input type="text" name="expaspor_taiw" value="<?php echo $d['expaspor_taiw']; ?>"></td>
+                                                    <td><input type="text" class="form-control" name="expaspor_taiw" value="<?php echo $d['expaspor_taiw']; ?>"></td>
                                                 </tr>
-                                                <tr>
+                                                <div class="form-group">
                                                     <td>SKCK</td>
-                                                    <td><input type="text" name="skck_taiw" value="<?php echo $d['skck_taiw']; ?>"></td>
+                                                    <td><input type="text" class="form-control" name="skck_taiw" value="<?php echo $d['skck_taiw']; ?>"></td>
                                                 </tr>
-                                                <tr>
+                                                <div class="form-group">
                                                     <td>Status Proses</td>
-                                                    <td><input type="text" name="status_proses_taiw" value="<?php echo $d['status_proses_taiw']; ?>"></td>
+                                                    <td><input type="text" class="form-control" name="status_proses_taiw" value="<?php echo $d['status_proses_taiw']; ?>"></td>
                                                 </tr>
-                                                <tr>
+                                                <div class="form-group">
                                                     <td></td>
                                                     <td><input type="submit" value="SIMPAN"></td>
                                                     <td><input type="submit" href="tabelDataTKITaiw.php" value="Cancel"></td>
                                                 </tr>		
-                                            </table>
+                                            </fieldset>
                                         </form>
                                         <?php 
                                     }

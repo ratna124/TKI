@@ -370,57 +370,57 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <form method="post" action="tabelDataTKIHongProses.php">
-                                    <table>
-                                        <tr>			
-                                            <td>Nama TKI</td>
+                                <form method="post" action="tabelDataTKIHongAddProses.php">
+                                    <fieldset>
+                                        <div class="form-group">			
+                                            <label>Nama TKI</label>
                                             <td>
                                                 <input type="hidden" name="id_hongkong" value="<?php echo $d['id_hongkong']; ?>">
-                                                <input type="text" name="id_dft">
+                                                <input type="text" name="id_dft" class="form-control" placeholder="Masukkan nama tki"/>
                                             </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sektor</td>
-                                            <td><input type="text" name="sektor_hk"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>E-KTP</td>
-                                            <td><input type="text" name="ektp_hk"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Kartu Keluarga</td>
-                                            <td><input type="text" name="kk_hk"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Akta Kelahiran</td>
-                                            <td><input type="text" name="akte_hk"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Surat Menikah</td>
-                                            <td><input type="text" name="suratnikah_hk"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Surat Ijin Ortu/Suami</td>
-                                            <td><input type="text" name="suratijin_hk"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ex Paspor</td>
-                                            <td><input type="text" name="expaspor_hk"></td>
-                                        </tr>
-                                        <tr>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Sektor</label>
+                                            <td><input type="text" name="sektor_hk" class="form-control"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>E-KTP</label>
+                                            <td><input type="text" name="ektp_hk" class="form-control"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Kartu Keluarga</label>
+                                            <td><input type="text" name="kk_hk" class="form-control"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Akta Kelahiran</label>
+                                            <td><input type="text" name="akte_hk" class="form-control"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Surat Menikah</label>
+                                            <td><input type="text" name="suratnikah_hk" class="form-control"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Surat Ijin Ortu/Suami</label>
+                                            <td><input type="text" name="suratijin_hk" class="form-control"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Ex Paspor</label>
+                                            <td><input type="text" name="expaspor_hk" class="form-control"/></td>
+                                        </div>
+                                        <div class="form-group">
                                             <td>SKCK</td>
-                                            <td><input type="text" name="skck_hk"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Status Proses</td>
-                                            <td><input type="text" name="status_proses_hk"></td>
-                                        </tr>
-                                        <tr>
+                                            <td><input type="text" name="skck_hk" class="form-control"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Status Proses</label>
+                                            <td><input type="text" name="status_proses_hk" class="form-control" placeholder="Masukkan status proses tki saat ini"/></td>
+                                        </div>
+                                        <p>
                                             <td></td>
                                             <td><input type="submit" value="SIMPAN"></td>
                                             <td><input type="submit" href="tabelDataTKIHong.php" value="Cancel"></td>
-                                        </tr>		
-                                    </table>
+                                        </p>		
+                                    </fieldset>
                                 </form>
                             </div>
                         </div>

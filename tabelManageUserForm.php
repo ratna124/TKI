@@ -122,7 +122,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="tabelBlkln.php">
                     <i class="fas fa-fw fa-building"></i>
                     <span>BLKLN</span></a>
             </li>
@@ -364,34 +364,40 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-		<form method="post" action="tabelManageUserFormProses.php">
-			<table>
-				<tr>			
-					<td>Nama</td>
-					<td>
-						<input type="hidden" name="id" value="<?php echo $d['id']; ?>">
-						<input type="text" name="nama">
-					</td>
-				</tr>
-				<tr>
-					<td>Username</td>
-					<td><input type="text" name="username"></td>
-				</tr>
-				<tr>
-					<td>Password</td>
-					<td><input type="text" name="password"></td>
-				</tr>
-                <tr>
-					<td>Role</td>
-					<td><input type="text" name="role"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" value="SIMPAN"></td>
-                    <td><input type="submit" href="tabelManageUSer.php" value="Cancel"></td>
-				</tr>		
-			</table>
-		</form>
+                                <form method="post" action="tabelManageUserFormProses.php">
+                                    <fieldset>
+                                        <div class="form-group">			
+                                            <label>Nama</label>
+                                            <td>
+                                                <input type="hidden" name="id" value="<?php echo $d['id']; ?>">
+                                                <input type="text" name="nama" class="form-control" placeholder="Masukkan nama"/>
+                                            </td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Username</label>
+                                            <td><input type="text" name="username" class="form-control" placeholder="Masukkan username"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <td><input type="text" name="password" class="form-control" placeholder="Masukkan password"/></td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Role</label>
+                                            <td>
+                                                <select class="form-control" name="role">
+                                                    <option>--pilih role--</option>
+                                                    <option value='1'>Admin</option>
+                                                    <option value='2'>TKI</option>
+                                                </select>   
+                                            </td>
+                                        </div>
+                                        <p>
+                                            <td></td>
+                                            <td><input type="submit" value="SIMPAN"></td>
+                                            <td><input type="submit" href="tabelManageUSer.php" value="Cancel"></td>
+                                        </p>		
+                                    </fieldset>
+                                </form>
                             </div>
                         </div>
                     </div>

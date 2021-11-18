@@ -122,7 +122,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="tabelBlkln.php">
                     <i class="fas fa-fw fa-user-edit"></i>
                     <span>BLKLN</span></a>
             </li>
@@ -378,27 +378,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php 
-		include 'config.php';
-        $konektor = mysqli_connect("localhost","root","", "tki");
-		$no = 1;
-		$data = mysqli_query($konektor,"select * from user");
-		while($d = mysqli_fetch_array($data)){
-			?>
-			<tr>
-				<td><?php echo $no++; ?></td>
-				<td><?php echo $d['nama']; ?></td>
-				<td><?php echo $d['username']; ?></td>
-				<td><?php echo $d['password']; ?></td>
-                <td><?php echo $d['role']; ?></td>
-				<td>
-					<a href="tabelManageUserEdit.php?id=<?php echo $d['id']; ?>">EDIT</a>
-					<a href="tabelManageUserDelete.php?id=<?php echo $d['id']; ?>">HAPUS</a>
-				</td>
-			</tr>
-			<?php 
-		}
-		?>
+                                        <?php 
+                                            include 'config.php';
+                                            $konektor = mysqli_connect("localhost","root","", "tki");
+                                            $no = 1;
+                                            $data = mysqli_query($konektor,"select * from user");
+                                            while($d = mysqli_fetch_array($data)){
+                                        ?>
+                                                <tr>
+                                                    <td><?php echo $no++; ?></td>
+                                                    <td><?php echo $d['nama']; ?></td>
+                                                    <td><?php echo $d['username']; ?></td>
+                                                    <td><?php echo $d['password']; ?></td>
+                                                    <td><?php echo $d['role']; ?></td>
+                                                    <td>
+                                                        <a href="tabelManageUserEdit.php?id=<?php echo $d['id']; ?>">EDIT</a>
+                                                        <a href="tabelManageUserDelete.php?id=<?php echo $d['id']; ?>">HAPUS</a>
+                                                    </td>
+                                                </tr>
+                                                <?php 
+                                            }
+                                            ?>
                                     </tbody>
                                 </table>
                             </div>

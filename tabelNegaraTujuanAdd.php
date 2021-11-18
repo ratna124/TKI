@@ -122,7 +122,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="tabelBlkln.php">
                     <i class="fas fa-fw fa-building"></i>
                     <span>BLKLN</span></a>
             </li>
@@ -362,37 +362,37 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-		<form method="post" action="tabelNegaraTujuanAddProses.php" enctype="multipart/form-data">
-			<table>
-				<tr>			
-					<td>Negara</td>
-					<td>
-						<input type="hidden" name="id_negara" value="<?php echo $d['id_negara']; ?>">
-						<input type="text" name="negara_tujuan">
-					</td>
-				</tr>
-				<tr>
-					<td>Kriteria</td>
-					<td><textarea type="text" name="kriteria" rows="7" cols="50"></textarea>
-				</tr>
-				<tr>
-					<td>Persyaratan</td>
-					<td><textarea type="text" name="persyaratan" rows="7" cols="50"></textarea>
-				</tr>
-                <tr>
-					<td>Gaji</td>
-					<td><input type="text" name="jumlah_gaji"></td>
-				</tr>
-                <tr>
-					<td>Gambar Negara</td>
-                    <td><input type="file" name="gambar_negara"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" value="SIMPAN"></td>
-				</tr>		
-			</table>
-		</form>
+                                <form method="post" action="tabelNegaraTujuanAddProses.php" enctype="multipart/form-data">
+                                    <table>
+                                        <tr>			
+                                            <td>Negara</td>
+                                            <td>
+                                                <input type="hidden" name="id_negara" value="<?php echo $d['id_negara']; ?>">
+                                                <input type="text" name="negara_tujuan">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kriteria</td>
+                                            <td><textarea type="text" name="kriteria" rows="7" cols="50"></textarea>
+                                        </tr>
+                                        <tr>
+                                            <td>Persyaratan</td>
+                                            <td><textarea type="text" name="persyaratan" rows="7" cols="50"></textarea>
+                                        </tr>
+                                        <tr>
+                                            <td>Gaji</td>
+                                            <td><input type="text" name="jumlah_gaji"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Gambar Negara</td>
+                                            <td><input type="file" name="gambar_negara"></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="submit" value="SIMPAN"></td>
+                                        </tr>		
+                                    </table>
+                                </form>
                             </div>
                         </div>
                     </div>
