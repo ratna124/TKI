@@ -60,7 +60,10 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Data TKI</h6>
                         <a class="collapse-item" href="TKIDataDiri.php">Data Diri</a>
-                        <a class="collapse-item" href="TKIUploadBerkas.php">Lengkapi Berkas</a>
+                        <a class="collapse-item" href="TKIUploadBerkasHongkong.php">Berkas Hongkong</a>
+                        <a class="collapse-item" href="TKIUploadBerkasSingapore.php">Lengkapi Singapore</a>
+                        <a class="collapse-item" href="TKIUploadBerkasMalay.php">Lengkapi Malaysia</a>
+                        <a class="collapse-item" href="TKIUploadBerkasTaiwan.php">Lengkapi Taiwan</a>
                     </div>
                 </div>
             </li>
@@ -307,75 +310,84 @@
         
     </div>
     <div class="card-body">
-    <div class="table-responsive">
-                            <?php
+    <?php
 	include 'config.php';
     $konektor = mysqli_connect("localhost","root","", "tki");
-	$id_hongkong = $_GET['id_hongkong'];
-	$data = mysqli_query($konektor,"select * from hongkong where id_hongkong='$id_hongkong'");
+	$id_malaysia = $_GET['id_malaysia'];
+	$data = mysqli_query($konektor,"select * from malaysia where id_malaysia='$id_malaysia'");
 	while($d = mysqli_fetch_array($data)){
 		?>
-		<form method="post" action="TKIUploadBerkasEditProses.php" enctype="multipart/form-data">
-			<table>
-				<tr>		
+    <form action="TKIUploadBerkasMalayAddProses.php" method="post" enctype="multipart/form-data">
+    <table>
+				<tr>			
 					<td>Sektor</td>
 					<td>
-                    <input type="hidden" name="id_hongkong" value="<?php echo $d['id_hongkong']; ?>">
-						<input type="text" name="sektor_hk" value="<?php echo $d['sektor_hk']; ?>">
+						<input type="hidden" name="id_malaysia" value="<?php echo $d['id_malaysia']; ?>">
+						<input type="text" name="sektor_malay" value="<?php echo $d['sektor_malay']; ?>">
 					</td>
 				</tr>
                 <tr>
-                    <td>E-KTP</td>
-                    <td><img src="gambar/<?php echo $d['ektp_hk']; ?>" style="width: 120px;float: left;margin-bottom: 5px;">
-                    <input type="file" name="ektp_hk" /></td>
+					<td>E-KTP</td>
+                    <td>
+                        <input type="file" name="ektp_malay" value="<?php echo $d['ektp_malay']; ?>">
+                        <img src="berkas/<?php echo $d['ektp_malay']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
+                    </td>
 				</tr>
                 <tr>
-                    <td>Kartu Keluarga</td>
-                    <td><img src="gambar/<?php echo $d['kk_hk']; ?>" style="width: 120px;float: left;margin-bottom: 5px;">
-                    <input type="file" name="kk_hk" /></td>
+					<td>Kartu Keluarga</td>
+                    <td>
+                        <input type="file" name="kk_malay" value="<?php echo $d['kk_malay']; ?>">
+                        <img src="berkas/<?php echo $d['kk_malay']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
+                    </td>
 				</tr>
                 <tr>
-                    <td>Akta Lahir</td>
-                    <td><img src="gambar/<?php echo $d['akta_hk']; ?>" style="width: 120px;float: left;margin-bottom: 5px;">
-                    <input type="file" name="akta_hk" /></td>
+					<td>Akte Lahir</td>
+                    <td>
+                        <input type="file" name="akta_malay" value="<?php echo $d['akta_malay']; ?>">
+                        <img src="berkas/<?php echo $d['akta_malay']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
+                    </td>
 				</tr>
                 <tr>
-                    <td>Surat Nikah</td>
-                    <td><img src="gambar/<?php echo $d['suratnikah_hk']; ?>" style="width: 120px;float: left;margin-bottom: 5px;">
-                    <input type="file" name="suratnikah_hk" /></td>
+					<td>Surat Nikah</td>
+                    <td>
+                        <input type="file" name="suratnikah_malay" value="<?php echo $d['suratnikah_malay']; ?>">
+                        <img src="berkas/<?php echo $d['suratnikah_malay']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
+                    </td>
 				</tr>
                 <tr>
-                    <td>Surat Ijin</td>
-                    <td><img src="gambar/<?php echo $d['suratijin_hk']; ?>" style="width: 120px;float: left;margin-bottom: 5px;">
-                    <input type="file" name="suratijin_hk" /></td>
+					<td>Surat Ijin</td>
+                    <td>
+                        <input type="file" name="suratijin_malay" value="<?php echo $d['suratijin_malay']; ?>">
+                        <img src="berkas/<?php echo $d['suratijin_malay']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
+                    </td>
 				</tr>
                 <tr>
-                    <td>Ex Paspor</td>
-                    <td><img src="gambar/<?php echo $d['expaspor_hk']; ?>" style="width: 120px;float: left;margin-bottom: 5px;">
-                    <input type="file" name="expaspor_hk" /></td>
+					<td>Ex Paspor</td>
+                    <td>
+                        <input type="file" name="expaspor_malay" value="<?php echo $d['expaspor_malay']; ?>">
+                        <img src="berkas/<?php echo $d['expaspor_malay']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
+                    </td>
 				</tr>
                 <tr>
-                    <td>SKCK</td>
-                    <td><img src="gambar/<?php echo $d['skck_hk']; ?>" style="width: 120px;float: left;margin-bottom: 5px;">
-                    <input type="file" name="skck_hk" /></td>
+					<td>SKCK</td>
+                    <td>
+                        <input type="file" name="skck_malay" value="<?php echo $d['skck_malay']; ?>">
+                        <img src="berkas/<?php echo $d['skck_malay']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
+                    </td>
 				</tr>
                 <tr>
-                <td>Status Proses</td>
-					<td>
-						<input type="text" name="status_proses_hk" value="<?php echo $d['status_proses_hk']; ?>">
-					</td>
+					<td>Status Proses</td>
+					<td><input type="text" name="status_proses_malay" value="<?php echo $d['status_proses_malay']; ?>"></td>
 				</tr>
 				<tr>
 					<td></td>
 					<td><input type="submit" value="SIMPAN"></td>
-                    <td><input type="submit" href="tabelPendaftar.php" value="Cancel"></td>
 				</tr>		
-			</table>
+                </table>
 		</form>
         <?php 
 	}
 	?>
-                            </div>
     </div>
 </div>
 

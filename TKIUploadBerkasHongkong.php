@@ -61,8 +61,8 @@
                         <h6 class="collapse-header">Data TKI</h6>
                         <a class="collapse-item" href="TKIDataDiri.php">Data Diri</a>
                         <a class="collapse-item" href="TKIUploadBerkasHongkong.php">Berkas Hongkong</a>
-                        <a class="collapse-item" href="TKIUploadBerkasMalay.php">Lengkapi Singapore</a>
-                        <a class="collapse-item" href="TKIUploadBerkasSingapore.php">Lengkapi Malaysia</a>
+                        <a class="collapse-item" href="TKIUploadBerkasSingapore.php">Lengkapi Singapore</a>
+                        <a class="collapse-item" href="TKIUploadBerkasMalay.php">Lengkapi Malaysia</a>
                         <a class="collapse-item" href="TKIUploadBerkasTaiwan.php">Lengkapi Taiwan</a>
                     </div>
                 </div>
@@ -300,54 +300,46 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-2 text-gray-800">Data Diri</h1>
+    <h1 class="h3 mb-2 text-gray-800">Berkas</h1>
 </div>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Data Diri TKI</h6><br>
-        
+    <?php 
+        include 'config.php';
+        $konektor = mysqli_connect("localhost","root","", "tki");
+        $no = 1;
+        $data = mysqli_query($konektor,"SELECT * FROM hongkong");
+         while($d = mysqli_fetch_array($data)){
+         ?>
+        <h6 class="m-0 font-weight-bold text-primary">Berkas TKI Hongkong</h6><br>
+        <a href="TKIUploadBerkasHongkongAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-plus fa-sm text-white-50"></i>Add Berkas</a>
+        <a href="TKIUploadBerkasHongkongEdit.php?id_hongkong=<?php echo $d['id_hongkong']; ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-plus fa-sm text-white-50"></i>Edit Berkas</a>
     </div>
     <div class="card-body">
-                <?php 
-                    include 'config.php';
-                    $konektor = mysqli_connect("localhost","root","", "tki");
-                    $no = 1;
-                    $data = mysqli_query($konektor,"SELECT * FROM pendaftaran INNER JOIN negara ON pendaftaran.id_negara = negara.id_negara");
-                    while($d = mysqli_fetch_array($data)){
-                        ?>
+               
                             <!--<?php echo $no++; ?> -->
-                            </h5>NIK</h5>
-                            <p><?php echo $d['nik']; ?></p>
-                            </h5>Nama Lengkap</h5>
-                            <p><?php echo $d['nama_lengkap']; ?></p>
-                            </h5>Negara Tujuan</h5>
-                            <p><?php echo $d['negara_tujuan']; ?></p>
-                            </h5>Tempat Lahir</h5>
-                            <p><?php echo $d['tempat_lahir']; ?></p>
-                            </h5>Tanggal Lahir</h5>
-                            <p><?php echo $d['tanggal_lahir']; ?></p>
-                            </h5>Umur</h5>
-                            <p><?php echo $d['umur']; ?></p>
-                            </h5>Alamat Lengkap</h5>
-                            <p><?php echo $d['alamat_lengkap']; ?></p>
-                            </h5>Jenis Kelamin</h5>
-                            <p><?php echo $d['jenis_kelamin']; ?></p>
-                            </h5>Tinggi Badan</h5>
-                            <p><?php echo $d['tb']; ?></p>
-                            </h5>Berat Badan</h5>
-                            <p><?php echo $d['bb']; ?></p>
-                            </h5>Pendidikan Terakhir</h5>
-                            <p><?php echo $d['pendidikan_terakhir']; ?></p>
-                            </h5>Status</h5>
-                            <p><?php echo $d['status']; ?></p>
-                            </h5>Agama</h5>
-                            <p><?php echo $d['agama']; ?></p>
-                            </h5>Pengalaman Kerja</h5>
-                            <p><?php echo $d['pengalaman_kerja']; ?></p>
-
-                
+                            </h5>Sektor</h5>
+                            <p><?php echo $d['sektor_hk']; ?></p><br>
+                            </h5>E-KTP</h5>
+                            <p><img src="berkas/<?php echo $d['ektp_hk']; ?>" style="width: 300px;"></p><br>
+                            </h5>Kartu Keluarga</h5>
+                            <p><img src="berkas/<?php echo $d['kk_hk']; ?>" style="width: 300px;"></p><br>
+                            </h5>Akta Lahir</h5>
+                            <p><img src="berkas/<?php echo $d['akta_hk']; ?>" style="width: 300px;"></p><br>
+                            </h5>Surat Nikah</h5>
+                            <p><img src="berkas/<?php echo $d['suratnikah_hk']; ?>" style="width: 300px;"></p><br>
+                            </h5>Surat Ijin</h5>
+                            <p><img src="berkas/<?php echo $d['suratijin_hk']; ?>" style="width: 300px;"></p><br>
+                            </h5>Ex Paspor</h5>
+                            <p><img src="berkas/<?php echo $d['expaspor_hk']; ?>" style="width: 300px;"></p><br>
+                            </h5>SKCK</h5>
+                            <p><img src="berkas/<?php echo $d['skck_hk']; ?>" style="width: 300px;"></p><br>
+                            </h5>Status Proses</h5>
+                            <p><?php echo $d['status_proses_hk']; ?></p>
                         <?php 
                         }
                     ?>

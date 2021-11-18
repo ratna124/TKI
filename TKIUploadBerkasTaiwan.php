@@ -60,7 +60,10 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Data TKI</h6>
                         <a class="collapse-item" href="TKIDataDiri.php">Data Diri</a>
-                        <a class="collapse-item" href="TKIUploadBerkas.php">Lengkapi Berkas</a>
+                        <a class="collapse-item" href="TKIUploadBerkasHongkong.php">Berkas Hongkong</a>
+                        <a class="collapse-item" href="TKIUploadBerkasSingapore.php">Lengkapi Singapore</a>
+                        <a class="collapse-item" href="TKIUploadBerkasMalay.php">Lengkapi Malaysia</a>
+                        <a class="collapse-item" href="TKIUploadBerkasTaiwan.php">Lengkapi Taiwan</a>
                     </div>
                 </div>
             </li>
@@ -303,37 +306,40 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Berkas TKI</h6><br>
-        <a href="TKIUploadBerkasAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-plus fa-sm text-white-50"></i>Add Berkas</a>
-    </div>
-    <div class="card-body">
-                <?php 
+        <h6 class="m-0 font-weight-bold text-primary">Berkas TKI Taiwan</h6><br>
+        <?php 
                     include 'config.php';
                     $konektor = mysqli_connect("localhost","root","", "tki");
                     $no = 1;
-                    $data = mysqli_query($konektor,"SELECT * FROM hongkong INNER JOIN pendaftaran ON hongkong.id_dft = pendaftaran.id_dft");
+                    $data = mysqli_query($konektor,"SELECT * FROM taiwan");
                     while($d = mysqli_fetch_array($data)){
                         ?>
+        <a href="TKIUploadBerkasTaiwanAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-plus fa-sm text-white-50"></i>Add Berkas</a>
+        <a href="TKIUploadBerkasTaiwanEdit.php?id_taiwan=<?php echo $d['id_taiwan']; ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-plus fa-sm text-white-50"></i>Edit Berkas</a>
+    </div>
+    <div class="card-body">
+                
                             <!--<?php echo $no++; ?> -->
                             </h5>Sektor</h5>
-                            <p><?php echo $d['sektor_hk']; ?></p>
-                            </h5>Sektor</h5>
-                            <img src="gambar/<?php echo $d['ektp_hk']; ?>" style="width: 100px;">
+                            <p><?php echo $d['sektor_taiw']; ?></p><br>
+                            </h5>E-KTP</h5>
+                            <p><img src="berkas/<?php echo $d['ektp_taiw']; ?>" style="width: 300px;"></p><br>
                             </h5>Kartu Keluarga</h5>
-                            <img src="gambar/<?php echo $d['kk_hk']; ?>" style="width: 100px;">
+                            <p><img src="berkas/<?php echo $d['kk_taiw']; ?>" style="width: 300px;"></p><br>
                             </h5>Akta Lahir</h5>
-                            <img src="gambar/<?php echo $d['akta_hk']; ?>" style="width: 100px;">
+                            <p><img src="berkas/<?php echo $d['akta_taiw']; ?>" style="width: 300px;"></p><br>
                             </h5>Surat Nikah</h5>
-                            <img src="gambar/<?php echo $d['suratnikah_hk']; ?>" style="width: 100px;">
+                            <p><img src="berkas/<?php echo $d['suratnikah_taiw']; ?>" style="width: 300px;"></p><br>
                             </h5>Surat Ijin</h5>
-                            <img src="gambar/<?php echo $d['suratijin_hk']; ?>" style="width: 100px;">
+                            <p><img src="berkas/<?php echo $d['suratijin_taiw']; ?>" style="width: 300px;"></p><br>
                             </h5>Ex Paspor</h5>
-                            <img src="gambar/<?php echo $d['expaspor_hk']; ?>" style="width: 100px;">
+                            <p><img src="berkas/<?php echo $d['expaspor_taiw']; ?>" style="width: 300px;"></p><br>
                             </h5>SKCK</h5>
-                            <img src="gambar/<?php echo $d['skck_hk']; ?>" style="width: 100px;">
+                            <p><img src="berkas/<?php echo $d['skck_taiw']; ?>" style="width: 300px;"></p><br>
                             </h5>Status Proses</h5>
-                            <p><?php echo $d['status_proses_hk']; ?></p>
+                            <p><?php echo $d['status_proses_taiw']; ?></p>
                         <?php 
                         }
                     ?>
