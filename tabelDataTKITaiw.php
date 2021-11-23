@@ -389,28 +389,26 @@
                                         <th>Action</th>
                                     </tr>
                                     </thead>
-                                    
                                     <tbody>
-                                    <?php 
-                                        include 'config.php';
-                                        $konektor = mysqli_connect("localhost","root","", "tki");
-                                        $no = 1;
-                                        $data = mysqli_query($konektor,"SELECT * FROM taiwan INNER JOIN pendaftaran ON taiwan.id_dft = pendaftaran.id_dft");
-                                        while($d = mysqli_fetch_array($data)){
-                                            ?>
-                                            <tr>
-                                                <td><?php echo $no++; ?></td>
-                                                <td><?php echo $d['nama_lengkap']; ?></td>
-                                                <td><?php echo $d['sektor_taiw']; ?></td>
-                                                <td><?php echo $d['ektp_taiw']; ?></td>
-                                                <td><?php echo $d['kk_taiw']; ?></td>
-                                                <td><?php echo $d['akte_taiw']; ?></td>
-                                                <td><?php echo $d['suratnikah_taiw']; ?></td>
-                                                <td><?php echo $d['suratijin_taiw']; ?></td>
-                                                <td><?php echo $d['expaspor_taiw']; ?></td>
-                                                <td><?php echo $d['skck_taiw']; ?></td>
-                                                <td><?php echo $d['status_proses_taiw']; ?></td>
-
+                                        <?php 
+                                            include 'config.php';
+                                            $konektor = mysqli_connect("localhost","root","", "tki");
+                                            $no = 1;
+                                            $data = mysqli_query($konektor,"SELECT * FROM taiwan INNER JOIN pendaftaran ON taiwan.id_dft = pendaftaran.id_dft");
+                                            while($d = mysqli_fetch_array($data)){
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $no++; ?></td>
+                                            <td><?php echo $d['nama_lengkap']; ?></td>
+                                            <td><?php echo $d['sektor_taiw']; ?></td>
+                                            <td><img src="berkas/<?php echo $d['ektp_taiw']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['kk_taiw']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['akte_taiw']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['suratnikah_taiw']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['suratijin_taiw']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['expaspor_taiw']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['skck_taiw']; ?>" style="width: 300px;"></td>
+                                            <td><?php echo $d['status_proses_taiw']; ?></td>
                                                 <td>
                                                     <a href="tabelDataTKITaiwEdit.php?id_taiwan=<?php echo $d['id_taiwan']; ?>">EDIT</a>
                                                     <a href="tabelDataTKITaiwDelete.php?id_taiwan=<?php echo $d['id_taiwan']; ?>">HAPUS</a>

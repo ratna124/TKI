@@ -370,7 +370,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <form method="post" action="tabelDataTKISingAddProses.php">
+                                <form method="post" action="tabelDataTKISingAddProses.php" enctype="multipart/form-data">
                                     <fieldset>
                                         <div class="form-group">			
                                             <td>Nama TKI</td>
@@ -381,35 +381,57 @@
                                         </div>
                                         <div class="form-group">
                                             <td>Sektor</td>
-                                            <td><input type="text" name="sektor_sing" class="form-control"/></td>
+                                            <td>
+                                                <input type="text" name="sektor_sing" class="form-control"/>
+                                            </td>
                                         </div>
                                         <div class="form-group">
                                             <td>E-KTP</td>
-                                            <td><input type="text" name="ektp_sing" class="form-control"/></td>
+                                            <td>
+                                                <input type="file" name="ektp_sing" class="form-control"/>
+                                            </td>
                                         </div>
                                         <div class="form-group">
                                             <td>Kartu Keluarga</td>
-                                            <td><input type="text" name="kk_sing" class="form-control"/></td>
+                                            <td>
+                                                <input type="file" name="kk_sing" class="form-control"/>
+                                            </td>
                                         </div>
                                         <div class="form-group">
                                             <td>Akta Kelahiran</td>
-                                            <td><input type="text" name="akte_sing" class="form-control"/></td>
+                                            <td>
+                                                <input type="file" name="akte_sing" class="form-control"/>
+                                            </td>
                                         </div>
                                         <div class="form-group">
                                             <td>Surat Menikah</td>
-                                            <td><input type="text" name="suratnikah_sing" class="form-control"/></td>
+                                            <td>
+                                                <input type="file" name="suratnikah_sing" class="form-control"/>
+                                            </td>
                                         </div>
                                         <div class="form-group">
                                             <td>Surat Ijin Ortu/Suami</td>
-                                            <td><input type="text" name="suratijin_sing" class="form-control"/></td>
+                                            <td>
+                                                <input type="file" name="suratijin_sing" class="form-control"/>
+                                            </td>
                                         </div>
                                         <div class="form-group">
                                             <td>Ex Paspor</td>
-                                            <td><input type="text" name="expaspor_sing" class="form-control"/></td>
+                                            <td>
+                                                <input type="file" name="expaspor_sing" class="form-control"/>
+                                            </td>
+                                        </div>
+                                        <div class="form-group">
+                                            <td>SKCK</td>
+                                            <td>
+                                                <input type="file" name="skck_sing" class="form-control"/>
+                                            </td>
                                         </div>
                                         <div class="form-group">
                                             <td>Status Proses</td>
-                                            <td><input type="text" name="status_proses_sing" class="form-control" placeholder="Masukkan status proses tki saat ini"/></td>
+                                            <td>
+                                                <input type="text" name="status_proses_sing" class="form-control" placeholder="Masukkan status proses tki saat ini"/>
+                                            </td>
                                         </div>
                                         <p>
                                             <td></td>

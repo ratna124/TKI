@@ -310,56 +310,78 @@
         
     </div>
     <div class="card-body">
-    <form action="TKIUploadBerkasTaiwanAddProses.php" method="post" enctype="multipart/form-data">
-    <table>
-				<tr>			
-					<td>Sektor</td>
-					<td>
-						<input type="hidden" name="id_taiwan" value="<?php echo $d['id_taiwan']; ?>">
-						<input type="text" name="sektor_taiw">
-					</td>
-				</tr>
-                <tr>
-					<td>E-KTP</td>
-                    <td><input type="file" name="ektp_taiw"></td>
-				</tr>
-                <tr>
-					<td>Kartu Keluarga</td>
-                    <td><input type="file" name="kk_taiw"></td>
-				</tr>
-                <tr>
-					<td>Akte Lahir</td>
-                    <td><input type="file" name="akta_taiw"></td>
-				</tr>
-                <tr>
-					<td>Surat Nikah</td>
-                    <td><input type="file" name="suratnikah_taiw"></td>
-				</tr>
-                <tr>
-					<td>Surat Ijin</td>
-                    <td><input type="file" name="suratijin_taiw"></td>
-				</tr>
-                <tr>
-					<td>Ex Paspor</td>
-                    <td><input type="file" name="expaspor_taiw"></td>
-				</tr>
-                <tr>
-					<td>SKCK</td>
-                    <td><input type="file" name="skck_taiw"></td>
-				</tr>
-                <tr>
-					<td>Status Proses</td>
-					<td><input type="text" name="status_proses_taiw"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" value="SIMPAN"></td>
-				</tr>		
-			</table>
-	</form>
- 
+        <form action="TKIUploadBerkasTaiwanAddProses.php" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <div class="form-group">			
+                    <label>Nama TKI</label>
+                    <td>
+                        <input type="hidden" name="id_taiwan" value="<?php echo $d['id_taiwan']; ?>">
+                        <input type="text" name="id_dft" class="form-control"/>
+                    </td>
+                    </div>
+                    <div class="form-group">
+                        <label>Sektor</label>
+                        <td>
+                            <input type="text" name="sektor_taiw" class="form-control"/>
+                        </td>
+                    </div>
+                    <div class="form-group">
+                        <label>E-KTP</label>
+                        <td>
+                            <input type="file" name="ektp_taiw" class="form-control"/>
+                        </td>
+                    </div>
+                    <div class="form-group">
+                        <label>Kartu Keluarga</label>
+                        <td>
+                            <input type="file" name="kk_taiw" class="form-control"/>
+                        </td>
+                    </div>
+                    <div class="form-group">
+                        <label>Akta Kelahiran</label>
+                        <td>
+                            <input type="file" name="akte_taiw" class="form-control"/>
+                        </td>
+                    </div>
+                     <div class="form-group">
+                        <label>Surat Menikah</label>
+                        <td>
+                            <input type="file" name="suratnikah_taiw" class="form-control"/>
+                        </td>
+                    </div>
+                    <div class="form-group">
+                        <label>Surat Ijin Ortu/Suami</label>
+                        <td>
+                            <input type="file" name="suratijin_taiw" class="form-control"/>
+                        </td>
+                    </div>
+                    <div class="form-group">
+                        <label>Ex Paspor</label>
+                        <td>
+                            <input type="file" name="expaspor_taiw" class="form-control"/>
+                        </td>
+                    </div>
+                    <div class="form-group">
+                        <label>SKCK</label>
+                        <td>
+                            <input type="file" name="skck_taiw" class="form-control"/>
+                        </td>
+                    </div>
+                    <div class="form-group">
+                        <label>Status Proses</label>
+                        <td>
+                            <input type="text" name="status_proses_taiw" class="form-control" placeholder="Masukkan status proses tki saat ini"/>
+                        </td>
+                     </div>
+                     <p>
+                        <td></td>
+                        <td><input type="submit" value="SIMPAN"></td>
+                        <td><input type="submit" href="tabelDataTKITaiw.php" value="Cancel"></td>
+                     </p>		
+                </fieldset>
+	        </form>
+        </div>
     </div>
-</div>
 
 </div>
 <!-- /.container-fluid -->

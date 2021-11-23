@@ -370,50 +370,68 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <form method="post" action="tabelDataTKIMalayAddProses.php">
-                                    <fieldset>
-                                        <div class="form-group">			
+                                <form method="post" action="tabelDataTKIMalayAddProses.php" enctype="multipart/form-data">
+                                <fieldset>
+                                    <div class="form-group">			
                                             <label>Nama TKI</label>
-                                            <td>
-                                                <input type="hidden" name="id_malaysia" value="<?php echo $d['id_malaysia']; ?>">
-                                                <input type="text" name="id_dft" class="form-control" placeholder="Masukkan nama tki"/>
-                                            </td>
+                                        <td>
+                                            <input type="hidden" name="id_malaysia" value="<?php echo $d['id_malaysia']; ?>">
+                                            <input type="text" name="id_dft" class="form-control" placeholder="Masukkan nama tki"/>
+                                        </td>
                                         </div>
                                         <div class="form-group">
                                             <label>Sektor</label>
-                                            <td><input type="text" name="sektor_malay" class="form-control" placeholder="Masukkan sektor tki/></td>
+                                            <td>
+                                                <input type="text" name="sektor_malay" class="form-control" placeholder="Masukkan sektor tki"/>
+                                            </td>
                                         </div>
                                         <div class="form-group">
                                             <label>E-KTP</label>
-                                            <td><input type="text" name="ektp_malay" class="form-control"/></td>
+                                            <td>
+                                                <input type="file" name="ektp_malay" class="form-control"/>
+                                            </td>
                                         </div>
                                         <div class="form-group">
                                             <label>Kartu Keluarga</label>
-                                            <td><input type="text" name="kk_malay" class="form-control"/></td>
+                                            <td>
+                                                <input type="file" name="kk_malay" class="form-control"/>
+                                            </td>
                                         </div>
                                         <div class="form-group">
                                             <label>Akta Kelahiran</label>
-                                            <td><input type="text" name="akte_malay" class="form-control"/></td>
+                                            <td>
+                                                <input type="file" name="akte_malay" class="form-control"/>
+                                            </td>
                                         </div>
                                         <div class="form-group">
                                             <label>Surat Menikah</label>
-                                            <td><input type="text" name="suratnikah_malay" class="form-control"/></td>
+                                            <td>
+                                                <input type="file" name="suratnikah_malay" class="form-control"/>
+                                            </td>
                                         </div>
                                         <div class="form-group">
                                             <label>Surat Ijin Ortu/Suami</label>
-                                            <td><input type="text" name="suratijin_malay" class="form-control"/></td>
+                                            <td>
+                                                <input type="file" name="suratijin_malay" class="form-control"/>
+                                            </td>
                                         </div>
                                         <div class="form-group">
                                             <label>Ex Paspor</label>
-                                            <td><input type="text" name="expaspor_malay" class="form-control"/></td>
+                                            <td>
+                                                <input type="file" name="expaspor_malay" class="form-control"/>
+                                            </td>
                                         </div>
                                         <div class="form-group">
                                             <label>SKCK</label>
-                                            <td><input type="text" name="skck_malay" class="form-control"/></td>
+                                            <td>
+                                                <input type="file" name="skck_malay" class="form-control"/>
+                                            </td>
                                         </div>
                                         <div class="form-group">
                                             <label>Status Proses</label>
-                                            <td><input type="text" name="status_proses_malay" class="form-control" placeholder="Masukkan status proses tki saat ini/></td>
+                                            <td>
+                                                <input type="text" name="status_proses_malay" class="form-control" placeholder="Masukkan status proses tki saat ini"/>
+                                            </td>
                                         </div>
                                         <p>
                                             <td></td>

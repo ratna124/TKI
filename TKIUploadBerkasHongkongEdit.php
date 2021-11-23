@@ -307,22 +307,27 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Berkas TKI</h6><br>
-        
     </div>
     <div class="card-body">
-    <?php
-	include 'config.php';
-    $konektor = mysqli_connect("localhost","root","", "tki");
-	$id_hongkong = $_GET['id_hongkong'];
-	$data = mysqli_query($konektor,"select * from hongkong where id_hongkong='$id_hongkong'");
-	while($d = mysqli_fetch_array($data)){
+        <?php
+	        include 'config.php';
+            $konektor = mysqli_connect("localhost","root","", "tki");
+	        $id_hongkong = $_GET['id_hongkong'];
+	        $data = mysqli_query($konektor,"select * from hongkong where id_hongkong='$id_hongkong'");
+	        while($d = mysqli_fetch_array($data)){
 		?>
-    <form action="TKIUploadBerkasHongkongAddProses.php" method="post" enctype="multipart/form-data">
-    <table>
+        <form action="TKIUploadBerkasHongkongEditProses.php" method="post" enctype="multipart/form-data">
+            <table>
 				<tr>			
-					<td>Sektor</td>
+					<td>Nama TKI</td>
 					<td>
 						<input type="hidden" name="id_hongkong" value="<?php echo $d['id_hongkong']; ?>">
+						<input type="text" name="id_dft" value="<?php echo $d['id_dft']; ?>">
+					</td>
+				</tr>
+                <tr>			
+					<td>Sektor</td>
+					<td>
 						<input type="text" name="sektor_hk" value="<?php echo $d['sektor_hk']; ?>">
 					</td>
 				</tr>
@@ -343,8 +348,8 @@
                 <tr>
 					<td>Akte Lahir</td>
                     <td>
-                        <input type="file" name="akta_hk" value="<?php echo $d['akta_hk']; ?>">
-                        <img src="berkas/<?php echo $d['akta_hk']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
+                        <input type="file" name="akte_hk" value="<?php echo $d['akte_hk']; ?>">
+                        <img src="berkas/<?php echo $d['akte_hk']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
                     </td>
 				</tr>
                 <tr>
@@ -388,7 +393,6 @@
         <?php 
 	}
 	?>
-    </div>
 </div>
 
 </div>

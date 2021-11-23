@@ -306,44 +306,58 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-    <?php 
-                    include 'config.php';
-                    $konektor = mysqli_connect("localhost","root","", "tki");
-                    $no = 1;
-                    $data = mysqli_query($konektor,"SELECT * FROM malaysia");
-                    while($d = mysqli_fetch_array($data)){
-                        ?>
         <h6 class="m-0 font-weight-bold text-primary">Berkas TKI Malaysia</h6><br>
         <a href="TKIUploadBerkasMalayAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-plus fa-sm text-white-50"></i>Add Berkas</a>
-        <a href="TKIUploadBerkasMalayEdit.php?id_malaysia=<?php echo $d['id_malaysia']; ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-plus fa-sm text-white-50"></i>Edit Berkas</a>
     </div>
     <div class="card-body">
-                
-                            <!--<?php echo $no++; ?> -->
-                            </h5>Sektor</h5>
-                            <p><?php echo $d['sektor_malay']; ?></p><br>
-                            </h5>E-KTP</h5>
-                            <p><img src="berkas/<?php echo $d['ektp_malay']; ?>" style="width: 300px;"></p><br>
-                            </h5>Kartu Keluarga</h5>
-                            <p><img src="berkas/<?php echo $d['kk_malay']; ?>" style="width: 300px;"></p><br>
-                            </h5>Akta Lahir</h5>
-                            <p><img src="berkas/<?php echo $d['akta_malay']; ?>" style="width: 300px;"></p><br>
-                            </h5>Surat Nikah</h5>
-                            <p><img src="berkas/<?php echo $d['suratnikah_malay']; ?>" style="width: 300px;"></p><br>
-                            </h5>Surat Ijin</h5>
-                            <p><img src="berkas/<?php echo $d['suratijin_malay']; ?>" style="width: 300px;"></p><br>
-                            </h5>Ex Paspor</h5>
-                            <p><img src="berkas/<?php echo $d['expaspor_malay']; ?>" style="width: 300px;"></p><br>
-                            </h5>SKCK</h5>
-                            <p><img src="berkas/<?php echo $d['skck_malay']; ?>" style="width: 300px;"></p><br>
-                            </h5>Status Proses</h5>
-                            <p><?php echo $d['status_proses_malay']; ?></p>
-                        <?php 
-                        }
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama TKI</th>
+                    <th>Sektor</th>
+                    <th>E-KTP</th>
+                    <th>Kartu Keluarga</th>
+                    <th>Akta Lahir</th>
+                    <th>Surat Nikah</th>
+                    <th>Surat Ijin</th>
+                    <th>Ex Paspor</th>
+                    <th>SKCK</th>
+                    <th>Status Proses</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <?php 
+                        include 'config.php';
+                        $konektor = mysqli_connect("localhost","root","", "tki");
+                        $no = 1;
+                        $data = mysqli_query($konektor,"SELECT * FROM malaysia INNER JOIN pendaftaran ON malaysia.id_dft = pendaftaran.id_dft");
+                        while($d = mysqli_fetch_array($data)){
                     ?>
- 
+                    <td><?php echo $no++; ?></td>
+                    <td><?php echo $d['nama_lengkap']; ?></p>
+                    <td><?php echo $d['sektor_malay']; ?></p>
+                    <td><img src="berkas/<?php echo $d['ektp_malay']; ?>" style="width: 300px;"></td>
+                    <td><img src="berkas/<?php echo $d['kk_malay']; ?>" style="width: 300px;"></td>
+                    <td><img src="berkas/<?php echo $d['akte_malay']; ?>" style="width: 300px;"></td>
+                    <td><img src="berkas/<?php echo $d['suratnikah_malay']; ?>" style="width: 300px;"></td>
+                    <td><img src="berkas/<?php echo $d['suratijin_malay']; ?>" style="width: 300px;"></td>
+                    <td><img src="berkas/<?php echo $d['expaspor_malay']; ?>" style="width: 300px;"></td>
+                    <td><img src="berkas/<?php echo $d['skck_malay']; ?>" style="width: 300px;"></td>
+                    <td><?php echo $d['status_proses_malay']; ?></td>
+                    <td>
+                        <a href="TKIUploadBerkasMalayEdit.php?id_malay=<?php echo $d['id_malaysia']; ?>">EDIT</a>
+                    </td>
+                </tr>
+                <?php 
+                    }
+                ?>
+            </tbody>
+        </table>
     </div>
 </div>
 

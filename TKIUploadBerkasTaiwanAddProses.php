@@ -4,10 +4,11 @@ include 'config.php';
 $konektor = mysqli_connect("localhost","root","", "tki");
 
 	// membuat variabel untuk menampung data dari form
+  $id_dft = $_POST['id_dft'];
   $sektor_taiw = $_POST['sektor_taiw'];
   $ektp_taiw = $_FILES['ektp_taiw']['name'];
   $kk_taiw = $_FILES['kk_taiw']['name'];
-  $akta_taiw = $_FILES['akta_taiw']['name'];
+  $akte_taiw = $_FILES['akte_taiw']['name'];
   $suratnikah_taiw = $_FILES['suratnikah_taiw']['name'];
   $suratijin_taiw = $_FILES['suratijin_taiw']['name'];
   $expaspor_taiw = $_FILES['expaspor_taiw']['name'];
@@ -29,14 +30,14 @@ $konektor = mysqli_connect("localhost","root","", "tki");
     $file_tmpkk = $_FILES['kk_taiw']['tmp_name'];   
     $angka_acak     = rand(1,999);
     $kk_baru = $angka_acak.'-'.$kk_taiw;
-    //akta
-    if($akta_taiw != "") {
-    $ekstensi_diperbolehkanakta = array('png','jpg'); //ekstensi file gambar yang bisa diupload 
-    $akta = explode('.', $akta_taiw); //memisahkan nama file dengan ekstensi yang diupload
-    $ekstensiakta = strtolower(end($akta));
-    $file_tmpakta = $_FILES['akta_taiw']['tmp_name'];   
+    //akte
+    if($akte_taiw != "") {
+    $ekstensi_diperbolehkanakte = array('png','jpg'); //ekstensi file gambar yang bisa diupload 
+    $akte = explode('.', $akte_taiw); //memisahkan nama file dengan ekstensi yang diupload
+    $ekstensiakte = strtolower(end($akte));
+    $file_tmpakte = $_FILES['akte_taiw']['tmp_name'];   
     $angka_acak     = rand(1,999);
-    $akta_baru = $angka_acak.'-'.$akta_taiw;
+    $akte_baru = $angka_acak.'-'.$akte_taiw;
     //surat nikah
     if($suratnikah_taiw != "") {
     $ekstensi_diperbolehkansn = array('png','jpg'); //ekstensi file gambar yang bisa diupload 
@@ -74,8 +75,8 @@ $konektor = mysqli_connect("localhost","root","", "tki");
                   move_uploaded_file($file_tmpektp, 'berkas/'.$ektp_baru); //memindah file gambar ke folder gambar
                   if(in_array($ekstensikk, $ekstensi_diperbolehkankk) === true)  {
                   move_uploaded_file($file_tmpkk, 'berkas/'.$kk_baru);
-                  if(in_array($ekstensiakta, $ekstensi_diperbolehkanakta) === true)  {
-                  move_uploaded_file($file_tmpakta, 'berkas/'.$akta_baru);
+                  if(in_array($ekstensiakte, $ekstensi_diperbolehkanakte) === true)  {
+                  move_uploaded_file($file_tmpakte, 'berkas/'.$akte_baru);
                   if(in_array($ekstensisn, $ekstensi_diperbolehkansn) === true)  {
                   move_uploaded_file($file_tmpsn, 'berkas/'.$suratnikah_baru);
                   if(in_array($ekstensisi, $ekstensi_diperbolehkansi) === true)  {
@@ -85,7 +86,7 @@ $konektor = mysqli_connect("localhost","root","", "tki");
                   if(in_array($ekstensisk, $ekstensi_diperbolehkansk) === true)  {
                   move_uploaded_file($file_tmpsk, 'berkas/'.$skck_baru);  
                   // jalankan query INSERT untuk menambah data ke database pastikan sesuai urutan (id tidak perlu karena dibikin otomatis)
-                    $query = "INSERT INTO taiwan (sektor_taiw, ektp_taiw, kk_taiw, akta_taiw, suratnikah_taiw, suratijin_taiw, expaspor_taiw, skck_taiw, status_proses_taiw) VALUES ('$sektor_taiw', '$ektp_baru', '$kk_baru', '$akta_baru', '$suratnikah_baru', '$suratijin_baru', '$expaspor_baru', '$skck_baru', '$status_proses_taiw')";
+                    $query = "INSERT INTO taiwan (id_dft, sektor_taiw, ektp_taiw, kk_taiw, akte_taiw, suratnikah_taiw, suratijin_taiw, expaspor_taiw, skck_taiw, status_proses_taiw) VALUES ('$id_dft', '$sektor_taiw', '$ektp_baru', '$kk_baru', '$akte_baru', '$suratnikah_baru', '$suratijin_baru', '$expaspor_baru', '$skck_baru', '$status_proses_taiw')";
                     $result = mysqli_query($konektor, $query);
                     // periska query apakah ada error
                     if(!$result){
@@ -104,11 +105,11 @@ $konektor = mysqli_connect("localhost","root","", "tki");
               }
                else {     
                //jika file ekstensi tidak jpg dan png maka alert ini yang tampil
-                  echo "<script>alert('Ekstensi gambar yang boleh hanya jpg atau png.');window.location='tTKIUploadBerkasTaiwanAdd.php';</script>";
+                  echo "<script>alert('Ekstensi gambar yang boleh hanya jpg atau png.');window.location='TKIUploadBerkasTaiwanAdd.php';</script>";
               }
             }
   } else {
-     $query = "INSERT INTO taiwan (sektor_taiw, ektp_taiw, kk_taiw, akta_taiw, suratnikah_taiw, suratijin_taiw, expaspor_taiw, skck_taiw, status_proses_taiw) VALUES ('$sektor_taiw', null, null, null, null, null, null, null, '$status_proses')";
+     $query = "INSERT INTO taiwan (id_dft, sektor_taiw, ektp_taiw, kk_taiw, akte_taiw, suratnikah_taiw, suratijin_taiw, expaspor_taiw, skck_taiw, status_proses_taiw) VALUES ('$id_dft', '$sektor_taiw', null, null, null, null, null, null, null, '$status_proses')";
                     $result = mysqli_query($konektor, $query);
                     // periska query apakah ada error
                     if(!$result){

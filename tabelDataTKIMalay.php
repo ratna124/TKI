@@ -389,34 +389,31 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    
-                                    <tbody>
-                                    <?php 
-                                        include 'config.php';
-                                        $konektor = mysqli_connect("localhost","root","", "tki");
-                                        $no = 1;
-                                        $data = mysqli_query($konektor,"SELECT * FROM malaysia INNER JOIN pendaftaran ON malaysia.id_dft = pendaftaran.id_dft");
-                                        while($d = mysqli_fetch_array($data)){
-                                            ?>
-                                            <tr>
-                                                <td><?php echo $no++; ?></td>
-                                                <td><?php echo $d['nama_lengkap']; ?></td>
-                                                <td><?php echo $d['sektor_malay']; ?></td>
-                                                <td><?php echo $d['ektp_malay']; ?></td>
-                                                <td><?php echo $d['kk_malay']; ?></td>
-                                                <td><?php echo $d['akte_malay']; ?></td>
-                                                <td><?php echo $d['suratnikah_malay']; ?></td>
-                                                <td><?php echo $d['suratijin_malay']; ?></td>
-                                                <td><?php echo $d['expaspor_malay']; ?></td>
-                                                <td><?php echo $d['skck_malay']; ?></td>
-                                                <td><?php echo $d['status_proses_malay']; ?></td>
-
-                                                <td>
-                                                    <a href="tabelDataTKIMalayEdit.php?id_malaysia=<?php echo $d['id_malaysia']; ?>">EDIT</a>
-                                                    <a href="tabelDataTKIMalayDelete.php?id_malaysia=<?php echo $d['id_malaysia']; ?>">HAPUS</a>
-                                                </td>
-                                            </tr>
+                                        <tr>
                                             <?php 
+                                                include 'config.php';
+                                                $konektor = mysqli_connect("localhost","root","", "tki");
+                                                $no = 1;
+                                                $data = mysqli_query($konektor,"SELECT * FROM malaysia INNER JOIN pendaftaran ON malaysia.id_dft = pendaftaran.id_dft");
+                                                while($d = mysqli_fetch_array($data)){
+                                            ?>
+                                            <td><?php echo $no++; ?></td>
+                                            <td><?php echo $d['nama_lengkap']; ?></p>
+                                            <td><?php echo $d['sektor_malay']; ?></p>
+                                            <td><img src="berkas/<?php echo $d['ektp_malay']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['kk_malay']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['akte_malay']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['suratnikah_malay']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['suratijin_malay']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['expaspor_malay']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['skck_malay']; ?>" style="width: 300px;"></td>
+                                            <td><?php echo $d['status_proses_malay']; ?></td>
+                                            <td>
+                                                <a href="tabelDataTKIMalayEdit.php?id_malaysia=<?php echo $d['id_malaysia']; ?>">EDIT</a>
+                                                <a href="tabelDataTKIMalayDelete.php?id_malaysia=<?php echo $d['id_malaysia']; ?>">HAPUS</a>
+                                            </td>
+                                        </tr>
+                                        <?php 
                                             }
                                         ?>
                                     </tbody>

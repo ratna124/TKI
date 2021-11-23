@@ -306,61 +306,79 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Berkas TKI Malaysia</h6><br>
-        
+        <h6 class="m-0 font-weight-bold text-primary">Berkas TKI Malaysia</h6><br>      
     </div>
     <div class="card-body">
-    <form action="TKIUploadBerkasMalayAddProses.php" method="post" enctype="multipart/form-data">
-    <table>
-				<tr>			
-					<td>Sektor</td>
-					<td>
-						<input type="hidden" name="id_malaysia" value="<?php echo $d['id_malaysia']; ?>">
-						<input type="text" name="sektor_malay">
-					</td>
-				</tr>
-                <tr>
-					<td>E-KTP</td>
-                    <td><input type="file" name="ektp_malay"></td>
-				</tr>
-                <tr>
-					<td>Kartu Keluarga</td>
-                    <td><input type="file" name="kk_malay"></td>
-				</tr>
-                <tr>
-					<td>Akte Lahir</td>
-                    <td><input type="file" name="akta_malay"></td>
-				</tr>
-                <tr>
-					<td>Surat Nikah</td>
-                    <td><input type="file" name="suratnikah_malay"></td>
-				</tr>
-                <tr>
-					<td>Surat Ijin</td>
-                    <td><input type="file" name="suratijin_malay"></td>
-				</tr>
-                <tr>
-					<td>Ex Paspor</td>
-                    <td><input type="file" name="expaspor_malay"></td>
-				</tr>
-                <tr>
-					<td>SKCK</td>
-                    <td><input type="file" name="skck_malay"></td>
-				</tr>
-                <tr>
-					<td>Status Proses</td>
-					<td><input type="text" name="status_proses_malay"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" value="SIMPAN"></td>
-				</tr>		
-			</table>
-	</form>
- 
+        <form action="TKIUploadBerkasMalayAddProses.php" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <div class="form-group">			
+                        <label>Nama TKI</label>
+                    <td>
+                        <input type="hidden" name="id_malaysia" value="<?php echo $d['id_malaysia']; ?>">
+                        <input type="text" name="id_dft" class="form-control" placeholder="Masukkan nama tki"/>
+                    </td>
+                </div>
+                <div class="form-group">
+                        <label>Sektor</label>
+                    <td>
+                        <input type="text" name="sektor_malay" class="form-control" placeholder="Masukkan sektor tki"/>
+                    </td>
+                </div>
+                <div class="form-group">
+                        <label>E-KTP</label>
+                    <td><input type="file" name="ektp_malay" class="form-control"/></td>
+                </div>
+                <div class="form-group">
+                        <label>Kartu Keluarga</label>
+                    <td>
+                        <input type="file" name="kk_malay" class="form-control"/>
+                    </td>
+                </div>
+                <div class="form-group">
+                        <label>Akta Kelahiran</label>
+                    <td>
+                        <input type="file" name="akte_malay" class="form-control"/>
+                    </td>
+                </div>
+                <div class="form-group">
+                        <label>Surat Menikah</label>
+                    <td>
+                        <input type="file" name="suratnikah_malay" class="form-control"/>
+                    </td>
+                </div>
+                <div class="form-group">
+                        <label>Surat Ijin Ortu/Suami</label>
+                    <td>
+                        <input type="file" name="suratijin_malay" class="form-control"/>
+                    </td>
+                </div>
+                <div class="form-group">
+                        <label>Ex Paspor</label>
+                    <td>
+                        <input type="file" name="expaspor_malay" class="form-control"/>
+                    </td>
+                </div>
+                <div class="form-group">
+                        <label>SKCK</label>
+                    <td>
+                        <input type="file" name="skck_malay" class="form-control"/>
+                    </td>
+                </div>
+                <div class="form-group">
+                        <label>Status Proses</label>
+                    <td>
+                        <input type="text" name="status_proses_malay" class="form-control" placeholder="Masukkan status proses tki saat ini"/>
+                    </td>
+                </div>
+                <p>
+                    <td></td>
+                        <td><input type="submit" value="SIMPAN"></td>
+                        <td><input type="submit" href="tabelDataTKIMalay.php" value="Cancel"></td>
+                </p>		
+            </fieldset>
+	    </form>
     </div>
 </div>
-
 </div>
 <!-- /.container-fluid -->
 

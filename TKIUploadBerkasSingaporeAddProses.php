@@ -4,10 +4,11 @@ include 'config.php';
 $konektor = mysqli_connect("localhost","root","", "tki");
 
 	// membuat variabel untuk menampung data dari form
+  $id_dft = $_POST['id_dft'];
   $sektor_sing = $_POST['sektor_sing'];
   $ektp_sing = $_FILES['ektp_sing']['name'];
   $kk_sing = $_FILES['kk_sing']['name'];
-  $akta_sing = $_FILES['akta_sing']['name'];
+  $akte_sing = $_FILES['akte_sing']['name'];
   $suratnikah_sing = $_FILES['suratnikah_sing']['name'];
   $suratijin_sing = $_FILES['suratijin_sing']['name'];
   $expaspor_sing = $_FILES['expaspor_sing']['name'];
@@ -29,14 +30,14 @@ $konektor = mysqli_connect("localhost","root","", "tki");
     $file_tmpkk = $_FILES['kk_sing']['tmp_name'];   
     $angka_acak     = rand(1,999);
     $kk_baru = $angka_acak.'-'.$kk_sing;
-    //akta
-    if($akta_sing != "") {
-    $ekstensi_diperbolehkanakta = array('png','jpg'); //ekstensi file gambar yang bisa diupload 
-    $akta = explode('.', $akta_sing); //memisahkan nama file dengan ekstensi yang diupload
-    $ekstensiakta = strtolower(end($akta));
-    $file_tmpakta = $_FILES['akta_sing']['tmp_name'];   
+    //akte
+    if($akte_sing != "") {
+    $ekstensi_diperbolehkanakte = array('png','jpg'); //ekstensi file gambar yang bisa diupload 
+    $akte = explode('.', $akte_sing); //memisahkan nama file dengan ekstensi yang diupload
+    $ekstensiakte = strtolower(end($akte));
+    $file_tmpakte = $_FILES['akte_sing']['tmp_name'];   
     $angka_acak     = rand(1,999);
-    $akta_baru = $angka_acak.'-'.$akta_sing;
+    $akte_baru = $angka_acak.'-'.$akte_sing;
     //surat nikah
     if($suratnikah_sing != "") {
     $ekstensi_diperbolehkansn = array('png','jpg'); //ekstensi file gambar yang bisa diupload 
@@ -74,8 +75,8 @@ $konektor = mysqli_connect("localhost","root","", "tki");
                   move_uploaded_file($file_tmpektp, 'berkas/'.$ektp_baru); //memindah file gambar ke folder gambar
                   if(in_array($ekstensikk, $ekstensi_diperbolehkankk) === true)  {
                   move_uploaded_file($file_tmpkk, 'berkas/'.$kk_baru);
-                  if(in_array($ekstensiakta, $ekstensi_diperbolehkanakta) === true)  {
-                  move_uploaded_file($file_tmpakta, 'berkas/'.$akta_baru);
+                  if(in_array($ekstensiakte, $ekstensi_diperbolehkanakte) === true)  {
+                  move_uploaded_file($file_tmpakte, 'berkas/'.$akte_baru);
                   if(in_array($ekstensisn, $ekstensi_diperbolehkansn) === true)  {
                   move_uploaded_file($file_tmpsn, 'berkas/'.$suratnikah_baru);
                   if(in_array($ekstensisi, $ekstensi_diperbolehkansi) === true)  {
@@ -85,7 +86,7 @@ $konektor = mysqli_connect("localhost","root","", "tki");
                   if(in_array($ekstensisk, $ekstensi_diperbolehkansk) === true)  {
                   move_uploaded_file($file_tmpsk, 'berkas/'.$skck_baru);  
                   // jalankan query INSERT untuk menambah data ke database pastikan sesuai urutan (id tidak perlu karena dibikin otomatis)
-                    $query = "INSERT INTO singapore (sektor_sing, ektp_sing, kk_sing, akta_sing, suratnikah_sing, suratijin_sing, expaspor_sing, skck_sing, status_proses_sing) VALUES ('$sektor_sing', '$ektp_baru', '$kk_baru', '$akta_baru', '$suratnikah_baru', '$suratijin_baru', '$expaspor_baru', '$skck_baru', '$status_proses_sing')";
+                    $query = "INSERT INTO singapore (id_dft, sektor_sing, ektp_sing, kk_sing, akte_sing, suratnikah_sing, suratijin_sing, expaspor_sing, skck_sing, status_proses_sing) VALUES ('$id_dft', '$sektor_sing', '$ektp_baru', '$kk_baru', '$akte_baru', '$suratnikah_baru', '$suratijin_baru', '$expaspor_baru', '$skck_baru', '$status_proses_sing')";
                     $result = mysqli_query($konektor, $query);
                     // periska query apakah ada error
                     if(!$result){
@@ -104,11 +105,11 @@ $konektor = mysqli_connect("localhost","root","", "tki");
               }
                else {     
                //jika file ekstensi tidak jpg dan png maka alert ini yang tampil
-                  echo "<script>alert('Ekstensi gambar yang boleh hanya jpg atau png.');window.location='tTKIUploadBerkasSingaporeAdd.php';</script>";
+                  echo "<script>alert('Ekstensi gambar yang boleh hanya jpg atau png.');window.location='TKIUploadBerkasSingaporeAdd.php';</script>";
               }
             }
   } else {
-     $query = "INSERT INTO singapore (sektor_sing, ektp_sing, kk_sing, akta_sing, suratnikah_sing, suratijin_sing, expaspor_sing, skck_sing, status_proses_sing) VALUES ('$sektor_sing', null, null, null, null, null, null, null, '$status_proses')";
+     $query = "INSERT INTO singapore (id_dft, sektor_sing, ektp_sing, kk_sing, akte_sing, suratnikah_sing, suratijin_sing, expaspor_sing, skck_sing, status_proses_sing) VALUES ('$id_dft', '$sektor_sing', null, null, null, null, null, null, null, '$status_proses')";
                     $result = mysqli_query($konektor, $query);
                     // periska query apakah ada error
                     if(!$result){

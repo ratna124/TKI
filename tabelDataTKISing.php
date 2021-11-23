@@ -389,28 +389,26 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    
                                     <tbody>
-                                    <?php 
-                                        include 'config.php';
-                                        $konektor = mysqli_connect("localhost","root","", "tki");
-                                        $no = 1;
-                                        $data = mysqli_query($konektor,"SELECT * FROM singapore INNER JOIN pendaftaran ON singapore.id_dft = pendaftaran.id_dft");
-                                        while($d = mysqli_fetch_array($data)){
-                                            ?>
-                                            <tr>
-                                                <td><?php echo $no++; ?></td>
-                                                <td><?php echo $d['nama_lengkap']; ?></td>
-                                                <td><?php echo $d['sektor_sing']; ?></td>
-                                                <td><?php echo $d['ektp_sing']; ?></td>
-                                                <td><?php echo $d['kk_sing']; ?></td>
-                                                <td><?php echo $d['akte_sing']; ?></td>
-                                                <td><?php echo $d['suratnikah_sing']; ?></td>
-                                                <td><?php echo $d['suratijin_sing']; ?></td>
-                                                <td><?php echo $d['expaspor_sing']; ?></td>
-                                                <td><?php echo $d['skck_sing']; ?></td>
-                                                <td><?php echo $d['status_proses_sing']; ?></td>
-
+                                        <?php 
+                                            include 'config.php';
+                                            $konektor = mysqli_connect("localhost","root","", "tki");
+                                            $no = 1;
+                                            $data = mysqli_query($konektor,"SELECT * FROM singapore INNER JOIN pendaftaran ON singapore.id_dft = pendaftaran.id_dft");
+                                            while($d = mysqli_fetch_array($data)){
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $no++; ?></td>
+                                            <td><?php echo $d['nama_lengkap']; ?></td>
+                                            <td><?php echo $d['sektor_sing']; ?></td>
+                                            <td><img src="berkas/<?php echo $d['ektp_sing']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['kk_sing']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['akte_sing']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['suratnikah_sing']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['suratijin_sing']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['expaspor_sing']; ?>" style="width: 300px;"></td>
+                                            <td><img src="berkas/<?php echo $d['skck_sing']; ?>" style="width: 300px;"></td>
+                                            <td><?php echo $d['status_proses_sing']; ?></td>
                                                 <td>
                                                     <a href="tabelDataTKISingEdit.php?id_singapore=<?php echo $d['id_singapore']; ?>">EDIT</a>
                                                     <a href="tabelDataTKISingDelete.php?id_singapore=<?php echo $d['id_singapore']; ?>">HAPUS</a>

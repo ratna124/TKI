@@ -389,7 +389,6 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    
                                     <tbody>
                                     <?php 
                                         include 'config.php';
@@ -397,35 +396,32 @@
                                         $no = 1;
                                         $data = mysqli_query($konektor,"SELECT * FROM hongkong INNER JOIN pendaftaran ON hongkong.id_dft = pendaftaran.id_dft");
                                         while($d = mysqli_fetch_array($data)){
-                                            ?>
-                                            <tr>
-                                                <td><?php echo $no++; ?></td>
-                                                <td><?php echo $d['nama_lengkap']; ?></td>
-                                                <td><?php echo $d['sektor_hk']; ?></td>
-                                                <td><?php echo $d['ektp_hk']; ?></td>
-                                                <td><?php echo $d['kk_hk']; ?></td>
-                                                <td><?php echo $d['akte_hk']; ?></td>
-                                                <td><?php echo $d['suratnikah_hk']; ?></td>
-                                                <td><?php echo $d['suratijin_hk']; ?></td>
-                                                <td><?php echo $d['expaspor_hk']; ?></td>
-                                                <td><?php echo $d['skck_hk']; ?></td>
-                                                <td><?php echo $d['status_proses_hk']; ?></td>
-
-                                                <td>
-                                                    <a href="tabelDataTKIHongEdit.php?id_hongkong=<?php echo $d['id_hongkong']; ?>">EDIT</a>
-                                                    <a href="tabelDataTKIHongDelete.php?id_hongkong=<?php echo $d['id_hongkong']; ?>">HAPUS</a>
-                                                </td>
-                                            </tr>
-                                            <?php 
-                                            }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                                    ?>
+                                    <td><?php echo $no++; ?></td>
+                                    <td><?php echo $d['nama_lengkap']; ?></p>
+                                    <td><?php echo $d['sektor_hk']; ?></p>
+                                    <td><img src="berkas/<?php echo $d['ektp_hk']; ?>" style="width: 300px;"></td>
+                                    <td><img src="berkas/<?php echo $d['kk_hk']; ?>" style="width: 300px;"></td>
+                                    <td><img src="berkas/<?php echo $d['akte_hk']; ?>" style="width: 300px;"></td>
+                                    <td><img src="berkas/<?php echo $d['suratnikah_hk']; ?>" style="width: 300px;"></td>
+                                    <td><img src="berkas/<?php echo $d['suratijin_hk']; ?>" style="width: 300px;"></td>
+                                    <td><img src="berkas/<?php echo $d['expaspor_hk']; ?>" style="width: 300px;"></td>
+                                    <td><img src="berkas/<?php echo $d['skck_hk']; ?>" style="width: 300px;"></td>
+                                    <td><?php echo $d['status_proses_hk']; ?></td>
+                                    <td>
+                                        <a href="tabelDataTKIHongEdit.php?id_hongkong=<?php echo $d['id_hongkong']; ?>">EDIT</a>
+                                        <a href="tabelDataTKIHongDelete.php?id_hongkong=<?php echo $d['id_hongkong']; ?>">HAPUS</a>
+                                    </td>
+                                 </tr>
+                                <?php 
+                                    }
+                                ?>
+                            </tbody>
+                        </table>
                     </div>
-
                 </div>
+            </div>
+        </div>
                 <!-- /.container-fluid -->
 
             </div>

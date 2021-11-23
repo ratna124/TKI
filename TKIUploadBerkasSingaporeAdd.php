@@ -309,55 +309,59 @@
         <h6 class="m-0 font-weight-bold text-primary">Berkas TKI Singapore</h6><br>
         
     </div>
-    <div class="card-body">
-    <form action="TKIUploadBerkasSingaporeAddProses.php" method="post" enctype="multipart/form-data">
-    <table>
-				<tr>			
-					<td>Sektor</td>
-					<td>
-						<input type="hidden" name="id_singapore" value="<?php echo $d['id_singapore']; ?>">
-						<input type="text" name="sektor_sing">
-					</td>
-				</tr>
-                <tr>
-					<td>E-KTP</td>
-                    <td><input type="file" name="ektp_sing"></td>
-				</tr>
-                <tr>
-					<td>Kartu Keluarga</td>
-                    <td><input type="file" name="kk_sing"></td>
-				</tr>
-                <tr>
-					<td>Akte Lahir</td>
-                    <td><input type="file" name="akta_sing"></td>
-				</tr>
-                <tr>
-					<td>Surat Nikah</td>
-                    <td><input type="file" name="suratnikah_sing"></td>
-				</tr>
-                <tr>
-					<td>Surat Ijin</td>
-                    <td><input type="file" name="suratijin_sing"></td>
-				</tr>
-                <tr>
-					<td>Ex Paspor</td>
-                    <td><input type="file" name="expaspor_sing"></td>
-				</tr>
-                <tr>
-					<td>SKCK</td>
-                    <td><input type="file" name="skck_sing"></td>
-				</tr>
-                <tr>
-					<td>Status Proses</td>
-					<td><input type="text" name="status_proses_sing"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" value="SIMPAN"></td>
-				</tr>		
-			</table>
-	</form>
- 
+        <div class="card-body">
+            <form action="TKIUploadBerkasSingaporeAddProses.php" method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <div class="form-group">			
+                        <td>Nama TKI</td>
+                        <td>
+                            <input type="hidden" name="id_singapore" value="<?php echo $d['id_singapore']; ?>">
+                            <input type="text" name="id_dft" class="form-control"/>
+                        </td>
+                    </div>
+                    <div class="form-group">
+                         <td>Sektor</td>
+                         <td><input type="text" name="sektor_sing" class="form-control"/></td>
+                    </div>
+                    <div class="form-group">
+                        <td>E-KTP</td>
+                        <td><input type="file" name="ektp_sing" class="form-control"/></td>
+                    </div>
+                    <div class="form-group">
+                        <td>Kartu Keluarga</td>
+                        <td><input type="file" name="kk_sing" class="form-control"/></td>
+                    </div>
+                    <div class="form-group">
+                        <td>Akta Kelahiran</td>
+                        <td><input type="file" name="akte_sing" class="form-control"/></td>
+                    </div>
+                    <div class="form-group">
+                        <td>Surat Menikah</td>
+                        <td><input type="file" name="suratnikah_sing" class="form-control"/></td>
+                    </div>
+                    <div class="form-group">
+                        <td>Surat Ijin Ortu/Suami</td>
+                        <td><input type="file" name="suratijin_sing" class="form-control"/></td>
+                    </div>
+                    <div class="form-group">
+                        <td>Ex Paspor</td>
+                        <td><input type="file" name="expaspor_sing" class="form-control"/></td>
+                    </div>
+                    <div class="form-group">
+                        <td>SKCK</td>
+                        <td><input type="file" name="skck_sing" class="form-control"/></td>
+                    </div>
+                    <div class="form-group">
+                        <td>Status Proses</td>
+                        <td><input type="text" name="status_proses_sing" class="form-control" placeholder="Masukkan status proses tki saat ini"/></td>
+                    </div>
+                     <p>
+                        <td></td>
+                        <td><input type="submit" value="SIMPAN"></td>
+                        <td><input type="submit" href="tabelDataTKISing.php" value="Cancel"></td>
+                    </p>		
+                 </fieldset>
+	    </form>
     </div>
 </div>
 
