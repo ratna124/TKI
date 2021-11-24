@@ -378,27 +378,27 @@
                                     </thead>
                                     <tbody>
                                     <?php 
-		include 'config.php';
-        $konektor = mysqli_connect("localhost","root","", "tki");
-		$no = 1;
-		$data = mysqli_query($konektor,"select * from negara");
-		while($d = mysqli_fetch_array($data)){
-			?>
-			<tr>
-				<td><?php echo $no++; ?></td>
-				<td><?php echo $d['negara_tujuan']; ?></td>
-				<td><?php echo $d['kriteria']; ?></td>
-				<td><?php echo $d['persyaratan']; ?></td>
-                <td><?php echo $d['jumlah_gaji']; ?></td>
-                <td style="text-align: center;"><img src="gambar/<?php echo $d['gambar_negara']; ?>" style="width: 100px;"></td>
-				<td>
-					<a href="tabelNegaraTujuanEdit.php?id_negara=<?php echo $d['id_negara']; ?>">EDIT</a>
-					<a href="tabelNegaraTujuanDelete.php?id_negara=<?php echo $d['id_negara']; ?>">HAPUS</a>
-				</td>
-			</tr>
-			<?php 
-		}
-		?>
+                                        include 'config.php';
+                                        $konektor = mysqli_connect("localhost","root","", "tki");
+                                        $no = 1;
+                                        $data = mysqli_query($konektor,"select * from negara");
+                                        while($d = mysqli_fetch_array($data)){
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $no++; ?></td>
+                                                <td><?php echo $d['negara_tujuan']; ?></td>
+                                                <td><?php echo $d['kriteria']; ?></td>
+                                                <td><?php echo $d['persyaratan']; ?></td>
+                                                <td><?php echo $d['jumlah_gaji']; ?></td>
+                                                <td style="text-align: center;"><img src="gambar/<?php echo $d['gambar_negara']; ?>" style="width: 100px;"></td>
+                                                <td>
+                                                    <a href="tabelNegaraTujuanEdit.php?id_negara=<?php echo $d['id_negara']; ?>">EDIT</a>
+                                                    <a href="tabelNegaraTujuanDelete.php?id_negara=<?php echo $d['id_negara']; ?>">HAPUS</a>
+                                                </td>
+                                            </tr>
+                                            <?php 
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

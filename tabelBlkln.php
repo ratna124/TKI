@@ -367,7 +367,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Tabel BLKLN</h6><br>
-                            <a href="tabelPendaftarAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            <a href="tabelBlklnAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-plus fa-sm text-white-50"></i>Add New TKI</a>
                         </div>
                         <div class="card-body">
@@ -389,7 +389,9 @@
                                         include 'config.php';
                                         $konektor = mysqli_connect("localhost","root","", "tki");
                                         $no = 1;
-                                        $data = mysqli_query($konektor,"SELECT * FROM blkln INNER JOIN negara ON pendaftaran.id_negara = negara.id_negara");
+                                        $data = mysqli_query($konektor,"SELECT * FROM blkln 
+                                                                        INNER JOIN pendaftaran ON blkln.id_dft = pendaftaran.id_dft 
+                                                                        INNER JOIN negara ON blkln.id_negara = negara.id_negara");
                                         while($d = mysqli_fetch_array($data)){
                                             ?>
                                             <tr>

@@ -102,7 +102,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="tabelNegaraTujuan.php">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-fw fa-globe"></i>
                     <span>Negara Tujuan</span></a>
             </li>
 
@@ -354,49 +354,54 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Test TKI</h1>
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-2 text-gray-800">Test TKI</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i>Cetak Disini</a>
+                    </div>
+                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
+                        For more information about DataTables, please visit the <a target="_blank"
+                            href="https://datatables.net">official DataTables documentation</a>.</p>
+
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Tabel Data Test TKI</h6><br>
-                            <a href="tabelTestAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-plus fa-sm text-white-50"></i>Add New Data Test</a>
+                            <h6 class="m-0 font-weight-bold text-primary">Form Tambah Data Test TKI</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama TKI</th>
-                                            <th>Negara Tujuan</th>
-                                            <th>Kemampuan Bahasa</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php 
-                                        include 'config.php';
-                                        $konektor = mysqli_connect("localhost","root","", "tki");
-                                        $no = 1;
-                                        $data = mysqli_query($konektor,"SELECT * FROM test");
-                                        while($d = mysqli_fetch_array($data)){
-                                            ?>
-                                            <tr>
-                                                <td><?php echo $no++; ?></td>
-                                                <td><?php echo $d['nama_tki']; ?></td>
-                                                <td><?php echo $d['id_negara']; ?></td>
-                                                <td><?php echo $d['nilai']; ?></td>
+                                <form method="post" action="tabelPendaftarAddProses.php">
+                                    <fieldset>
+                                        <div class="form-group">			
+                                            <label>Nama TKI</label>
                                                 <td>
-                                                    <a href="tabelTestEdit.php?id_test=<?php echo $d['id_test']; ?>">EDIT</a>
-                                                    <a href="tabelTestDelete.php?id_test=<?php echo $d['id_test']; ?>">HAPUS</a>
+                                                <input type="hidden" name="id_test" value="<?php echo $d['id_test']; ?>">
+                                                <input type="text" name="nama_tki" class="form-control" placeholder="Masukkan nama tki"/>
                                                 </td>
-                                            </tr>
-                                            <?php 
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Negara Tujuan </label>
+                                            <td>
+                                                <select class="form-control" name="id_negara">
+                                                    <option>--pilih negara tujuan--</option>
+                                                    <option value='1'>Hongkong</option>
+                                                    <option value='2'>Taiwan</option>
+                                                    <option value='3'>Singapore</option>
+                                                    <option value='4'>Malaysia</option>
+                                                </select>   
+                                            </td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Kemampuan Bahasa</label>
+                                            <td><input type="text" name="nilai" class="form-control" placeholder="Masukkan nilai"/></td>
+                                        </div>
+                                        <p>
+                                            <td></td>
+                                            <td><input type="submit" value="SIMPAN"></td>
+                                            <td><input type="submit" href="#" value="Cancel"></td>
+                                        </p>		
+                                    </fieldset>
+                                </form>
                             </div>
                         </div>
                     </div>

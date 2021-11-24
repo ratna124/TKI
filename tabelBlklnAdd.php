@@ -376,20 +376,28 @@
                                             <label>Nama TKI</label>
                                             <td>
                                                 <input type="hidden" name="id_blk" value="<?php echo $d['id_blk']; ?>">
-                                                <input type="text" name="id_dft" class="form-control" placeholder="Masukkan "/>
+                                                <input type="text" name="id_dft" class="form-control"/>
                                             </td>
                                         </div>
                                         <div class="form-group">
                                             <label>Negara Tujuan</label>
-                                            <td><input type="text" name="negara_tujuan"></td>
+                                            <td>
+                                                <select class="form-control" name="id_negara">
+                                                    <option>--pilih negara tujuan--</option>
+                                                    <option value='1'>Hongkong</option>
+                                                    <option value='2'>Taiwan</option>
+                                                    <option value='3'>Singapore</option>
+                                                    <option value='4'>Malaysia</option>
+                                                </select>   
+                                            </td>
                                         </div>
                                         <div class="form-group">
                                             <label>Jabatan Sektor</label>
-                                            <td><input type="text" name="jabatan_sektor"></td>
+                                            <td><input type="text" name="jabatan_sektor" class="form-control" placeholder="Masukkan jabatan sektor tki"/></td>
                                         </div>
                                         <div class="form-group">
                                             <label>Medical</label>
-                                            <td><input type="text" name="medical"></td>
+                                            <td><input type="text" name="medical" class="form-control" placeholder="Masukkan medical"/></td>
                                         </div>
                                         <p>
                                             <td></td>

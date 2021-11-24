@@ -374,36 +374,44 @@
                                     include 'config.php';
                                     $konektor = mysqli_connect("localhost","root","", "tki");
                                     $id_blk= $_GET['id_blk'];
-                                    $data = mysqli_query($konektor,"SELECT * FROM hongkong WHERE id_hongkong='$id_hongkong'");
+                                    $data = mysqli_query($konektor,"SELECT * FROM blkln WHERE id_blk='$id_blk'");
                                     while($d = mysqli_fetch_array($data)){
                                 ?>
                                         <form method="post" action="tabelBlklnEditProses.php">
-                                            <table>
-                                                <tr>			
+                                            <fieldset>
+                                                <div class="form-group">			
                                                     <td>Nama TKI</td>
                                                     <td>
                                                         <input type="hidden" name="id_blk" value="<?php echo $d['id_blk']; ?>">
-                                                        <input type="text" name="id_dft" value="<?php echo $d['id_dft']; ?>">
+                                                        <input type="text" class="form-control" name="id_dft" value="<?php echo $d['id_dft']; ?>">
                                                     </td>
-                                                </tr>
-                                                <tr>
+                                                </div>
+                                                <div class="form-group">
                                                     <td>Negara Tujuan</td>
-                                                    <td><input type="text" name="negara_tujuan" value="<?php echo $d['negara_tujuan']; ?>"></td>
-                                                </tr>
-                                                <tr>
+                                                    <td>
+                                                        <select class="form-control" name="id_negara">
+                                                            <option>--Atur Ulang Negara Tujuan--</option>
+                                                            <option value='1'>Hongkong</option>
+                                                            <option value='2'>Taiwan</option>
+                                                            <option value='3'>Singapore</option>
+                                                            <option value='4'>Malaysia</option>
+                                                        </select>   
+                                                    </td>
+                                                </div>
+                                                <div class="form-group">
                                                     <td>Jabatan Sektor</td>
-                                                    <td><input type="text" name="jabatan_sektor" value="<?php echo $d['jabatan_sektor']; ?>"></td>
-                                                </tr>
-                                                <tr>
+                                                    <td><input type="text" class="form-control" name="jabatan_sektor" value="<?php echo $d['jabatan_sektor']; ?>"></td>
+                                                </div>
+                                                <div class="form-group">
                                                     <td>Medical</td>
-                                                    <td><input type="text" name="medical" value="<?php echo $d['medical']; ?>"></td>
-                                                </tr>
-                                                <tr>
+                                                    <td><input type="text" class="form-control" name="medical" value="<?php echo $d['medical']; ?>"></td>
+                                                </div>
+                                                <p>
                                                     <td></td>
                                                     <td><input type="submit" value="SIMPAN"></td>
                                                     <td><input type="submit" href="tabelBlkln.php" value="Cancel"></td>
-                                                </tr>		
-                                            </table>
+                                                </p>		
+                                            </fieldset>
                                         </form>
                                         <?php 
                                     }
