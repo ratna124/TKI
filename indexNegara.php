@@ -26,69 +26,70 @@
                     <i class="fas fa-bars ms-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.php">Home Page</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tujuan">Negara Tujuan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php">Tentang Kami</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="TKIFormDaftar.php">Daftar Disini!</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
         <!-- Masthead-->
         <header class="masthead">
-        
-        </header>
-        <a href="index.php" style="color: #141414">Back to Landing Page</a>
-        <!-- Services-->
-        <?php 
-		include 'config.php';
-        $konektor = mysqli_connect("localhost","root","", "tki");
-        $id_negara = $_GET['id_negara'];
-        $data = mysqli_query($konektor,"select * from negara where id_negara='$id_negara'");
-        while($d = mysqli_fetch_array($data)){
-			?>
-        <section class="page-section" id="services">
             <div class="container">
-                <div class="text-center">
-                <h2 type="hidden" name="id_negara" value="<?php echo $d['id_negara']; ?>"></h2>
-                <img src="gambar/<?php echo $d['gambar_negara']; ?>" style="width: 700px;"><br><br>
-                    <h2 class="section-heading text-uppercase"><?php echo $d['negara_tujuan']; ?></h2>
-                </div>
-                <br><br>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <h4 class="my-3">Kriteria</h4>
-                        <p class="text-muted"><?php echo $d['kriteria']; ?></p>
-                    </div>
-                    <div class="col-md-4">
-                        <h4 class="my-3">Persyaratan</h4>
-                        <p class="text-muted"><?php echo $d['persyaratan']; ?></p>
-                    </div>
-                    <div class="col-md-4">
-                        <h4 class="my-3">Gaji</h4>
-                        <p class="text-muted">Rp. <?php echo $d['jumlah_gaji']; ?></p>
-                    </div>
+                <div class="masthead-subheading">Welcome To PT Hendrarta Argaraya !</div>
+                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="login.php">Sign In</a>
+            </div>
+        </header>
+
+        <!-- Negara Tujuan-->
+        <section class="page-section" id="negara">
+            <div class="container">
+                <div>
+                    <?php 
+                    include 'config.php';
+                    $konektor = mysqli_connect("localhost","root","", "tki");
+                    $id_negara = $_GET['id_negara'];
+                    $data = mysqli_query($konektor,"select * from negara where id_negara='$id_negara'");
+                    while($d = mysqli_fetch_array($data)){
+                    ?>
+                    <section class="page-section" id="negara">
+                        <div class="container">
+                            <div class="text-center">
+                            <h2 class="section-heading text-uppercase">Negara Tujuan</h2>
+                            <h3 class="section-subheading text-muted">Country Of Destination.</h3>
+                            <h2 type="hidden" name="id_negara" value="<?php echo $d['id_negara']; ?>"></h2>
+                            <h2 id="tujuan" class="section-heading text-uppercase"><?php echo $d['negara_tujuan']; ?></h2>
+                            <img src="gambar/<?php echo $d['gambar_negara']; ?>" style="width: 700px;"><br><br>
+                            </div>
+                            <br><br>
+                            <div class="row text-center">
+                                <div class="col-md-4">
+                                    <h4 class="my-3">Kriteria</h4>
+                                    <p class="text-muted"><?php echo $d['kriteria']; ?></p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4 class="my-3">Persyaratan</h4>
+                                    <p class="text-muted"><?php echo $d['persyaratan']; ?></p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4 class="my-3">Gaji</h4>
+                                    <p class="text-muted">Rp. <?php echo $d['jumlah_gaji']; ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <?php 
+                    }
+                    ?>
                 </div>
             </div>
         </section>
-        <?php 
-		}
-		?>
-         <!-- Clients-->
-        <div class="py-5">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/microsoft.svg" alt="..." /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/google.svg" alt="..." /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/facebook.svg" alt="..." /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/ibm.svg" alt="..." /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
+        
         <!-- Contact-->
         <section class="page-section" id="contact">
             <div class="container">
