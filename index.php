@@ -27,11 +27,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">Home Page</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#content">Home Page</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Negara Tujuan</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Tentang Kami</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.php">Login Here!</a></li>
+                        <li class="nav-item"><a class="nav-link" href="TKIFormDaftar.php">Daftar Disini!</a></li>
                     </ul>
                 </div>
             </div>
@@ -44,8 +44,8 @@
                 <a class="btn btn-primary btn-xl text-uppercase" href="login.php">Sign In</a>
             </div>
         </header>
-        <!-- Services-->
-        <section class="page-section" id="services">
+        <!-- Content-->
+        <section class="page-section" id="content">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Partners for success abroad</h2>
@@ -92,7 +92,7 @@
                         <?php
                         include 'config.php';
                         $konektor = mysqli_connect("localhost","root","", "tki");
-		                $data = mysqli_query($konektor,"select * from negara");
+		                $data = mysqli_query($konektor,"SELECT * FROM negara");
                         $no = 1;
 		                while($d = mysqli_fetch_array($data)){
 			            ?>
