@@ -70,7 +70,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="TKITest.php">
                     <i class="fas fa-fw fa-user-edit"></i>
                     <span>Test TKI</span></a>
             </li>
@@ -300,94 +300,47 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-2 text-gray-800">Berkas</h1>
+    <h1 class="h3 mb-2 text-gray-800">Test Mandiri</h1>
 </div>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Berkas TKI</h6><br>
-        
+        <h6 class="m-0 font-weight-bold text-primary">Test Mandiri</h6><br>
+        <p>Berikut ini adalah link untuk melakukan test mandiri <a href="#">Link</a></p>
+        <a href="TKITestAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-plus fa-sm text-white-50"></i>Submit Hasil</a>
     </div>
     <div class="card-body">
-    <?php
-	include 'config.php';
-    $konektor = mysqli_connect("localhost","root","", "tki");
-	$id_malaysia = $_GET['id_malaysia'];
-	$data = mysqli_query($konektor,"select * from malaysia where id_malaysia='$id_malaysia'");
-	while($d = mysqli_fetch_array($data)){
-		?>
-    <form action="TKIUploadBerkasMalayAddProses.php" method="post" enctype="multipart/form-data">
-    <table>
-				<tr>			
-					<td>Sektor</td>
-					<td>
-						<input type="hidden" name="id_malaysia" value="<?php echo $d['id_malaysia']; ?>">
-						<input type="text" name="sektor_malay" value="<?php echo $d['sektor_malay']; ?>">
-					</td>
-				</tr>
-                <tr>
-					<td>E-KTP</td>
-                    <td>
-                        <input type="file" name="ektp_malay" value="<?php echo $d['ektp_malay']; ?>">
-                        <img src="berkas/<?php echo $d['ektp_malay']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
-                    </td>
-				</tr>
-                <tr>
-					<td>Kartu Keluarga</td>
-                    <td>
-                        <input type="file" name="kk_malay" value="<?php echo $d['kk_malay']; ?>">
-                        <img src="berkas/<?php echo $d['kk_malay']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
-                    </td>
-				</tr>
-                <tr>
-					<td>Akte Lahir</td>
-                    <td>
-                        <input type="file" name="akta_malay" value="<?php echo $d['akta_malay']; ?>">
-                        <img src="berkas/<?php echo $d['akta_malay']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
-                    </td>
-				</tr>
-                <tr>
-					<td>Surat Nikah</td>
-                    <td>
-                        <input type="file" name="suratnikah_malay" value="<?php echo $d['suratnikah_malay']; ?>">
-                        <img src="berkas/<?php echo $d['suratnikah_malay']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
-                    </td>
-				</tr>
-                <tr>
-					<td>Surat Ijin</td>
-                    <td>
-                        <input type="file" name="suratijin_malay" value="<?php echo $d['suratijin_malay']; ?>">
-                        <img src="berkas/<?php echo $d['suratijin_malay']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
-                    </td>
-				</tr>
-                <tr>
-					<td>Ex Paspor</td>
-                    <td>
-                        <input type="file" name="expaspor_malay" value="<?php echo $d['expaspor_malay']; ?>">
-                        <img src="berkas/<?php echo $d['expaspor_malay']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
-                    </td>
-				</tr>
-                <tr>
-					<td>SKCK</td>
-                    <td>
-                        <input type="file" name="skck_malay" value="<?php echo $d['skck_malay']; ?>">
-                        <img src="berkas/<?php echo $d['skck_malay']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
-                    </td>
-				</tr>
-                <tr>
-					<td>Status Proses</td>
-					<td><input type="text" name="status_proses_malay" value="<?php echo $d['status_proses_malay']; ?>"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" value="SIMPAN"></td>
-				</tr>		
-                </table>
-		</form>
-        <?php 
-	}
-	?>
+    <div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama TKI</th>
+                                            <th>Negara Tujuan</th>
+                                            <th>Score Test</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php 
+                                        include 'config.php';
+                                        $konektor = mysqli_connect("localhost","root","", "tki");
+                                        $no = 1;
+                                        $data = mysqli_query($konektor,"SELECT * FROM test INNER JOIN pendaftaran ON test.id_dft = pendaftaran.id_dft INNER JOIN negara ON test.id_negara = negara.id_negara");
+                                        while($d = mysqli_fetch_array($data)){
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $no++; ?></td>
+                                                <td><?php echo $d['nama_lengkap']; ?></td>
+                                                <td><?php echo $d['negara_tujuan']; ?></td>
+                                                <td><img src="nilai/<?php echo $d['nilai']; ?>" style="width: 200px;"></td>
+                                            </tr>
+                                            <?php 
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
     </div>
 </div>
 

@@ -28,12 +28,12 @@ $konektor = mysqli_connect("localhost","root","", "tki");
                     } else {
                       //tampil alert dan akan redirect ke halaman index.php
                       //silahkan ganti index.php sesuai halaman yang akan dituju
-                      echo "<script>alert('Data berhasil ditambah.');window.location='tabelTest.php';</script>";
+                      echo "<script>alert('Data berhasil ditambah.');window.location='TKITest.php';</script>";
                     }
   
               } else {     
                //jika file ekstensi tidak jpg dan png maka alert ini yang tampil
-                  echo "<script>alert('Ekstensi gambar yang boleh hanya jpg atau png.');window.location='tabelTestAdd.php';</script>";
+                  echo "<script>alert('Ekstensi gambar yang boleh hanya jpg atau png.');window.location='TKITestAdd.php';</script>";
               }
   } else {
      $query = "INSERT INTO test (id_dft, id_negara, nilai) VALUES ('$id_dft', '$id_negara', null)";
@@ -45,7 +45,7 @@ $konektor = mysqli_connect("localhost","root","", "tki");
                     } else {
                       //tampil alert dan akan redirect ke halaman index.php
                       //silahkan ganti index.php sesuai halaman yang akan dituju
-                      echo "<script>alert('Data berhasil ditambah.');window.location='tabelTest.php';</script>";
+                      echo "<script>alert('Data berhasil ditambah.');window.location='TKITest.php';</script>";
                     }
   }
   ?>

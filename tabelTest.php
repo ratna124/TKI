@@ -364,13 +364,13 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>No</th>
                                             <th>Nama TKI</th>
                                             <th>Negara Tujuan</th>
-                                            <th>Kemampuan Bahasa</th>
+                                            <th>Score Test</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -379,14 +379,14 @@
                                         include 'config.php';
                                         $konektor = mysqli_connect("localhost","root","", "tki");
                                         $no = 1;
-                                        $data = mysqli_query($konektor,"SELECT * FROM test");
+                                        $data = mysqli_query($konektor,"SELECT * FROM test INNER JOIN pendaftaran ON test.id_dft = pendaftaran.id_dft INNER JOIN negara ON test.id_negara = negara.id_negara");
                                         while($d = mysqli_fetch_array($data)){
                                             ?>
                                             <tr>
                                                 <td><?php echo $no++; ?></td>
-                                                <td><?php echo $d['nama_tki']; ?></td>
-                                                <td><?php echo $d['id_negara']; ?></td>
-                                                <td><?php echo $d['nilai']; ?></td>
+                                                <td><?php echo $d['nama_lengkap']; ?></td>
+                                                <td><?php echo $d['negara_tujuan']; ?></td>
+                                                <td><img src="nilai/<?php echo $d['nilai']; ?>" style="width: 200px;"></td>
                                                 <td>
                                                     <a href="tabelTestEdit.php?id_test=<?php echo $d['id_test']; ?>">EDIT</a>
                                                     <a href="tabelTestDelete.php?id_test=<?php echo $d['id_test']; ?>">HAPUS</a>

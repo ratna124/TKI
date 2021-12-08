@@ -373,8 +373,8 @@
                                 <?php
                                     include 'config.php';
                                     $konektor = mysqli_connect("localhost","root","", "tki");
-                                    $id_dft = $_GET['id_test'];
-                                    $data = mysqli_query($konektor,"SELECT * FROM test WHERE id_test='$id_test'");
+                                    $id_test = $_GET['id_test'];
+                                    $data = mysqli_query($konektor,"SELECT * FROM test INNER JOIN pendaftaran ON test.id_dft = pendaftaran.id_dft INNER JOIN negara ON test.id_negara = negara.id_negara WHERE id_test='$id_test'");
                                     while($d = mysqli_fetch_array($data)){
                                 ?>
                                         <form method="post" action="tabelTestEditProses.php">
@@ -383,7 +383,7 @@
                                                     <label>Nama TKI</label>
                                                     <td>
                                                         <input type="hidden" name="id_test" value="<?php echo $d['id_test']; ?>">
-                                                        <input type="text" class="form-control" name="nama_tki" value="<?php echo $d['nama_tki']; ?>">
+                                                        <input type="text" class="form-control" name="id_dft" value="<?php echo $d['id_dft']; ?>">
                                                     </td>
                                                 </div>
                                                 <div class="form-group">
@@ -391,22 +391,25 @@
                                                     <td>
                                                         <select class="form-control" name="id_negara">
                                                             <option>--Atur Ulang Negara Tujuan--</option>
-                                                            <option value='1'>Hongkong</option>
-                                                            <option value='2'>Taiwan</option>
-                                                            <option value='3'>Singapore</option>
-                                                            <option value='4'>Malaysia</option>
+                                                            <option value='9'>Hongkong</option>
+                                                            <option value='13'>Taiwan</option>
+                                                            <option value='14'>Singapore</option>
+                                                            <option value='15'>Malaysia</option>
                                                         </select>   
                                                     </td>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Kemampuan Bahasa</label>
-                                                    <td><input type="text" class="form-control" name="nilai" value="<?php echo $d['nilai']; ?>"></td>
+                                                    <label>Score Nilai</label>
+                                                    <td>
+                                                        <img src="nilai/<?php echo $d['nilai']; ?>" class="form-control" style="width: 200px;height: 200px;float: left;margin-bottom: 5px;">
+                                                        <input type="file" name="nilai" />
+                                                    </td>
                                                 </div>
-                                                <p>
-                                                    <td></td>
+                                                <br><br><br><br><br><br><br>
+                                                <div class="form-group">
                                                     <td><input type="submit" value="SIMPAN"></td>
-                                                    <td><input type="submit" href="tabelTest.php" value="Cancel"></td>
-                                                </p>		
+                                                    <td><input type="submit" href="tabelTest.php" value="Cancel"></td>	
+                                                </div>	
                                             </fieldset>
                                         </form>
                                         <?php 

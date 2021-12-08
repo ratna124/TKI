@@ -392,8 +392,8 @@
 				</tr>
                 <tr>
                 <td>Gambar Negara</td>
-          <td><img src="gambar/<?php echo $d['gambar_negara']; ?>" style="width: 120px;float: left;margin-bottom: 5px;">
-          <input type="file" name="gambar_negara" /></td>
+                    <td><img src="gambar/<?php echo $d['gambar_negara']; ?>" style="width: 120px;float: left;margin-bottom: 5px;">
+                    <input type="file" name="gambar_negara" /></td>
 				</tr>
 				<tr>
 					<td></td>

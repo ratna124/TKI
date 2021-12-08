@@ -70,7 +70,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="TKITest.php">
                     <i class="fas fa-fw fa-user-edit"></i>
                     <span>Test TKI</span></a>
             </li>
@@ -326,7 +326,6 @@
                     <th>Ex Paspor</th>
                     <th>SKCK</th>
                     <th>Status Proses</th>
-                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -349,9 +348,6 @@
                     <td><img src="berkas/<?php echo $d['expaspor_malay']; ?>" style="width: 300px;"></td>
                     <td><img src="berkas/<?php echo $d['skck_malay']; ?>" style="width: 300px;"></td>
                     <td><?php echo $d['status_proses_malay']; ?></td>
-                    <td>
-                        <a href="TKIUploadBerkasMalayEdit.php?id_malay=<?php echo $d['id_malaysia']; ?>">EDIT</a>
-                    </td>
                 </tr>
                 <?php 
                     }

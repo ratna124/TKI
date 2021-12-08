@@ -70,7 +70,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="TKITest.php">
                     <i class="fas fa-fw fa-user-edit"></i>
                     <span>Test TKI</span></a>
             </li>
@@ -300,99 +300,48 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-2 text-gray-800">Berkas</h1>
+    <h1 class="h3 mb-2 text-gray-800">Submit Hasil Test Mandiri</h1>
 </div>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Berkas TKI</h6><br>
     </div>
     <div class="card-body">
-        <?php
-	        include 'config.php';
-            $konektor = mysqli_connect("localhost","root","", "tki");
-	        $id_hongkong = $_GET['id_hongkong'];
-	        $data = mysqli_query($konektor,"select * from hongkong where id_hongkong='$id_hongkong'");
-	        while($d = mysqli_fetch_array($data)){
-		?>
-        <form action="TKIUploadBerkasHongkongEditProses.php" method="post" enctype="multipart/form-data">
-            <table>
-				<tr>			
-					<td>Nama TKI</td>
-					<td>
-						<input type="hidden" name="id_hongkong" value="<?php echo $d['id_hongkong']; ?>">
-						<input type="text" name="id_dft" value="<?php echo $d['id_dft']; ?>">
-					</td>
-				</tr>
-                <tr>			
-					<td>Sektor</td>
-					<td>
-						<input type="text" name="sektor_hk" value="<?php echo $d['sektor_hk']; ?>">
-					</td>
-				</tr>
-                <tr>
-					<td>E-KTP</td>
+    <div class="table-responsive">
+        <form method="post" action="TKITestAddProses.php" enctype="multipart/form-data">
+            <fieldset>
+                <div class="form-group">			
+                    <label>Nama TKI</label>
                     <td>
-                        <input type="file" name="ektp_hk" value="<?php echo $d['ektp_hk']; ?>">
-                        <img src="berkas/<?php echo $d['ektp_hk']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
+                        <input type="hidden" name="id_test" value="<?php echo $d['id_test']; ?>">
+                        <input type="text" name="id_dft" class="form-control" placeholder="Masukkan nama tki"/>
                     </td>
-				</tr>
-                <tr>
-					<td>Kartu Keluarga</td>
+                </div>
+                <div class="form-group">
+                    <label>Negara Tujuan </label>
                     <td>
-                        <input type="file" name="kk_hk" value="<?php echo $d['kk_hk']; ?>">
-                        <img src="berkas/<?php echo $d['kk_hk']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
+                        <select class="form-control" name="id_negara">
+                            <option>--pilih negara tujuan--</option>
+                            <option value='9'>Hongkong</option>
+                            <option value='13'>Taiwan</option>
+                            <option value='14'>Singapore</option>
+                           <option value='15'>Malaysia</option>
+                        </select>   
                     </td>
-				</tr>
-                <tr>
-					<td>Akte Lahir</td>
-                    <td>
-                        <input type="file" name="akte_hk" value="<?php echo $d['akte_hk']; ?>">
-                        <img src="berkas/<?php echo $d['akte_hk']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
-                    </td>
-				</tr>
-                <tr>
-					<td>Surat Nikah</td>
-                    <td>
-                        <input type="file" name="suratnikah_hk" value="<?php echo $d['suratnikah_hk']; ?>">
-                        <img src="berkas/<?php echo $d['suratnikah_hk']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
-                    </td>
-				</tr>
-                <tr>
-					<td>Surat Ijin</td>
-                    <td>
-                        <input type="file" name="suratijin_hk" value="<?php echo $d['suratijin_hk']; ?>">
-                        <img src="berkas/<?php echo $d['suratijin_hk']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
-                    </td>
-				</tr>
-                <tr>
-					<td>Ex Paspor</td>
-                    <td>
-                        <input type="file" name="expaspor_hk" value="<?php echo $d['expaspor_hk']; ?>">
-                        <img src="berkas/<?php echo $d['expaspor_hk']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
-                    </td>
-				</tr>
-                <tr>
-					<td>SKCK</td>
-                    <td>
-                        <input type="file" name="skck_hk" value="<?php echo $d['skck_hk']; ?>">
-                        <img src="berkas/<?php echo $d['skck_hk']; ?>" style="width: 200px;float: left;margin-bottom: 5px;">
-                    </td>
-				</tr>
-                <tr>
-					<td>Status Proses</td>
-					<td><input type="text" name="status_proses_hk" value="<?php echo $d['status_proses_hk']; ?>"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" value="SIMPAN"></td>
-				</tr>		
-                </table>
-		</form>
-        <?php 
-	}
-	?>
+                </div>
+                <div class="form-group">
+                    <label>Score Test</label>
+                    <td><input type="file" name="nilai" class="form-control"/></td>
+                </div>
+                    <p>
+                        <td></td>
+                        <td><input type="submit" value="SIMPAN"></td>
+                        <td><input type="submit" href="#" value="Cancel"></td>
+                    </p>		
+            </fieldset>
+        </form>
+    </div>
 </div>
 
 </div>

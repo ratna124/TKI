@@ -370,36 +370,36 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <form method="post" action="tabelPendaftarAddProses.php">
-                                    <fieldset>
-                                        <div class="form-group">			
-                                            <label>Nama TKI</label>
-                                                <td>
-                                                <input type="hidden" name="id_test" value="<?php echo $d['id_test']; ?>">
-                                                <input type="text" name="nama_tki" class="form-control" placeholder="Masukkan nama tki"/>
-                                                </td>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Negara Tujuan </label>
-                                            <td>
-                                                <select class="form-control" name="id_negara">
-                                                    <option>--pilih negara tujuan--</option>
-                                                    <option value='1'>Hongkong</option>
-                                                    <option value='2'>Taiwan</option>
-                                                    <option value='3'>Singapore</option>
-                                                    <option value='4'>Malaysia</option>
-                                                </select>   
-                                            </td>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Kemampuan Bahasa</label>
-                                            <td><input type="text" name="nilai" class="form-control" placeholder="Masukkan nilai"/></td>
-                                        </div>
-                                        <p>
+                            <form method="post" action="tabelTestAddProses.php" enctype="multipart/form-data">
+                                <fieldset>
+                                    <div class="form-group">			
+                                        <label>Nama TKI</label>
+                                        <td>
+                                            <input type="hidden" name="id_test" value="<?php echo $d['id_test']; ?>">
+                                            <input type="text" name="id_dft" class="form-control" placeholder="Masukkan nama tki"/>
+                                        </td>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Negara Tujuan </label>
+                                        <td>
+                                            <select class="form-control" name="id_negara">
+                                                <option>--pilih negara tujuan--</option>
+                                                <option value='9'>Hongkong</option>
+                                                <option value='13'>Taiwan</option>
+                                                <option value='14'>Singapore</option>
+                                                <option value='15'>Malaysia</option>
+                                            </select>   
+                                        </td>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Score Test</label>
+                                        <td><input type="file" name="nilai" class="form-control"/></td>
+                                    </div>
+                                         <p>
                                             <td></td>
                                             <td><input type="submit" value="SIMPAN"></td>
                                             <td><input type="submit" href="#" value="Cancel"></td>
-                                        </p>		
+                                         </p>		
                                     </fieldset>
                                 </form>
                             </div>
