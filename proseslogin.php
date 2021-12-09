@@ -21,7 +21,7 @@ if($cek > 0){
 		$_SESSION['username'] = $username;
 		$_SESSION['role'] = "1";
 		// alihkan ke halaman dashboard admin
-		header("location:tabelManageUser.php");
+		header("location:indexadmin.php");
  
 	// cek jika user login sebagai pegawai
 	}else if($data['role']=="2"){
@@ -29,7 +29,7 @@ if($cek > 0){
 		$_SESSION['username'] = $username;
 		$_SESSION['role'] = "2";
 		// alihkan ke halaman dashboard pegawai
-		header("location:index2.php");
+		header("location:indextki.php");
 	}
 	else{
  
