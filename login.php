@@ -31,8 +31,18 @@
 		      			<input type="text" class="form-control" name="username" placeholder="Enter username" id="username">
 		      		</div>
 	            <div class="form-group">
-	              <input type="password" class="form-control" name="password" placeholder="Enter password" id="password">
-	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+					<input type="password" class="form-control" name="password" placeholder="Enter password" id="password">
+	              	<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" onclick="myFunction()"></span>
+					<script>
+						function myFunction() {
+							var x = document.getElementById("password");
+							if (x.type === "password") {
+								x.type = "text";
+							} else {
+								x.type = "password";
+							}
+						}
+					</script>
 	            </div>
 	            <div class="form-group">
 	            	<button type="submit" class="form-control btn btn-primary submit px-3">Log In</button>
@@ -44,14 +54,15 @@
 							<span class="checkmark"></span>
 						</label>
 					</div>
-					<div class="w-50 text-md-right">
-						<a href="#" style="color: #fff">Forgot Password</a>
-					</div>
 	            </div>
 	          </form>
-	          <p class="w-100 text-center">
-			  <a href="registrasi.php" style="color: #67b4f5">&mdash; Or Create an Account &mdash;</a>
-			</p>
+			  <hr>
+			  	<div class="text-center">
+                    <a class="small" href="##">Forgot Password?</a>
+            	</div>
+                <div class="text-center">
+                    <a class="small" href="registrasi.php">Create an Account!</a>
+                </div>
 		      </div>
 				</div>
 			</div>
