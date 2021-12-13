@@ -77,7 +77,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="TKIBlkln.php">
                     <i class="fas fa-fw fa-building"></i>
                     <span>BLKLN</span></a>
             </li>

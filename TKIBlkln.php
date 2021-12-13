@@ -61,8 +61,8 @@
                         <h6 class="collapse-header">Data TKI</h6>
                         <a class="collapse-item" href="TKIDataDiri.php">Data Diri</a>
                         <a class="collapse-item" href="TKIUploadBerkasHongkong.php">Berkas Hongkong</a>
-                        <a class="collapse-item" href="TKIUploadBerkasSingapore.php">Lengkapi Singapore</a>
-                        <a class="collapse-item" href="TKIUploadBerkasMalay.php">Lengkapi Malaysia</a>
+                        <a class="collapse-item" href="TKIUploadBerkasMalay.php">Lengkapi Singapore</a>
+                        <a class="collapse-item" href="TKIUploadBerkasSingapore.php">Lengkapi Malaysia</a>
                         <a class="collapse-item" href="TKIUploadBerkasTaiwan.php">Lengkapi Taiwan</a>
                     </div>
                 </div>
@@ -300,64 +300,54 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-2 text-gray-800">Berkas</h1>
+    <h1 class="h3 mb-2 text-gray-800">BLKLN</h1>
 </div>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Berkas TKI Taiwan</h6><br>
-        <a href="TKIUploadBerkasTaiwanAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-plus fa-sm text-white-50"></i>Add Berkas</a>
-    </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama TKI</th>
-                            <th>Sektor</th>
-                            <th>E-KTP</th>
-                            <th>Kartu Keluarga</th>
-                            <th>Akta Kelahiran</th>
-                            <th>Surat Menikah</th>
-                            <th>Surat Ijin Ortu/Suami</th>
-                            <th>Ex Paspor</th>
-                            <th>SKCK</th>
-                            <th>Status Proses</th>
-                        </tr>
-                    </thead>
-                         <tbody>
-                            <?php 
-                                include 'config.php';
-                                $konektor = mysqli_connect("localhost","root","", "tki");
-                                $no = 1;
-                                $data = mysqli_query($konektor,"SELECT * FROM taiwan INNER JOIN pendaftaran ON taiwan.id_dft = pendaftaran.id_dft");
-                                while($d = mysqli_fetch_array($data)){
-                            ?>
-                            <tr>
-                                <td><?php echo $no++; ?></td>
-                                <td><?php echo $d['nama_lengkap']; ?></td>
-                                <td><?php echo $d['sektor_taiw']; ?></td>
-                                <td><img src="berkas/<?php echo $d['ektp_taiw']; ?>" style="width: 300px;"></td>
-                                <td><img src="berkas/<?php echo $d['kk_taiw']; ?>" style="width: 300px;"></td>
-                                <td><img src="berkas/<?php echo $d['akte_taiw']; ?>" style="width: 300px;"></td>
-                                <td><img src="berkas/<?php echo $d['suratnikah_taiw']; ?>" style="width: 300px;"></td>
-                                <td><img src="berkas/<?php echo $d['suratijin_taiw']; ?>" style="width: 300px;"></td>
-                                <td><img src="berkas/<?php echo $d['expaspor_taiw']; ?>" style="width: 300px;"></td>
-                                <td><img src="berkas/<?php echo $d['skck_taiw']; ?>" style="width: 300px;"></td>
-                                <td><?php echo $d['status_proses_taiw']; ?></td>
-                            </tr>
-                            <?php 
-                                }
-                            ?>
-                       </tbody>
-                    </table>
-        </div>
-    </div>
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Tabel BLKLN</h6><br>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Negara Tujuan</th>
+                                            <th>Jabatan Sektor</th>
+                                            <th>Medical</th>
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tbody>
+                                    <?php 
+                                        include 'config.php';
+                                        $konektor = mysqli_connect("localhost","root","", "tki");
+                                        $no = 1;
+                                        $data = mysqli_query($konektor,"SELECT * FROM blkln 
+                                                                        INNER JOIN pendaftaran ON blkln.id_dft = pendaftaran.id_dft 
+                                                                        INNER JOIN negara ON blkln.id_negara = negara.id_negara");
+                                        while($d = mysqli_fetch_array($data)){
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $no++; ?></td>
+                                                <td><?php echo $d['nama_lengkap']; ?></td>
+                                                <td><?php echo $d['negara_tujuan']; ?></td>
+                                                <td><?php echo $d['jabatan_sektor']; ?></td>
+                                                <td><?php echo $d['medical']; ?></td>
+                                            </tr>
+                                            <?php 
+                                            }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
 
-</div>
+                </div>
 <!-- /.container-fluid -->
 
 </div>
