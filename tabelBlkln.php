@@ -246,8 +246,8 @@
                                                 <td><?php echo $d['medical']; ?></td>
 
                                                 <td>
-                                                    <a href="tabelBlklnEdit.php?id_blk=<?php echo $d['id_blk']; ?>">EDIT</a>
-                                                    <a href="tabelBlklnDelete.php?id_blk=<?php echo $d['id_blk']; ?>">HAPUS</a>
+                                                    <a href="tabelBlklnEdit.php?id_blkln=<?php echo $d['id_blkln']; ?>">EDIT</a>
+                                                    <a href="tabelBlklnDelete.php?id_blkln=<?php echo $d['id_blkln']; ?>">HAPUS</a>
                                                 </td>
                                             </tr>
                                             <?php 

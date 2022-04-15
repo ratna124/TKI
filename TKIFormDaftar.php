@@ -70,10 +70,10 @@
                                 <td>
                                 <select class="form-control" name="id_negara">
                                 <option>--pilih negara tujuan--</option>
-                                <option value='1'>Hongkong</option>
-                                <option value='2'>Taiwan</option>
-                                <option value='3'>Singapore</option>
-                                <option value='4'>Malaysia</option>
+                                <option value='9'>Hongkong</option>
+                                <option value='15'>Taiwan</option>
+                                <option value='13'>Singapore</option>
+                                <option value='14'>Malaysia</option>
                                 </select>   
                                 </td>
                             </div>

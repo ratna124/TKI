@@ -219,20 +219,20 @@
                                         <div class="form-group">			
                                             <label>Nama TKI</label>
                                             <td>
-                                                <input type="hidden" name="id_blk" value="<?php echo $d['id_blk']; ?>">
+                                                <input type="hidden" name="id_blkln" value="<?php echo $d['id_blkln']; ?>">
                                                 <input type="text" name="id_dft" class="form-control"/>
                                             </td>
                                         </div>
                                         <div class="form-group">
                                             <label>Negara Tujuan</label>
                                             <td>
-                                                <select class="form-control" name="id_negara">
-                                                    <option>--pilih negara tujuan--</option>
-                                                    <option value='1'>Hongkong</option>
-                                                    <option value='2'>Taiwan</option>
-                                                    <option value='3'>Singapore</option>
-                                                    <option value='4'>Malaysia</option>
-                                                </select>   
+                                            <select class="form-control" name="id_negara">
+                                                <option>--pilih negara tujuan--</option>
+                                                <option value='9'>Hongkong</option>
+                                                <option value='15'>Taiwan</option>
+                                                <option value='13'>Singapore</option>
+                                                <option value='14'>Malaysia</option>
+                                            </select> 
                                             </td>
                                         </div>
                                         <div class="form-group">

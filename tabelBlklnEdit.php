@@ -225,8 +225,8 @@
                                 <?php
                                     include 'config.php';
                                     $konektor = mysqli_connect("localhost","root","", "tki");
-                                    $id_blk= $_GET['id_blk'];
-                                    $data = mysqli_query($konektor,"SELECT * FROM blkln WHERE id_blk='$id_blk'");
+                                    $id_blkln= $_GET['id_blkln'];
+                                    $data = mysqli_query($konektor,"SELECT * FROM blkln WHERE id_blkln='$id_blkln'");
                                     while($d = mysqli_fetch_array($data)){
                                 ?>
                                         <form method="post" action="tabelBlklnEditProses.php">
@@ -234,20 +234,20 @@
                                                 <div class="form-group">			
                                                     <td>Nama TKI</td>
                                                     <td>
-                                                        <input type="hidden" name="id_blk" value="<?php echo $d['id_blk']; ?>">
+                                                        <input type="hidden" name="id_blkln" value="<?php echo $d['id_blkln']; ?>">
                                                         <input type="text" class="form-control" name="id_dft" value="<?php echo $d['id_dft']; ?>">
                                                     </td>
                                                 </div>
                                                 <div class="form-group">
                                                     <td>Negara Tujuan</td>
                                                     <td>
-                                                        <select class="form-control" name="id_negara">
-                                                            <option>--Atur Ulang Negara Tujuan--</option>
-                                                            <option value='1'>Hongkong</option>
-                                                            <option value='2'>Taiwan</option>
-                                                            <option value='3'>Singapore</option>
-                                                            <option value='4'>Malaysia</option>
-                                                        </select>   
+                                                    <select class="form-control" name="id_negara">
+                                                        <option>--pilih negara tujuan--</option>
+                                                        <option value='9'>Hongkong</option>
+                                                        <option value='15'>Taiwan</option>
+                                                        <option value='13'>Singapore</option>
+                                                        <option value='14'>Malaysia</option>
+                                                    </select>  
                                                     </td>
                                                 </div>
                                                 <div class="form-group">

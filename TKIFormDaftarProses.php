@@ -25,6 +25,6 @@ mysqli_query($konektor,"INSERT INTO pendaftaran VALUES('','$id_negara', '$nik','
                                                         '$status', '$agama', '$pengalaman_kerja')");
  
 // mengalihkan halaman kembali ke tabelPendaftar.php
-header("location:tabelPendaftar.php");
+header("location:index.php");
  
 ?>
